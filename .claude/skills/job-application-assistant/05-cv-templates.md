@@ -6,6 +6,26 @@ framework_version: 1.4.5
 
 <!-- SETUP: Profile statements and section ordering are personalized by running /setup -->
 
+<!-- BEGIN ACTIVE-TEMPLATE (managed by /add-template - do not edit by hand) -->
+> **Active template override: `saurav-html`**
+>
+> A custom template is active. Where this block conflicts with the stock guidance below, this block wins. Structural advice below (tailoring, page-budget, cutting rules) still applies.
+>
+> - **Template skeleton:** `templates/cv/saurav-html/template.html` — use this as the structural reference instead of the stock template
+> - **Manifest:** `templates/cv/saurav-html/TEMPLATE.md` — read this for style rules and known pitfalls before drafting
+> - **Master content reference:** `cv/master_cv.html` / `cv/master_cv.md` — the candidate's detailed base CV; the content pool every tailored CV draws from (facts still come from `01-candidate-profile.md`)
+> - **Source extension:** `.html` (not `.tex` unless the template's own toolchain is LaTeX)
+> - **Compile command:** `cd cv && rm -f main_<company>_<role>.pdf && google-chrome --headless --disable-gpu --no-sandbox --no-pdf-header-footer --print-to-pdf=main_<company>_<role>.pdf main_<company>_<role>.html` (not the command named in the stock guidance below — `/apply`'s compile step must use this instead). Run it from the output directory.
+> - **Fonts:** Times New Roman / system serif
+> - **Page limit:** exactly 2 page(s)
+> - **Output file:** `cv/main_<company>_<role>.html`; the template is a single self-contained file, no assets to copy
+> - **Work-authorization header line (hard rule, from the candidate profile):** Germany → "Opportunity card holder"; India → omit the span entirely; rest of world → "Sponsorship required". Phone is always the India number, written `+918527089555`.
+<!-- END ACTIVE-TEMPLATE -->
+
+## Solution keyword bank (tailoring source)
+
+The master CV (`cv/master_cv.md` / `cv/master_cv.html`) carries two extra skills rows - **"Streaming Protocols & Formats"** (RTSP, SRT, MPEG-TS, multicast, LL-HLS, CMAF, VP8/VP9, AV1, AAC, Opus) and **"Product & Solution Domains"** (video conferencing/UC, OTT, IPTV, STB, smart TV, digital signage, DOOH, video walls, control rooms, VMS/NVR, dashcam telematics, EDR, DMS/OMS, in-vehicle multimedia, cloud gaming, telehealth). When a posting names one of these solutions or keywords, weave the matching term into the tailored CV's summary, skills, or experience bullets - **only as far as the Keyword Policy in `01-candidate-profile.md` allows** (it also lists the held-back terms - ISO 26262/ASIL/AUTOSAR, AAOS/QNX/CarPlay, DeepStream/OpenVINO/TensorRT, GMSL/FPD-Link, etc. - that must never be added). Space on a 2-page CV is finite: pull only the rows relevant to the target role, never the whole bank.
+
 ## Template: LaTeX moderncv (Banking Style)
 
 All CVs use the moderncv LaTeX package with the "banking" style and "blue" color scheme.
@@ -59,7 +79,7 @@ Expected output: `Output written on main_<company>_<role>.pdf (2 pages, ...)`. A
     linkcolor=blue,
     filecolor=magenta,
     urlcolor=blue,
-    pdftitle={[YOUR_NAME] - CV},
+    pdftitle={Saurav Kalia - CV},
     % Keep pdfpagemode=UseNone: this block runs after moderncv's own
     % \AtEndPreamble (moderncv.cls sets pdfpagemode there), so a FullScreen
     % value here would win and open every CV in fullscreen presentation mode.
@@ -69,13 +89,13 @@ Expected output: `Output written on main_<company>_<role>.pdf (2 pages, ...)`. A
 \usepackage{import}
 
 % Personal data
-\name{[FIRST_NAME]}{[LAST_NAME]}
+\name{Saurav}{Kalia}
 % If you have no address to list, DELETE this whole line. \address{}{}{} fails
 % with "There's no line here to end" on every moderncv version.
-\address{[YOUR_ADDRESS]}{}{}
-\phone[mobile]{[YOUR_PHONE]}
-\email{[YOUR_EMAIL]}
-\extrainfo{\href{[YOUR_LINKEDIN_URL]}{LinkedIn}, \href{[YOUR_GITHUB_URL]}{GitHub}}
+\address{Munich, Germany}{}{}
+\phone[mobile]{+918527089555}
+\email{sauravkalia@gmail.com}
+\extrainfo{\href{https://linkedin.com/in/saurav2026}{LinkedIn}}
 
 \begin{document}
 \makecvtitle
@@ -136,12 +156,15 @@ When the role sits outside your home domain, **lead with the domain-transfer arg
 
 **Create 2-3 profile statement templates for your main role types:**
 
-<!-- SETUP: These are populated based on your background -->
-**For [YOUR_PRIMARY_ROLE_TYPE] roles:**
-> [YOUR_PROFILE_STATEMENT_TEMPLATE_1]
+<!-- SETUP: Populated from ~/code/data/cv.md by /setup Path B -->
+**For embedded C++ / multimedia-streaming roles (primary direction):**
+> Principal-level embedded C++ engineer with 19+ years architecting real-time video streaming systems at scale: 100+ concurrent WebRTC/HLS streams per node across 700k+ dashcam devices at Lytx, and GPU-accelerated control-room video walls (16x HD simultaneous streams, frame-accurate PTP/genlock synchronization) at Barco. Deep expertise across GStreamer, WebRTC, and embedded Linux (Yocto/ARM), from device drivers and bootloaders to cloud media servers on EKS.
 
-**For [YOUR_SECONDARY_ROLE_TYPE] roles:**
-> [YOUR_PROFILE_STATEMENT_TEMPLATE_2]
+**For video-streaming platform / WebRTC backend roles:**
+> Streaming-platform engineer with 19+ years building the media plane end to end: WebRTC and HLS delivery (98.6% session success at 600-session load, zero leaks across 4,286 sessions), GStreamer/Janus media servers, Kafka-backed event buses, and production debugging at the socket and thread level (fd lifecycles, back pressure, ICE/STUN/TURN topology). Owned platforms from greenfield architecture (Voizzit) to 700k-device scale (Lytx).
+
+**For embedded Linux / firmware / BSP roles:**
+> Embedded Linux engineer with 19+ years shipping ARM-based multimedia devices: NXP i.MX8 dashcams on Yocto (raised recording duty cycle from 49% to ~100%, passed 21-hour soaks), Tizen signage platforms at Samsung, and STB firmware with bare-metal A/B-OTA bootloaders. Comfortable from NAND/NOR flash drivers and device trees up through GStreamer pipelines and hardware codecs (NXP VPU).
 
 Statements labeled *[Used for: <company>_<role>]* were extracted from archived application drafts by `/setup` Path A. They are **phrasing references, never fact sources**: when drafting from one, every factual claim still comes from `01-candidate-profile.md` - a past tailored draft does not vouch for its own accuracy.
 
