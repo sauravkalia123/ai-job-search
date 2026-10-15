@@ -28,6 +28,14 @@ Read the posting's eligibility / work rights / "who can apply" section **verbati
 
 If the candidate's permit also constrains *hours* or *start date* (a student visa with a term-time cap, a permit that begins on graduation), record that as a second gate under this section during `/setup`, with the specific dates. Do not merge it with the eligibility question above — they fail for different reasons and need different answers.
 
+### Candidate permit facts (recorded during /setup)
+
+- **Citizenship:** India. **Current residence:** Munich, Germany.
+- **Germany — Opportunity Card (Chancenkarte) holder.** Permitted to seek and take up qualified employment in Germany; the permit itself needs no employer sponsorship. Postings in Germany: **PROCEED** on eligibility (still check the posting for citizen/PR-only wording, which would FAIL).
+- **Every other country — sponsorship required.** No existing right to work outside Germany and India. A posting that says "no sponsorship", "must have existing work rights", or names a citizen/PR requirement: **FAIL — hard stop**, quote it back. A posting that is silent on sponsorship: **PROCEED, but mark unverified** per the table above — sponsorship willingness is the single most common reason this candidate is excluded, so verify the employer's sponsorship stance (careers page, international-applicant FAQ) before drafting.
+- **India — citizen.** No eligibility gate applies.
+- **CV header line rule** (enforced by `/apply` drafting; see `05-cv-templates.md`): Germany → "Opportunity card holder"; India → no work-authorization line; rest of world → "Sponsorship required".
+
 A role that fails this gate is not scored and not drafted. Everything below applies only to roles that pass it.
 
 ## Language Gate — run before scoring
@@ -43,6 +51,8 @@ Read the posting's language requirements as stated for **the role itself** — n
 | Requires a language you list, at or below your declared level (or the posting doesn't specify a level at all — just names the language) | **PASS.** No note needed. |
 
 Judge the level comparison the same way you judge everything else in this framework: read both sides as written and reason about it, don't force either into a rigid scale — CEFR letters, LinkedIn-style buckets ("professional working proficiency"), and plain-English words ("conversational," "fluent," "native") all appear in the wild and don't map onto each other precisely. When genuinely unsure whether a stated bar exceeds the candidate's level, prefer FLAG over a silent PASS — the human is meant to be the tiebreaker, not the gate.
+
+**English is always a PASS (candidate instruction, 2026-10-13):** English is the candidate's primary working language (19+ years across India, UAE, South Korea, Germany). Any posting requirement in English — including "fluent English", "business-level English", "English/Full professional" — passes the gate unconditionally. If a posting specifies no language at all, assume English: PASS, no flag. Only non-English requirements trigger the table above.
 
 **Worked example:** a candidate whose Languages table lists Spanish (Native) and English (B1/B2). A posting requiring "fluent Russian" → **FAIL**, Russian isn't declared at all. A posting requiring "fluent English" → **FLAG**, English is declared but "fluent" plausibly exceeds B1/B2 — score and draft the application, but tell the candidate this posting's bar may be a stretch and let them decide. A posting requiring "conversational English" or unspecified English → **PASS**, B1/B2 clears a "conversational" bar cleanly.
 
@@ -60,9 +70,11 @@ How well do the required/preferred skills align with the candidate's capabilitie
 | 40-59 | Partial match, significant upskilling needed |
 | 0-39 | Fundamental mismatch |
 
-**Strong match areas:** [YOUR_PRIMARY_SKILLS]
-**Moderate match areas:** [YOUR_SECONDARY_SKILLS]
-**Weak match areas:** [SKILLS_YOU_LACK]
+**Strong match areas (candidate's own tier list, 2026-10-13 - full credit):** C, Embedded C, C++, C++14, C++17, C++20, C++21, Concurrency, Multithreading, Linux, Embedded Linux, RTOS, GStreamer, FFmpeg, WebRTC, RTP/RTCP, RTSP, HLS, MPEG-DASH, MP4, H.264, H.265, Video Streaming, Real-Time Media, Low-Latency Video, Video Pipeline, Camera Pipeline, Media Server, Multi-Stream Processing, Multi-Stream Decoding, Audio/Video Synchronization, Digital Signage, Video Walls, IPTV, OTT, Set-Top Boxes (STB), Smart TV Media Player, Tizen, Video Telematics, Dashcam, Live View, Video Recording, Widevine, PlayReady, DRM, Performance Optimization, Memory Optimization, Multicast Video, Embedded Multimedia, Video Playback, Live Transcoding
+**Moderate match areas (partial credit):** SIP, VoIP, PipeWire, JACK, JACK2, ALSA, Audio Mixing, Audio Routing, Audio Streaming, MPEG-TS, SRT, RIST, NDI, CMAF, LL-HLS, VP8, VP9, AV1, AAC, Opus, Adaptive Bitrate Streaming (ABR), CDN, Origin Server, Media Packager, IPTV Headend, Broadcast Video, Cloud Playout, Video Conferencing, Remote Production, VMS, NVR, IP Cameras, Body-Worn Cameras, Video Analytics, Edge AI, V4L2, Yocto, Linux BSP, VPU, Android TV, RDK, ExoPlayer, Shaka Player, Wayland, Weston, QNX, AGL, Android Automotive (AAOS), Video Injection, Timing-Accurate Playback, Multi-Camera Capture, High-Bitrate Recording, Cloud Upload, Secure Upload, Fast Boot, OTA Updates, Secure Boot, A/B Partitions, PTP, gPTP, Automotive Ethernet, Shared Camera Buffers, GPU Compositing, Video Overlay, Multi-Output Synchronization, Multi-Zone Audio, Echo Cancellation (AEC)
+**Weak match areas (do NOT consider - never credit these, score the role as if the candidate lacks them):** ADAS, AUTOSAR, ISO 26262, ASIL, UN R46, Euro NCAP, Driver Monitoring System (DMS), Occupant Monitoring System (OMS), Forward Collision Warning (FCW), Lane Departure Warning (LDW), Traffic Sign Recognition, Pedestrian Detection, Blind-Spot Detection, Sensor Fusion, Automated Parking Assist, Surround-View Camera, Digital Mirrors, Camera Monitor System (CMS), IR Camera, Radar Fusion, GMSL, FPD-Link, MIPI CSI-2, ISP Tuning, GPU Stitching, DeepStream, OpenVINO, TensorRT, HIL/SIL, Safety-Grade Pipeline, Safety Partitioning, Safety Isolation, Hypervisor-Based Cockpit, QNX Guest, i.MX/TI Jacinto/Qualcomm SA8xxx *in automotive-platform context only* (general embedded Linux/ARM multimedia work on i.MX8 stays Strong per the tier list above), Apple CarPlay, Android Auto, IEEE 1722, AVB/TSN, SMPTE 2110, Medical Imaging Video, Surgical Video, Drone Video Link, Robotics Video, Smart Home Video, Telehealth, In-Flight Entertainment (IFE), Hospitality TV, E-Learning Video, Contact Centre, UCaaS, Public Address, Intercom, Paging Systems, Internet Radio, Podcast Streaming, Cloud Gaming, Remote Desktop Streaming, Stadium Displays, DOOH Advertising, Retail Advertising Screens, Digital Instrument Cluster, Head-Up Display (HUD), AR Navigation, eCall, Hypervisor, Serializer/Deserializer Drivers, CAN; also (earlier instruction): Rust, Kafka, AWS/Kubernetes/Docker cloud infrastructure, web frontends, data engineering, mobile app development
+
+**ADAS nuance (candidate instruction, 2026-10-13):** the candidate is NOT an ADAS engineer and must never be positioned as one - the Weak tier covers ADAS *domain* keywords (safety algorithms, sensor fusion, radar, standards/compliance, DMS/OMS detection logic). BUT he **can work in the ADAS domain where the actual work is camera-feed processing**. So when scoring a posting that mentions ADAS: classify the *substance of the work*, not the title. If the required skills are dominated by camera pipelines, multi-camera capture, video processing/decoding, encoding, recording, low-latency video - i.e. Strong-tier work that happens to sit in an ADAS program - score it normally on those Strong skills and list the missing ADAS domain knowledge honestly under gaps. Only postings whose substance is ADAS algorithms, safety/fusion, or compliance score Weak.
 
 ### 2. Experience Match (0-100)
 Does work history align with what they're looking for? Match on the function and nature of the work performed, not the literal job title - a "Data Consultant" and a "Data Scientist" role can be functionally identical.
@@ -74,9 +86,9 @@ Does work history align with what they're looking for? Match on the function and
 | 40-59 | Adjacent experience, would need to make the case |
 | 0-39 | Unrelated experience |
 
-**Strong:** [YOUR_DIRECT_EXPERIENCE_DOMAINS]
-**Moderate:** [YOUR_ADJACENT_EXPERIENCE]
-**Entry-level:** [ROLES_WITH_LIMITED_EXPERIENCE]
+**Strong:** Real-time video streaming / multimedia systems (19+ years: STB firmware, signage and video walls, control rooms, dashcam cloud and device, OTT platforms)
+**Moderate:** General embedded Linux / IoT product development, C++ backend services (Kafka, microservices, networking), driver/BSP work, consumer-electronics platform engineering
+**Entry-level:** Web frontend, mobile apps, pure ML/data-science roles (transferable C++/Python only)
 
 ### 3. Behavioral/Culture Fit (0-100)
 Does the role and company culture match the behavioral profile?
@@ -91,10 +103,16 @@ Does the role and company culture match the behavioral profile?
 **Red flags to research:** Department disorganization, work dominated by maintenance over development, poor chemistry with leadership, culture mismatches. Check reviews, media coverage, LinkedIn connections, and network contacts for insider perspective.
 
 ### 4. Location & Logistics (Pass/Fail + Notes)
-- Within commute range: PASS
-- Remote with occasional office: PASS
-- Requires relocation: FAIL (deal-breaker)
-- Frequent international travel: FLAG (discuss with user)
+
+The candidate is open to relocation **worldwide**. Location willingness never fails a role on its own; the binding constraints are the Eligibility Gate (sponsorship) and, in Germany, the Language Gate. Score this dimension as:
+
+- Germany: PASS (Opportunity Card holder, already in Munich). Flag postings requiring fluent German for daily work (language is A1 today).
+- India: PASS (citizen).
+- Europe (EU/EEA/UK), Canada, Australia, New Zealand, UAE, Singapore, South Korea, Malaysia: PASS with "Sponsorship required" — employer must be willing to sponsor (verify on silent postings).
+- Rest of world: PASS with "Sponsorship required" — same sponsorship caveat.
+- Remote (any timezone reasonable for overlap): PASS.
+- FAIL only when the posting states no sponsorship / existing-work-rights-only, which the Eligibility Gate already catches — do not double-fail here.
+- Frequent international travel: FLAG (discuss with user).
 
 ### 5. Career Alignment & Motivation (0-100)
 Does this role advance career goals and contain tasks that energize?
@@ -107,19 +125,19 @@ Does this role advance career goals and contain tasks that energize?
 | 0-39 | Dead end or backwards step |
 
 **Career goals:**
-- [YOUR_CAREER_GOAL_1]
-- [YOUR_CAREER_GOAL_2]
-- [YOUR_CAREER_GOAL_3]
+- Principal / Staff / Lead embedded C++ roles owning real-time video streaming or multimedia pipelines (media servers, WebRTC platforms, embedded capture devices)
+- Greenfield platform architecture: design and build streaming/media systems from scratch and take them to production scale
+- Grow back into deep technical leadership in a product company (video conferencing, OTT, automotive/telematics, surveillance, broadcast/pro AV, robotics-vision, mediatech)
 
 **Motivation filter:** Evaluate not just whether you *can* do the tasks, but whether the tasks will *energize* you. Consider:
-- Tasks that energize: [YOUR_ENERGIZING_TASKS]
-- Tasks that drain: [YOUR_DRAINING_TASKS]
+- Tasks that energize: GStreamer pipeline design and debugging, concurrency and performance engineering (CPU/memory/latency), production root-cause forensics, embedded Linux bring-up, building streaming platforms from scratch, AI-assisted engineering tooling
+- Tasks that drain: (not yet specified by the user - flag for /setup update)
 - Non-task factors: leadership style, department culture, company values, degree of autonomy
 
 **Life situation alignment:** Consider personal constraints:
-- **Security**: [YOUR_FINANCIAL_SITUATION_CONTEXT]
-- **Flexibility**: [YOUR_SCHEDULE_CONSTRAINTS]
-- **Professional development**: [YOUR_GROWTH_PRIORITIES]
+- **Security**: Employed (Lytx, since Dec 2025); based in Munich on an Opportunity Card - sponsorship/permit path matters per country (see Eligibility Gate)
+- **Flexibility**: Open to relocation worldwide; no stated schedule constraints
+- **Professional development**: Actively learning German (A1 -> target: working proficiency); keeps current via AI-assisted tooling and modern C++
 
 ### 6. Salary Benchmark (Optional)
 

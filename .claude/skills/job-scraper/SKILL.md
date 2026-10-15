@@ -17,7 +17,9 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash(bun --version), Bash(bun run 
 This skill searches job portals using the **installed portal-search CLIs** in
 `.agents/skills/` (plus WebSearch as a fallback), using queries from your profile.
 It deduplicates against previously seen jobs and the application tracker, and
-presents new matches with a quick fit assessment.
+presents new matches as a **ranked shortlist**: every posting that passes the title
+gate gets its JD fetched and scored against the full evaluation framework in the
+same run — no separate ranking pass (see Step 3).
 
 ## Invocation
 
@@ -29,7 +31,7 @@ The user triggers this skill by saying things like:
 
 Optional arguments:
 - A focus area, e.g. "/scrape data science" or "/scrape geophysics"
-- "broad" to run all search categories, e.g. "/scrape broad"
+- "broad" to additionally run the broad-only (Weak-tier) keywords, e.g. "/scrape broad"
 - "health" to run the portal health check only (Step 4.75), without searching, deduplicating, or presenting jobs - e.g. "/scrape health", or "/scrape health jobnet" to probe one portal even if disabled
 
 ---
@@ -44,7 +46,7 @@ Optional arguments:
 
 ### Step 1: Search
 
-Read `search-queries.md` (this directory) for the search strategy. By default, run the top 3 priority query categories. If the user said "broad", run all categories. If the user specified a focus area (e.g. "data science"), prioritize queries from that category.
+Read `search-queries.md` (this directory) for the search strategy. By default, run the **full keyword catalog**: every Strong-tier keyword, the full solution-name pass, and the sponsorship variants across all configured markets (candidate mandate 2026-10-15). If the user said "broad", additionally run the broad-only/Weak-tier keywords. If the user specified a focus area (e.g. "data science"), prioritize queries from that category.
 
 **Use the installed CLI tools as the primary search mechanism.** Fall back to `WebSearch` only for portals that do not have a CLI skill, or if `bun` is unavailable on the system.
 
@@ -66,7 +68,7 @@ For each **enabled** portal skill:
 
 1. Read its `SKILL.md` to find the correct `bun run …` invocation and supported flags.
 2. Translate the query terms from `search-queries.md` into that portal's flag format (e.g. `--key`, `--search-string`, `--query`, filter codes — whatever the portal's SKILL.md specifies).
-3. Scope to the last 14 days using the portal's supported recency **filter** flag (`--jobage`, `--since <YYYY-MM-DD>`, etc. — as documented per portal). A portal with **no recency flag** (jobdanmark offers none) still gets scoped: every portal's search output carries a `date` field, so filter client-side — drop results whose `date` is older than 14 days after the call returns, and never invent a flag the portal's SKILL.md does not document (the CLIs reject unknown flags). `--order PublicationDate` is a sort, and a sort is not a filter — pairing it with a `--limit` is a defensible approximation on a portal that offers nothing better (jobnet), but apply the client-side date filter on top all the same.
+3. Scope to the last 7 days using the portal's supported recency **filter** flag (`--jobage`, `--since <YYYY-MM-DD>`, etc. — as documented per portal). A portal with **no recency flag** (jobdanmark offers none) still gets scoped: every portal's search output carries a `date` field, so filter client-side — drop results whose `date` is older than 7 days after the call returns, and never invent a flag the portal's SKILL.md does not document (the CLIs reject unknown flags). `--order PublicationDate` is a sort, and a sort is not a filter — pairing it with a `--limit` is a defensible approximation on a portal that offers nothing better (jobnet), but apply the client-side date filter on top all the same.
 4. Cap results to ~20 per call using the portal's limit flag.
 5. Use `--format json` for machine-readable output.
 
@@ -90,9 +92,13 @@ Tag each fallback result as WebSearch-sourced, keeping the portal tag when the f
 For each promising result from Step 1:
 
 **From CLI results:** Search output already includes title, company, location, date,
-and URL. For jobs worth a deeper look, fetch full detail with that portal's `detail`
-command (see its SKILL.md — do not guess flags) to extract **key requirements**,
-**application deadline**, and a brief description snippet.
+and URL. Apply the **title gate** (Step 3): fetch full detail with that portal's
+`detail` command (see its SKILL.md — do not guess flags) for every posting that
+passes — i.e. domain-plausible **or unclear** — to extract the full description,
+**key requirements**, and **application deadline**. Only clear non-fits (wrong
+domain, undeclared required language, below-level) are skipped without a fetch.
+Portals whose search output already carries the full description (freehire-search)
+need no extra call — score straight from it.
 
 **Closed-at-source detection:** `linkedin-search detail` also returns `isActive`.
 `false` means the posting page itself renders LinkedIn's "No longer accepting
@@ -129,15 +135,32 @@ A distribution pattern worth flagging to the user as a caution signal, not as an
 
 If two or more results in this run's pool (from the same company, or sharing the same req/job ID visible in the URL or title) have substantially the same description and differ only in city/location/title, don't present them as separate rows. Consolidate into a single row and note the spread, e.g. "posted identically across 6 cities (BR, MX, GT)".
 
-### Step 3: Quick Fit Assessment
+### Step 3: Inline Ranking (title gate → JD → full-framework score)
 
-For each new job, do a rapid fit check (NOT the full evaluation from `04-job-evaluation.md` - just a quick signal):
+**The title gate.** From search metadata alone, hard-drop only clear non-fits: wrong
+domain (sales, web-only frontend, admin), roles requiring an entirely-undeclared
+language, clearly below-level (junior/graduate). Everything else passes — **vague
+titles at relevant companies are default-pull, not drop**: "Software Engineer" at a
+relevant employer or an unknown-stack listing is exactly where a strong match hides.
+The 7-day window bounds volume; the gate bounds JD fetches — never an arbitrary cap.
 
-- **High match**: Role directly involves your core skills
-- **Medium match**: Role is adjacent to your experience
-- **Low match**: Role requires significant skills you lack
+**Score inline.** For every gated-in posting, score it against the full framework in
+`04-job-evaluation.md` in this same run, using the JD from Step 2, and produce the
+rank fields (`rank_score`, `rank_verdict`, `strengths`, `gaps`, `location_verdict`,
+`language_gate`, `language_note`, `rank_date`) that Step 4 stores. Portals that ship
+descriptions in search output cost nothing extra here; others cost one `detail` call
+per gated-in posting.
 
-**Language override:** before assigning a match level, check the posting against `04-job-evaluation.md`'s Language Gate (a required language you haven't declared at all in your CLAUDE.md Languages table). A required language that's entirely undeclared overrides skill fit: mark it **Low** regardless of how well the skills align, and name it in the highlight bullets so it isn't buried under an otherwise-good-looking match. A **declared** language at a requirement that reads higher than your declared level is *not* an override — score fit normally, but add a red-flag bullet under that job's highlights (Step 5) quoting the posting's requirement next to your declared level, so the gap is visible without being auto-downgraded.
+**Honest partial scoring.** If a portal starts rate-limiting detail calls mid-run
+(backoff already exhausted), stop fetching for that portal, store its remaining
+gated-in postings as `status: "new"`, and report them in Step 5 as "unscored — run
+/rank later". Never guess a score for a JD that wasn't read.
+
+**Language Gate:** a required language entirely undeclared in your CLAUDE.md Languages
+table overrides skill fit (FAIL — apply the framework's override rule). A declared
+language above your level (e.g. German at A1) is FLAG — score normally and carry the
+quoted requirement in `language_note` so the gap is visible without being
+auto-downgraded.
 
 ### Step 4: Deduplicate & Store
 
@@ -173,11 +196,11 @@ The `portal` field records which CLI skill produced the job (results are already
 
 The `source` field records which mechanism produced the entry: `cli` for Step 1b portal-CLI output, `websearch` for the Step 1c fallback. This is what keeps a ghost-job report diagnosable after the run's summary is gone: a stored entry whose URL later resolves to nothing (or to a different job) reads very differently depending on whether it came from live CLI output or from a search index that can be weeks stale - and a presented job with no entry here at all points at fabrication, which Rule 1 forbids. Entries written before this field existed lack it; never backfill it - the mechanism was not recorded.
 
-`/rank` extends this schema additively: ranked entries also carry `rank_score` (0–100 overall score), `rank_verdict` (fit band, e.g. "strong fit"), `rank_date` (ISO date of ranking), the veto fields `location_verdict` and `language_gate` (both PASS/FAIL/FLAG) with `language_note` (the quoted requirement explaining a non-PASS), and `strengths`/`gaps` (1-3 verbatim bullets each, copied from the scoring agent's findings). The `status` field is set to `"ranked"`. Do not drop any of these fields when re-writing entries. Entries ranked before `strengths`/`gaps` existed simply lack them; readers tolerate their absence and never backfill by guessing. Entries ranked before the verdict rename may carry a legacy PASS/FAIL/FLAG string in `location` - read that as the verdict when `location_verdict` is absent; in fresh entries `location` is always a place, never a verdict.
+`/rank` extends this schema additively — and under the inline-ranking pipeline (Step 3) `/scrape` itself writes the same fields at first store for every gated-in posting (`status: "ranked"`; `"new"` now means only unscored leftovers from a rate-limit partial). Ranked entries also carry `rank_score` (0–100 overall score), `rank_verdict` (fit band, e.g. "strong fit"), `rank_date` (ISO date of ranking), the veto fields `location_verdict` and `language_gate` (both PASS/FAIL/FLAG) with `language_note` (the quoted requirement explaining a non-PASS), and `strengths`/`gaps` (1-3 verbatim bullets each, copied from the scoring agent's findings). The `status` field is set to `"ranked"`. Do not drop any of these fields when re-writing entries. Entries ranked before `strengths`/`gaps` existed simply lack them; readers tolerate their absence and never backfill by guessing. Entries ranked before the verdict rename may carry a legacy PASS/FAIL/FLAG string in `location` - read that as the verdict when `location_verdict` is absent; in fresh entries `location` is always a place, never a verdict.
 
 `deadline` is a base field rather than a `/rank` extension: Step 2's detail fetch already extracts the application deadline, so it is written when the job is first seen and refreshed by `/rank` Step 4 when a scoring agent returns a different value. `null` means the posting states no deadline; a missing key means the entry predates this field - **never infer a deadline** from either, and never backfill by guessing.
 
-`posted_date` is the posting's own publication date, taken from the `date` field Step 2's contract already guarantees on every portal CLI's search output. Step 1b uses that date to scope the run to the last 14 days and then drops it, so nothing downstream can distinguish a posting published yesterday from one published two years ago - `first_seen` is when this scraper first saw the entry, not when the employer posted it. Persisting it makes Step 1b's window auditable after the run and gives `/rank` a freshness signal to weigh, instead of rediscovering the date and recording it in prose that nothing reads. That gap landed for real: a freehire-search posting dated 2024-05-13 was scraped and ranked Strong Fit at position 1 of 133, its own scoring note observing the listing "may be long stale" with nothing able to act on it. `null` means the portal returned no date for that result (the CLIs emit `date: null` when a listing omits it); a missing key means the entry predates this field - **never infer a posting date** from either, and never backfill by guessing.
+`posted_date` is the posting's own publication date, taken from the `date` field Step 2's contract already guarantees on every portal CLI's search output. Step 1b uses that date to scope the run to the last 7 days and then drops it, so nothing downstream can distinguish a posting published yesterday from one published two years ago - `first_seen` is when this scraper first saw the entry, not when the employer posted it. Persisting it makes Step 1b's window auditable after the run and gives `/rank` a freshness signal to weigh, instead of rediscovering the date and recording it in prose that nothing reads. That gap landed for real: a freehire-search posting dated 2024-05-13 was scraped and ranked Strong Fit at position 1 of 133, its own scoring note observing the listing "may be long stale" with nothing able to act on it. `null` means the portal returned no date for that result (the CLIs emit `date: null` when a listing omits it); a missing key means the entry predates this field - **never infer a posting date** from either, and never backfill by guessing.
 
 3. Only present jobs NOT already in the seen list (matched by URL or
    company+title) or tracker.
@@ -223,7 +246,10 @@ Scraper-based portal CLIs rot silently: when a portal changes its markup, the pa
 
 ### Step 5: Present Results
 
-Present new jobs in a table sorted by fit (high first). When Step 1b skipped
+Present new jobs in a table sorted by `rank_score` (strong fit first); rows carry
+their `rank_verdict`, Language-Gate flags, and where short enough the top strength.
+Postings left unscored by a rate-limit partial are listed separately with a
+"run /rank later" note. When Step 1b skipped
 portals (`enabled: false`), report them with the `skipped (disabled):` line below
 so opting one out stays visible rather than silent; omit the line when nothing
 was skipped. When any portal's results came from the Step 1c fallback this run
@@ -273,7 +299,11 @@ After presenting, ask:
 
 If the user picks a number, invoke the **job-application-assistant** skill workflow (fit evaluation first, then CV + cover letter if approved).
 
-If the run found many new jobs (roughly 8+), also suggest `/rank` - it batch-scores all new postings against the full fit framework and returns a ranked shortlist, which beats eyeballing a long table. (`/rank` sets the `ranked` and `expired` status values in `seen_jobs.json`; treat both as already-seen for dedup purposes.)
+`/rank` is the retro path, not a required second stage: suggest it only when a run
+left unscored leftovers (rate-limit partials), or when the user wants an old
+`new`-status backlog scored / re-scored after profile changes. (`/rank` sets the
+`ranked` and `expired` status values in `seen_jobs.json`; treat both as already-seen
+for dedup purposes.)
 
 ### Step 6: Update Tracker (Optional)
 
@@ -287,7 +317,7 @@ If the user decides to apply to any job, the tracker row is written by **job-app
 2. **Respect deduplication.** Always check seen_jobs.json AND job_search_tracker.csv before presenting.
 3. **Focus on configured geographic area.** Skip jobs that require relocation or are clearly outside commute range.
 4. **Only open positions.** Skip postings with expired deadlines or those marked as closed.
-5. **Be efficient with detail fetches.** Don't run `detail` or WebFetch on every search hit — pre-filter by title/snippet, then fetch only promising matches.
+5. **JD fetches are bounded by the title gate, not an arbitrary cap.** Every gated-in posting (domain-plausible or unclear) gets its JD fetched and scored inline (Step 3); only clear non-fits are skipped. Prefer portals whose search output already carries descriptions; if a portal rate-limits, stop scoring that portal and report the leftovers as unscored — never guess.
 6. **Parallel searches.** Run portal CLI searches in parallel; use WebSearch only for gaps the CLIs don't cover.
 7. **No automated people lookups.** Referral contacts (Step 4.5) are LinkedIn search links only - never fetch or scrape LinkedIn people-search result pages programmatically.
 8. **Health checks are bounded and honest.** Step 4.75 spends at most one probe, one retry, and (in `health` mode) one detail fetch per portal - a diagnosis, not a crawl. A rate-limit is never evidence of breakage. Health verdicts come only from observed CLI output; a portal that could not be tested is reported as inconclusive, never guessed. The `enabled` toggle is the only thing the health check may edit, and only with confirmation.

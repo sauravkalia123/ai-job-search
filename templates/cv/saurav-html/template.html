@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[YOUR_NAME] — CV</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 10.5pt;
+    line-height: 1.35;
+    color: #000000;
+    background: #ffffff;
+    padding: 0.3in 0.4in;
+  }
+
+  .page {
+    max-width: 8.5in;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 8px;
+  }
+
+  .header h1 {
+    font-size: 22pt;
+    font-weight: bold;
+    margin-bottom: 4px;
+    letter-spacing: 1px;
+  }
+
+  .contact-row {
+    font-size: 9pt;
+    color: #333333;
+    word-wrap: break-word;
+  }
+
+  .contact-row span {
+    margin: 0 3px;
+  }
+
+  .separator {
+    color: #999;
+  }
+
+  /* Sections */
+  .section {
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-size: 12pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 2px;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+  }
+
+  .summary-text {
+    font-size: 10pt;
+    line-height: 1.4;
+    text-align: justify;
+  }
+
+  /* Core Skills - bullet list style */
+  .core-skills-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  .core-skills-list li {
+    margin-bottom: 4px;
+    font-size: 9.5pt;
+    line-height: 1.4;
+  }
+  .core-skills-list strong {
+    font-weight: 700;
+    display: inline-block;
+    min-width: 170px;
+  }
+
+  /* Job entries */
+  .job {
+    margin-bottom: 10px;
+  }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-bottom: 1px;
+  }
+
+  .job-company {
+    font-size: 11pt;
+    font-weight: bold;
+  }
+
+  .job-period {
+    font-size: 9pt;
+    color: #444444;
+    font-style: italic;
+  }
+
+  .job-role {
+    font-size: 10pt;
+    font-weight: 600;
+    font-style: italic;
+    margin-bottom: 4px;
+    color: #222222;
+  }
+
+  .job ul {
+    padding-left: 20px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+
+  .job li {
+    font-size: 9.5pt;
+    line-height: 1.4;
+    margin-bottom: 2px;
+  }
+
+  .job li strong {
+    font-weight: 700;
+  }
+
+  .tech-stack {
+    font-size: 8.5pt;
+    color: #444444;
+    margin-top: 4px;
+    padding-top: 2px;
+    font-style: italic;
+  }
+
+  /* Education */
+  .edu-item {
+    margin-bottom: 4px;
+  }
+
+  .edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+  }
+
+  .edu-title {
+    font-weight: 700;
+    font-size: 10pt;
+  }
+
+  .edu-year {
+    font-size: 9pt;
+    color: #555555;
+  }
+
+  /* Skills rows (for detailed technical skills) */
+  .skills-row {
+    margin-bottom: 4px;
+  }
+
+  .skill-category {
+    font-weight: 700;
+    font-size: 9.5pt;
+    display: inline-block;
+    min-width: 130px;
+  }
+
+  .skill-item {
+    font-size: 9.5pt;
+  }
+
+  ul {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding-left: 20px;
+  }
+
+  li {
+    font-size: 9.5pt;
+    line-height: 1.4;
+    margin-bottom: 2px;
+  }
+
+  .avoid-break {
+    break-inside: avoid;
+  }
+
+  @media print {
+    body {
+      padding: 0.2in 0.3in;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <!-- [WORK_AUTH_LINE] rule (mandatory, from candidate profile):
+       Germany applications -> "Opportunity card holder"
+       India applications   -> omit the work-auth span entirely
+       Rest of world        -> "Sponsorship required"                               -->
+  <div class="header">
+    <h1>[YOUR_NAME]</h1>
+    <div class="contact-row">
+      [YOUR_PHONE] <span class="separator">|</span>
+      [YOUR_EMAIL] <span class="separator">|</span>
+      [YOUR_LINKEDIN_URL] <span class="separator">|</span>
+      [YOUR_CITY], [YOUR_COUNTRY] — Open to Relocation <span class="separator">|</span>
+      [WORK_AUTH_LINE]
+    </div>
+  </div>
+
+  <!-- PROFESSIONAL SUMMARY -->
+  <!-- 3-6 lines, tailored per role. Bold the title, years, domain, top metrics,
+       and the deep-expertise list. Lead with the domain-transfer argument when
+       the target role sits outside the candidate's home domain. -->
+  <div class="section">
+    <div class="section-title">Professional Summary</div>
+    <div class="summary-text">
+      <strong>[TARGET_TITLE]</strong> with <strong>[X]+ years</strong> architecting <strong>[CORE_DOMAIN]</strong> at scale. [COMPANY_1: headline metric]. [COMPANY_2: headline metric]. Deep expertise: <strong>[KEY_TECH_1], [KEY_TECH_2], [KEY_TECH_3]</strong>. [LEADERSHIP_OR_AWARD_LINE].
+    </div>
+  </div>
+
+  <!-- CORE SKILLS -->
+  <!-- Reorder rows to put the posting's stack first. Use the posting's exact
+       term in the row label when it truthfully applies (ATS matches literally). -->
+  <div class="section">
+    <div class="section-title">Core Skills</div>
+    <ul class="core-skills-list" style="list-style: none; padding-left: 0;">
+      <li><strong>• [CATEGORY_1]:</strong> [SKILLS_1]</li>
+      <li><strong>• [CATEGORY_2]:</strong> [SKILLS_2]</li>
+      <li><strong>• [CATEGORY_3]:</strong> [SKILLS_3]</li>
+      <li><strong>• [CATEGORY_4]:</strong> [SKILLS_4]</li>
+    </ul>
+  </div>
+
+  <!-- WORK EXPERIENCE -->
+  <!-- Most recent first. 4-6 bullets for the most relevant role, 3-4 previous,
+       2-3 older. One .job div per employer. If a single employer needs internal
+       phases (e.g. device work vs cloud work), add extra .job-role lines inside
+       the same .job div. Do NOT put .avoid-break on a .job block taller than
+       one page. -->
+  <div class="section">
+    <div class="section-title">Work Experience</div>
+
+    <div class="job avoid-break">
+      <div class="job-header">
+        <span class="job-company">[COMPANY]</span>
+        <span class="job-period">[START] – [END]</span>
+      </div>
+      <div class="job-role">[JOB_TITLE] | [LOCATION]</div>
+      <ul>
+        <li>[ACHIEVEMENT with <strong>metric</strong>]</li>
+        <li>[ACHIEVEMENT with <strong>metric</strong>]</li>
+        <li>[ACHIEVEMENT with <strong>metric</strong>]</li>
+        <li>[ACHIEVEMENT with <strong>metric</strong>]</li>
+      </ul>
+      <div class="tech-stack">Tech: [TECH_LIST]</div>
+    </div>
+
+    <div class="job avoid-break">
+      <div class="job-header">
+        <span class="job-company">[COMPANY]</span>
+        <span class="job-period">[START] – [END]</span>
+      </div>
+      <div class="job-role">[JOB_TITLE] | [LOCATION]</div>
+      <ul>
+        <li>[ACHIEVEMENT]</li>
+        <li>[ACHIEVEMENT]</li>
+        <li>[ACHIEVEMENT]</li>
+      </ul>
+      <div class="tech-stack">Tech: [TECH_LIST]</div>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section avoid-break">
+    <div class="section-title">Education</div>
+    <div class="edu-item">
+      <div class="edu-header">
+        <span class="edu-title">[DEGREE] — [INSTITUTION]</span>
+        <span class="edu-year">[YEAR]</span>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-header">
+        <span class="edu-title">[DEGREE] — [INSTITUTION]</span>
+        <span class="edu-year">[YEAR]</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LANGUAGES -->
+  <div class="section avoid-break">
+    <div class="section-title">Languages</div>
+    <div class="skills-row">
+      <span class="skill-category">[LANGUAGE]:</span>
+      <span class="skill-item">[LEVEL]</span>
+    </div>
+    <div class="skills-row">
+      <span class="skill-category">[LANGUAGE]:</span>
+      <span class="skill-item">[LEVEL]</span>
+    </div>
+  </div>
+
+  <!-- OPTIONAL SECTIONS (include only when they serve the target role) -->
+  <!-- Technical Focus Areas / Key Achievements / Certifications -->
+  <div class="section avoid-break">
+    <div class="section-title">Key Achievements</div>
+    <ul>
+      <li>[ACHIEVEMENT with <strong>emphasis</strong>]</li>
+      <li>[ACHIEVEMENT]</li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>
