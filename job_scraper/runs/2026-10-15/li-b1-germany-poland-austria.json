@@ -1,0 +1,994 @@
+{
+  "batch": "b1",
+  "markets": {
+    "Germany": {
+      "calls": 76,
+      "errors": 0,
+      "raw": 581,
+      "gated_in": 322,
+      "details": 10,
+      "notes": "76 catalog queries (C++ rerun separately after filename collision); 760 raw rows -> 581 unique after in-run dedup; date>=2026-10-09 filter applied (3 OLD dropped at gate); top 10 gated-in fetched by title relevance; 10/10 isActive=true"
+    },
+    "Poland": {
+      "calls": 76,
+      "errors": 0,
+      "raw": 496,
+      "gated_in": 332,
+      "details": 10,
+      "notes": "76 catalog queries (C++ rerun separately); 760 raw rows -> 496 unique; top 10 gated-in fetched; 10/10 isActive=true"
+    },
+    "Austria": {
+      "calls": 76,
+      "errors": 0,
+      "raw": 433,
+      "gated_in": 247,
+      "details": 10,
+      "notes": "76 catalog queries (C++ rerun separately); 760 raw rows -> 433 unique; top 10 gated-in fetched; 10/10 isActive=true"
+    }
+  },
+  "drafts": [
+    {
+      "file": "cv/drafts/cv_saurav_qualcomm_automotive-embedd-87a.html",
+      "jobId": "4451186689",
+      "company": "Qualcomm",
+      "country": "DE",
+      "rank_score": 77,
+      "verified": true
+    },
+    {
+      "file": "cv/drafts/cv_saurav_parloa_principal-software--986.html",
+      "jobId": "4479549696",
+      "company": "Parloa",
+      "country": "DE",
+      "rank_score": 75,
+      "verified": true
+    },
+    {
+      "file": "cv/drafts/cv_saurav_teli-labs_principal-softwa-c4f.html",
+      "jobId": "4478486983",
+      "company": "Teli Labs",
+      "country": "DE",
+      "rank_score": 75,
+      "verified": true
+    },
+    {
+      "file": "cv/drafts/cv_saurav_holoplot_senior-software-e-9a1.html",
+      "jobId": "4479125644",
+      "company": "HOLOPLOT",
+      "country": "DE",
+      "rank_score": 72,
+      "verified": true
+    },
+    {
+      "file": "cv/drafts/cv_saurav_ambu_embedded-software-dev-d64.html",
+      "jobId": "4459785319",
+      "company": "Ambu",
+      "country": "DE",
+      "rank_score": 74,
+      "verified": true
+    },
+    {
+      "file": "cv/drafts/cv_saurav_smartclip_c-engineer_de.html",
+      "jobId": "4477690872",
+      "company": "smartclip",
+      "country": "DE",
+      "rank_score": 68,
+      "verified": true
+    },
+    {
+      "file": "cv/drafts/cv_saurav_wandelbots_senior-software-d44.html",
+      "jobId": "4451516406",
+      "company": "Wandelbots",
+      "country": "DE",
+      "rank_score": 67,
+      "verified": true
+    },
+    {
+      "file": "cv/drafts/cv_saurav_next-ventures_software-eng-705.html",
+      "jobId": "4477080142",
+      "company": "Next Ventures",
+      "country": "DE",
+      "rank_score": 56,
+      "verified": true
+    },
+    {
+      "file": "cv/drafts/cv_saurav_amazon_embedded-software-e-595.html",
+      "jobId": "4469198860",
+      "company": "Amazon",
+      "country": "PL",
+      "rank_score": 81,
+      "verified": true
+    },
+    {
+      "file": "cv/drafts/cv_saurav_globallogic_senior-embedde-65b.html",
+      "jobId": "4469691404",
+      "company": "GlobalLogic",
+      "country": "PL",
+      "rank_score": 75,
+      "verified": true
+    },
+    {
+      "file": "cv/drafts/cv_saurav_luxoft_senior-software-eng-180.html",
+      "jobId": "4477696911",
+      "company": "Luxoft",
+      "country": "PL",
+      "rank_score": 74,
+      "verified": true
+    },
+    {
+      "file": "cv/drafts/cv_saurav_alten_senior-embedded-soft-8f0.html",
+      "jobId": "4479812880",
+      "company": "ALTEN",
+      "country": "PL",
+      "rank_score": 66,
+      "verified": true
+    },
+    {
+      "file": "cv/drafts/cv_saurav_luxoft_software-engineer-a-b04.html",
+      "jobId": "4477816243",
+      "company": "Luxoft",
+      "country": "PL",
+      "rank_score": 64,
+      "verified": true
+    },
+    {
+      "file": "cv/drafts/cv_saurav_accenture-poland_senior-em-2b8.html",
+      "jobId": "4477280918",
+      "company": "Accenture Poland",
+      "country": "PL",
+      "rank_score": 63,
+      "verified": true
+    },
+    {
+      "file": "cv/drafts/cv_saurav_google_senior-software-eng-9d0.html",
+      "jobId": "4467545525",
+      "company": "Google",
+      "country": "PL",
+      "rank_score": 59,
+      "verified": true
+    },
+    {
+      "file": "cv/drafts/cv_saurav_pidso_senior-embedded-syst-6f8.html",
+      "jobId": "4474899578",
+      "company": "PIDSO",
+      "country": "AT",
+      "rank_score": 79,
+      "verified": true
+    },
+    {
+      "file": "cv/drafts/cv_saurav_wintersteiger_softwareentw-bc1.html",
+      "jobId": "4475253568",
+      "company": "WINTERSTEIGER",
+      "country": "AT",
+      "rank_score": 66,
+      "verified": true
+    },
+    {
+      "file": "cv/drafts/cv_saurav_copa-data_senior-software--331.html",
+      "jobId": "4477466558",
+      "company": "COPA-DATA",
+      "country": "AT",
+      "rank_score": 63,
+      "verified": true
+    },
+    {
+      "file": "cv/drafts/cv_saurav_hitachi-rail_software-engi-02a.html",
+      "jobId": "4476037489",
+      "company": "Hitachi Rail",
+      "country": "AT",
+      "rank_score": 61,
+      "verified": true
+    },
+    {
+      "file": "cv/drafts/cv_saurav_duckduckgo_senior-c-engine-dfb.html",
+      "jobId": "4478437184",
+      "company": "DuckDuckGo",
+      "country": "AT",
+      "rank_score": 60,
+      "verified": true
+    },
+    {
+      "file": "cv/drafts/cv_saurav_frequentis_atm-service-eng-6e3.html",
+      "jobId": "4441302826",
+      "company": "Frequentis",
+      "country": "AT",
+      "rank_score": 57,
+      "verified": true
+    }
+  ],
+  "candidates": [
+    {
+      "title": "Automotive -Embedded Software Applications Engineer (m/f/d) - Multimedia - Ingolstadt",
+      "company": "Qualcomm",
+      "location": "Ingolstadt, Bavaria, Germany",
+      "date": null,
+      "url": "https://de.linkedin.com/jobs/view/automotive-embedded-software-applications-engineer-m-f-d-multimedia-ingolstadt-4451186689",
+      "jobId": "4451186689",
+      "isActive": true,
+      "rank_score": 77,
+      "rank_verdict": "strong fit",
+      "strengths": [
+        "19+ years embedded multimedia: dashcam device on NXP i.MX8/Yocto, STB middleware, display systems",
+        "C/C++ embedded development and production debugging forensics (fd double-close hang, worker-pool exhaustion)",
+        "Video codecs H.264/H.265, camera and display pipelines, performance/memory optimization"
+      ],
+      "gaps": [
+        "No formal customer-facing applications-engineering role",
+        "QNX/Green Hills and GPU/display-panel bring-up (CSI/DSI, panel timing) not claimed",
+        "Android platform work not claimed (Tizen is)"
+      ],
+      "location_verdict": "PASS",
+      "language_gate": "PASS",
+      "language_note": null,
+      "deadline": null,
+      "sponsorship": "not stated in JD",
+      "rank_note": "Tracker shows a Qualcomm application rejected 2026-10-06 (different role); strong domain match: automotive multimedia on embedded Linux"
+    },
+    {
+      "title": "Principal Software Engineer - Real-Time Voice",
+      "company": "Parloa",
+      "location": "Berlin, Berlin, Germany",
+      "date": null,
+      "url": "https://de.linkedin.com/jobs/view/principal-software-engineer-real-time-voice-4479549696",
+      "jobId": "4479549696",
+      "isActive": true,
+      "rank_score": 75,
+      "rank_verdict": "strong fit",
+      "strengths": [
+        "WebRTC stack primary skill: ICE/STUN/TURN/DTLS-SRTP/libnice; 98.6% WebRTC session success at Lytx",
+        "Real-time media 19+ years incl. Janus media server platform built from scratch (Voizzit)",
+        "C/C++ systems programming at the media/transport layer; low-latency production forensics"
+      ],
+      "gaps": [
+        "No carrier-grade SIP/PSTN operations (Kamailio/FreeSWITCH/Asterisk not claimed)",
+        "SIP trunking/telephony carrier integrations not claimed",
+        "Go less proven (C++ strong, Rust secondary)"
+      ],
+      "location_verdict": "PASS",
+      "language_gate": "PASS",
+      "language_note": null,
+      "deadline": null,
+      "sponsorship": "not stated in JD",
+      "rank_note": "Hands-on principal role owning voice infrastructure; SIP/telephony ops is the main gap"
+    },
+    {
+      "title": "Principal Software Engineer - Real-Time Voice",
+      "company": "Teli Labs",
+      "location": "Berlin, Berlin, Germany",
+      "date": null,
+      "url": "https://de.linkedin.com/jobs/view/principal-software-engineer-real-time-voice-4478486983",
+      "jobId": "4478486983",
+      "isActive": true,
+      "rank_score": 75,
+      "rank_verdict": "strong fit",
+      "strengths": [
+        "Same JD as Parloa 4479549696: WebRTC/ICE/STUN/TURN primary skills, 98.6% session success at Lytx",
+        "Real-time media 19+ years; Janus media server platform from scratch",
+        "C/C++ systems programming; low-latency debugging"
+      ],
+      "gaps": [
+        "Same as Parloa: no carrier-grade SIP/PSTN operations experience",
+        "Go less proven"
+      ],
+      "location_verdict": "PASS",
+      "language_gate": "PASS",
+      "language_note": null,
+      "deadline": null,
+      "sponsorship": "not stated in JD",
+      "rank_note": "MASS-POSTING NOTE: identical req posted under Teli Labs and Parloa (same title, same JD text) - treat as one opening"
+    },
+    {
+      "title": "Senior Software Engineer - Embedded (Go, Python, Linux, C) (f/m/d)",
+      "company": "HOLOPLOT",
+      "location": "Berlin, Berlin, Germany",
+      "date": null,
+      "url": "https://de.linkedin.com/jobs/view/senior-software-engineer-embedded-go-python-linux-c-f-m-d-4479125644",
+      "jobId": "4479125644",
+      "isActive": true,
+      "rank_score": 72,
+      "rank_verdict": "good fit",
+      "strengths": [
+        "Embedded Linux strong: Yocto/Buildroot, A/B updates, ARM (i.MX8 dashcam device, 21-hour soak passed)",
+        "Deep Linux internals: boot, systemd, drivers; hardware-in-the-loop style testing at Lytx",
+        "PTP (IEEE 1588) time sync experience (Barco) maps to Audio-over-IP nice-to-haves"
+      ],
+      "gaps": [
+        "Go required ('strong proficiency in Go and Python') - Go not claimed",
+        "FOSS upstreaming workflow only partial",
+        "Audio DSP domain (Dante/RAVENNA/AES67) not claimed beyond PTP"
+      ],
+      "location_verdict": "PASS",
+      "language_gate": "PASS",
+      "language_note": "JD states 'Strong communication skills in English'",
+      "deadline": null,
+      "sponsorship": "not stated in JD",
+      "rank_note": "Pro-audio embedded platform (Sphere Las Vegas vendor); strong embedded-Linux match, Go is the gap"
+    },
+    {
+      "title": "Embedded Software Developer (Embedded Linux)",
+      "company": "Ambu",
+      "location": "Augsburg, Bavaria, Germany",
+      "date": null,
+      "url": "https://de.linkedin.com/jobs/view/embedded-software-developer-embedded-linux-4459785319",
+      "jobId": "4459785319",
+      "isActive": true,
+      "rank_score": 74,
+      "rank_verdict": "good fit",
+      "strengths": [
+        "Embedded Linux + Yocto is exactly the profile: custom distro, firmware, drivers on i.MX8",
+        "Board bring-up/BSP and device-tree work in scope of experience",
+        "C/C++ primary; ARM platforms"
+      ],
+      "gaps": [
+        "Zephyr/microcontroller RTOS not claimed",
+        "Regulated medical-device software experience not claimed",
+        "Pytest/HIL test tooling only partially matching"
+      ],
+      "location_verdict": "PASS",
+      "language_gate": "PASS",
+      "language_note": "JD states 'Strong English communication skills, both written and spoken'",
+      "deadline": null,
+      "sponsorship": "not stated in JD",
+      "rank_note": "Tracker shows an Ambu application rejected 2026-09-22 (different role); ~3 days/week office in Augsburg, ~20 days/yr travel"
+    },
+    {
+      "title": "C++ Engineer (f/m/d)",
+      "company": "smartclip",
+      "location": "Berlin, Germany",
+      "date": null,
+      "url": "https://de.linkedin.com/jobs/view/c-engineer-f-m-d-4477690872",
+      "jobId": "4477690872",
+      "isActive": true,
+      "rank_score": 68,
+      "rank_verdict": "good fit",
+      "strengths": [
+        "Modern C++ performance engineering is the exact mandate: memory layouts, cache, allocators, latency hunting",
+        "Toolchain fluency: perf, gdb, valgrind, strace all on profile",
+        "Hot-path latency work at scale (100+ concurrent streams/node, 700k+ devices)"
+      ],
+      "gaps": [
+        "Ad-serving domain is new (adtech, not media pipelines)",
+        "Distributed backend scale-out (NoSQL, CAP trade-offs) secondary"
+      ],
+      "location_verdict": "PASS",
+      "language_gate": "PASS",
+      "language_note": "No language requirement stated; ad body largely German",
+      "deadline": null,
+      "sponsorship": "not stated in JD",
+      "rank_note": "RTL Group adtech; remote-by-default with Berlin on-sites; performance-architect framing fits strengths"
+    },
+    {
+      "title": "Senior Software Engineer (gn) Camera Integration Framework",
+      "company": "Wandelbots",
+      "location": "Dresden, Saxony, Germany",
+      "date": null,
+      "url": "https://de.linkedin.com/jobs/view/senior-software-engineer-gn-camera-integration-framework-4451516406",
+      "jobId": "4451516406",
+      "isActive": true,
+      "rank_score": 67,
+      "rank_verdict": "good fit",
+      "strengths": [
+        "Camera integration domain strength: camera pipelines, V4L2, multi-camera capture (dashcam device)",
+        "Platform-building mandate matches 'build platforms from scratch, own end to end'",
+        "Linux device management and hardware bring-up experience"
+      ],
+      "gaps": [
+        "Core stack is Python/Go + Kubernetes backend - Go not claimed, K8s secondary",
+        "Industrial vision/CV concepts (calibration, depth, point clouds) not claimed"
+      ],
+      "location_verdict": "PASS",
+      "language_gate": "PASS",
+      "language_note": null,
+      "deadline": null,
+      "sponsorship": "not stated in JD",
+      "rank_note": "Robotics-perception sector (target list); role leans cloud-backend despite camera framing"
+    },
+    {
+      "title": "Software Engineer C++ / Image Processing (m/f/d)",
+      "company": "Next Ventures",
+      "location": "Hannover, Lower Saxony, Germany",
+      "date": null,
+      "url": "https://de.linkedin.com/jobs/view/software-engineer-c-image-processing-m-f-d-4477080142",
+      "jobId": "4477080142",
+      "isActive": true,
+      "rank_score": 56,
+      "rank_verdict": "moderate fit",
+      "strengths": [
+        "Strong C++ with debugging, profiling and performance optimization",
+        "Real-time systems, hardware interfaces and embedded technologies background",
+        "Python for testing/automation"
+      ],
+      "gaps": [
+        "Practical Computer Vision / image-analysis algorithm experience (OpenCV) not claimed",
+        "Thin agency posting - employer and product domain unclear"
+      ],
+      "location_verdict": "PASS",
+      "language_gate": "PASS",
+      "language_note": "JD states 'Fluent English'",
+      "deadline": null,
+      "sponsorship": "not stated in JD",
+      "rank_note": "Agency role; C++/real-time match but CV-algorithms requirement is a genuine gap"
+    },
+    {
+      "title": "Broadcast Engineer / Medieningenieur / Systemingenieur (w/m/d) fuer Kontributionssysteme",
+      "company": "Bayerischer Rundfunk",
+      "location": "Munich, Bavaria, Germany",
+      "date": null,
+      "url": "https://de.linkedin.com/jobs/view/broadcast-engineer-medieningenieur-systemingenieur-w-m-d-fuer-kontributionssysteme-4477009515",
+      "jobId": "4477009515",
+      "isActive": true,
+      "rank_score": 54,
+      "rank_verdict": "moderate fit",
+      "strengths": [
+        "Live streaming protocols (HLS, RTP, SRT, WebRTC, SIP) named in JD - core profile skills",
+        "Network protocol analysis and Linux administration strong",
+        "Broadcast contribution domain familiarity (Barco control rooms)"
+      ],
+      "gaps": [
+        "SMPTE 2022/2110, AES67, SDI/MADI baseband distribution not claimed",
+        "LiveU product administration not claimed",
+        "Role is system engineering/administration, not software development"
+      ],
+      "location_verdict": "PASS",
+      "language_gate": "FLAG",
+      "language_note": "JD: 'Gute englische und deutsche Sprachkenntnisse in Wort und Schrift' - German declared only at A1; also 'applications without a valid work permit and sufficient German language skills may not be considered'",
+      "deadline": null,
+      "sponsorship": "Work permit for Germany required for non-EU citizens - candidate holds a valid one (Opportunity Card)",
+      "rank_note": "Public broadcaster; German bar (good written/spoken) well above A1 - flagged, decide deliberately"
+    },
+    {
+      "title": "Senior DSP Engineer",
+      "company": "Axon",
+      "location": "Kassel, Hesse, Germany",
+      "date": null,
+      "url": "https://de.linkedin.com/jobs/view/senior-dsp-engineer-4479779975",
+      "jobId": "4479779975",
+      "isActive": true,
+      "rank_score": 41,
+      "rank_verdict": "weak fit",
+      "strengths": [
+        "C++ real-time software development",
+        "Python prototyping tooling"
+      ],
+      "gaps": [
+        "RF spectrum analysis / SDR / wireless comms (LTE PHY, 802.11, 802.15.4) not claimed",
+        "CUDA not claimed",
+        "Audio DSP background does not transfer to RF signal processing"
+      ],
+      "location_verdict": "PASS",
+      "language_gate": "PASS",
+      "language_note": null,
+      "deadline": null,
+      "sponsorship": "not stated in JD",
+      "rank_note": "Drone-detection RF DSP - fundamental domain mismatch despite the company's body-worn-camera ecosystem"
+    },
+    {
+      "title": "Embedded Software Engineer III, Ring, Ring",
+      "company": "Amazon",
+      "location": "Gdansk Metropolitan Area, Poland",
+      "date": null,
+      "url": "https://pl.linkedin.com/jobs/view/embedded-software-engineer-iii-ring-ring-4469198860",
+      "jobId": "4469198860",
+      "isActive": true,
+      "rank_score": 81,
+      "rank_verdict": "strong fit",
+      "strengths": [
+        "Camera-device firmware is the exact profile: multi-camera capture, drivers, recorder on i.MX8/Yocto",
+        "Debugging depth JD asks for verbatim: soak failures, board-variant issues, root-cause forensics",
+        "Technical leadership by code review and architecture (led 4-30 engineers; Best Code Reviewer)"
+      ],
+      "gaps": [
+        "Smart-home/IoT consumer domain is new (dashcam/fleet background)",
+        "Connectivity stacks (Wi-Fi/BLE provisioning) not claimed",
+        "Power management firmware not claimed"
+      ],
+      "location_verdict": "PASS",
+      "language_gate": "PASS",
+      "language_note": null,
+      "deadline": null,
+      "sponsorship": "not stated in JD",
+      "rank_note": "Tracker shows an Amazon application (gmail-scan applied 2026-10-12, role unspecified) - different role, note for conflict check"
+    },
+    {
+      "title": "Senior Embedded C Developer (IoT) IRC304551",
+      "company": "GlobalLogic",
+      "location": "Cracow, Malopolskie, Poland",
+      "date": null,
+      "url": "https://pl.linkedin.com/jobs/view/senior-embedded-c-developer-iot-irc304551-4469691404",
+      "jobId": "4469691404",
+      "isActive": true,
+      "rank_score": 75,
+      "rank_verdict": "strong fit",
+      "strengths": [
+        "Linux-based camera devices (floodlight cameras, doorbells): drivers, application layer, cloud - direct match",
+        "Embedded C 5+ yrs required; 19+ years embedded C/C++ on Linux/RTOS",
+        "Camera product development end to end (Lytx dashcam device)"
+      ],
+      "gaps": [
+        "Smart-home consumer domain is new",
+        "Cloud/IoT backend integration depth (AWS IoT-style) secondary"
+      ],
+      "location_verdict": "PASS",
+      "language_gate": "PASS",
+      "language_note": "JD states 'Excellent communication in English (both written and spoken)'",
+      "deadline": null,
+      "sponsorship": "not stated in JD",
+      "rank_note": "Client is a world-known brand (US R&D cooperation); substance is camera-device engineering"
+    },
+    {
+      "title": "Senior Software Engineer (Linux)",
+      "company": "Luxoft",
+      "location": "Cracow Metropolitan Area, Poland",
+      "date": null,
+      "url": "https://pl.linkedin.com/jobs/view/senior-software-engineer-linux-4477696911",
+      "jobId": "4477696911",
+      "isActive": true,
+      "rank_score": 74,
+      "rank_verdict": "good fit",
+      "strengths": [
+        "Linux platform internals: kernel, systemd, device drivers, IPC (D-Bus) - all experience-backed",
+        "Debugging toolchain verbatim: gdb, tcpdump/Wireshark, core-dump analysis; production forensics at Lytx",
+        "Video/audio subsystem escalation work matches dashcam + control-room pipeline experience"
+      ],
+      "gaps": [
+        "Customer-facing escalation role - direct enterprise-customer interaction not proven",
+        "CollabOS (video-conferencing peripherals) domain is new but adjacent to UC target sector"
+      ],
+      "location_verdict": "PASS",
+      "language_gate": "PASS",
+      "language_note": null,
+      "deadline": null,
+      "sponsorship": "not stated in JD",
+      "rank_note": "Role supports Linux-based collaboration devices (cameras, mic pods) - videoconferencing target sector"
+    },
+    {
+      "title": "Senior Embedded Software Engineer (Texas Instruments DSP/ARM)",
+      "company": "ALTEN",
+      "location": "Cracow, Malopolskie, Poland",
+      "date": null,
+      "url": "https://pl.linkedin.com/jobs/view/senior-embedded-software-engineer-texas-instruments-dsp-arm-4479812880",
+      "jobId": "4479812880",
+      "isActive": true,
+      "rank_score": 66,
+      "rank_verdict": "good fit",
+      "strengths": [
+        "JD's alternative platform list names NXP i.MX - candidate's daily platform (Lytx device)",
+        "Bootloaders, firmware update and rollback: A/B OTA zero-brick bootloader shipped (Logic Eastern)",
+        "RTOS, low-level C/C++, memory handling, device communication"
+      ],
+      "gaps": [
+        "TI C6000/C2000/Sitara specifics not claimed",
+        "JTAG/SWD, oscilloscope/logic-analyzer hardware debug not explicitly claimed",
+        "Power-electronics domain and EtherCAT not claimed"
+      ],
+      "location_verdict": "PASS",
+      "language_gate": "PASS",
+      "language_note": null,
+      "deadline": null,
+      "sponsorship": "not stated in JD",
+      "rank_note": "JD is written in Polish; no language requirement stated - assumed English per rule; hybrid Cracow 3 days/week"
+    },
+    {
+      "title": "Software Engineer - Android & Native C++ Integration",
+      "company": "Luxoft",
+      "location": "Cracow Metropolitan Area, Poland",
+      "date": null,
+      "url": "https://pl.linkedin.com/jobs/view/software-engineer-android-native-c-integration-4477816243",
+      "jobId": "4477816243",
+      "isActive": true,
+      "rank_score": 64,
+      "rank_verdict": "good fit",
+      "strengths": [
+        "Conference-room camera product line - videoconferencing target sector",
+        "C++20 native libraries, RAII, multithreaded real-time video pipelines - core strengths",
+        "IPC design experience (DBus, WebSockets, REST at Barco)"
+      ],
+      "gaps": [
+        "Android app development (Java/Kotlin), AIDL/IPC-on-Android not claimed",
+        "JNI boundary work not claimed",
+        "CV/ML feature surfacing not claimed"
+      ],
+      "location_verdict": "PASS",
+      "language_gate": "PASS",
+      "language_note": "JD states 'English: B2 Upper Intermediate'",
+      "deadline": null,
+      "sponsorship": "not stated in JD",
+      "rank_note": "Video-collaboration devices; Android layer is the core gap"
+    },
+    {
+      "title": "Senior Embedded C++ Low Level Developer and Architect",
+      "company": "Accenture Poland",
+      "location": "Wroclaw, Dolnoslaskie, Poland",
+      "date": null,
+      "url": "https://pl.linkedin.com/jobs/view/senior-embedded-c-low-level-developer-and-architect-4477280918",
+      "jobId": "4477280918",
+      "isActive": true,
+      "rank_score": 63,
+      "rank_verdict": "good fit",
+      "strengths": [
+        "Low-level drivers in modern C++ (I2C, SPI) - experience-backed (i.MX8 device, STB firmware)",
+        "RTOS and multi-core concepts; gtest unit testing practice",
+        "15+ years requirement comfortably met (19+)"
+      ],
+      "gaps": [
+        "AUTOSAR/Adaptive AUTOSAR, MISRA/CERT not claimed (JD domain is software-defined vehicle)",
+        "CAN/LIN/MDIO buses not claimed",
+        "ADAS domain context is outside declared positioning"
+      ],
+      "location_verdict": "PASS",
+      "language_gate": "PASS",
+      "language_note": null,
+      "deadline": null,
+      "sponsorship": "not stated in JD",
+      "rank_note": "SDV platform (Linux/Android/QNX/AUTOSAR); driver-level substance fits, automotive-safety stack is the gap"
+    },
+    {
+      "title": "Senior Software Engineer, Embedded Systems/Firmware",
+      "company": "Google",
+      "location": "Cracow, Malopolskie, Poland",
+      "date": null,
+      "url": "https://pl.linkedin.com/jobs/view/senior-software-engineer-embedded-systems-firmware-4467545525",
+      "jobId": "4467545525",
+      "isActive": true,
+      "rank_score": 59,
+      "rank_verdict": "moderate fit",
+      "strengths": [
+        "Embedded systems and firmware depth: SoC bring-up adjacent work on i.MX8",
+        "Linux kernel-level work: device drivers, bootloaders, systemd internals",
+        "Tech-lead profile: BSP team lead preferred - led platform teams at Samsung/Lytx"
+      ],
+      "gaps": [
+        "Android systems/BSP required (2+ yrs minimum) - not claimed",
+        "Upstream Linux kernel contributions not claimed",
+        "Pixel/SoC silicon bring-up specifics not claimed"
+      ],
+      "location_verdict": "PASS",
+      "language_gate": "PASS",
+      "language_note": "JD states 'Excellent technical documentation and communication skills in English'",
+      "deadline": null,
+      "sponsorship": "not stated in JD",
+      "rank_note": "Android gap is a minimum-qualification gap - flagged honestly"
+    },
+    {
+      "title": "Senior Embedded C/C++ Engineer IRC296661",
+      "company": "GlobalLogic",
+      "location": "Cracow, Malopolskie, Poland",
+      "date": null,
+      "url": "https://pl.linkedin.com/jobs/view/senior-embedded-c-c-engineer-irc296661-4424423290",
+      "jobId": "4424423290",
+      "isActive": true,
+      "rank_score": 54,
+      "rank_verdict": "moderate fit",
+      "strengths": [
+        "Embedded C/C++ 6+ yrs; Linux environments; SDK/platform bring-up experience",
+        "Code review/mentoring expectations match profile"
+      ],
+      "gaps": [
+        "5G/LTE Layer-1 on SoC not claimed",
+        "DSP/MATLAB, RF SoC, FPGA, O-RAN not claimed",
+        "Telecom physical-layer domain is outside the candidate's direction"
+      ],
+      "location_verdict": "PASS",
+      "language_gate": "PASS",
+      "language_note": null,
+      "deadline": null,
+      "sponsorship": "not stated in JD",
+      "rank_note": "Telecom SDK unit - embedded skills transfer but the domain is L1/RF"
+    },
+    {
+      "title": "Senior Android Video Player Engineer - Remote",
+      "company": "Kake",
+      "location": "Warsaw, Mazowieckie, Poland (Remote)",
+      "date": null,
+      "url": "https://pl.linkedin.com/jobs/view/senior-android-video-player-engineer-remote-4476031199",
+      "jobId": "4476031199",
+      "isActive": true,
+      "rank_score": 40,
+      "rank_verdict": "weak fit",
+      "strengths": [
+        "HLS/DASH/ABR domain knowledge transfers conceptually",
+        "Playback reliability/latency debugging mindset"
+      ],
+      "gaps": [
+        "7+ years Android app development (Kotlin/Java, ExoPlayer, Jetpack Compose) - not claimed at all",
+        "Ad-tech integrations (IMA/SSAI/DAI) not claimed",
+        "QoE analytics tooling (Conviva/Mux) not claimed"
+      ],
+      "location_verdict": "FLAG",
+      "language_gate": "PASS",
+      "language_note": null,
+      "deadline": null,
+      "sponsorship": "not stated in JD",
+      "rank_note": "Location FLAG: requires 5-6h daily PST overlap (night hours from Poland); core stack is Android app dev - fundamental mismatch"
+    },
+    {
+      "title": "Real-Time Developer - Member of Technical Staff",
+      "company": "Luxoft Poland",
+      "location": "Gdansk, Pomorskie, Poland",
+      "date": null,
+      "url": "https://pl.linkedin.com/jobs/view/real-time-developer-member-of-technical-staff-4479789644",
+      "jobId": "4479789644",
+      "isActive": true,
+      "rank_score": 38,
+      "rank_verdict": "weak fit",
+      "strengths": [
+        "Low-latency pipeline and concurrency skills (ring buffers, lock-free, profiling) transfer",
+        "Real-time systems experience with strict latency requirements"
+      ],
+      "gaps": [
+        "Windows kernel-mode drivers required - candidate is Linux",
+        "ML inference runtime integration (ONNX Runtime/OpenVINO) not claimed",
+        "Windows-focused role with regular on-site work in Gdansk"
+      ],
+      "location_verdict": "PASS",
+      "language_gate": "PASS",
+      "language_note": null,
+      "deadline": null,
+      "sponsorship": "not stated in JD",
+      "rank_note": "AMD endpoint-security platform; platform mismatch (Windows kernel) despite real-time fit"
+    },
+    {
+      "title": "Senior Embedded Systems Architect - Platform (m/f/*)",
+      "company": "PIDSO-Propagation Ideas and Solutions",
+      "location": "Vienna, Vienna, Austria",
+      "date": null,
+      "url": "https://at.linkedin.com/jobs/view/senior-embedded-systems-architect-platform-m-f-4474899578",
+      "jobId": "4474899578",
+      "isActive": true,
+      "rank_score": 79,
+      "rank_verdict": "strong fit",
+      "strengths": [
+        "Platform ownership of secure/lifecycle-critical capabilities: secure boot, authenticated updates, rollback, recovery - shipped (A/B OTA zero-brick bootloader, firmware auto-update)",
+        "ARM SoCs, bare-metal, RTOS, embedded Linux, Yocto (named helpful skill) - core profile",
+        "Active AI-assisted engineering explicitly welcomed - Claude Code tooling built at Lytx"
+      ],
+      "gaps": [
+        "AMD/Xilinx SoC ecosystem not claimed (JD says not required)",
+        "Regulated-context standards (DO-178C, ISO 26262, IEC 62443) not claimed",
+        "FPGA/AXI/DMA integration not claimed"
+      ],
+      "location_verdict": "PASS",
+      "language_gate": "PASS",
+      "language_note": null,
+      "deadline": null,
+      "sponsorship": "not stated in JD",
+      "rank_note": "Antenna/radar/RF systems (aerospace, defense, motorsport); platform-architect mandate matches career goal"
+    },
+    {
+      "title": "Softwareentwicklung Embedded Systems m/w/x",
+      "company": "WINTERSTEIGER",
+      "location": "Ried im Innkreis, Upper Austria, Austria",
+      "date": null,
+      "url": "https://at.linkedin.com/jobs/view/softwareentwicklung-embedded-systems-m-w-x-4475253568",
+      "jobId": "4475253568",
+      "isActive": true,
+      "rank_score": 66,
+      "rank_verdict": "good fit",
+      "strengths": [
+        "Hardware-near C/C++ on embedded Linux - exact profile",
+        "Secure IoT architectures for remote maintenance and OTA updates - shipped at Logic Eastern/Lytx (A/B OTA, firmware auto-update)",
+        "CI/CD and agile practice; 5+ yrs required, 19+ available"
+      ],
+      "gaps": [
+        "Agricultural machinery domain (seed/drying systems) is new",
+        "ECU/Steuergeraet programming not claimed",
+        "Simulation environments not claimed"
+      ],
+      "location_verdict": "PASS",
+      "language_gate": "PASS",
+      "language_note": null,
+      "deadline": null,
+      "sponsorship": "not stated in JD",
+      "rank_note": "JD in German; no language requirement stated - assumed English per rule; 10% travel in Europe"
+    },
+    {
+      "title": "Senior Software Developer C++ (m/w/d)",
+      "company": "COPA-DATA",
+      "location": "Salzburg, Salzburg, Austria",
+      "date": null,
+      "url": "https://at.linkedin.com/jobs/view/senior-software-developer-c-4477466558",
+      "jobId": "4477466558",
+      "isActive": true,
+      "rank_score": 63,
+      "rank_verdict": "good fit",
+      "strengths": [
+        "Excellent C++ for a system-software platform (zenon) - core strength",
+        "Several years of software development - 19+",
+        "System-level enthusiasm: pipelines, drivers, concurrency"
+      ],
+      "gaps": [
+        "Automation/SCADA domain is new",
+        "C++ GUI/Windows-desktop stack (typical zenon) not claimed"
+      ],
+      "location_verdict": "PASS",
+      "language_gate": "FLAG",
+      "language_note": "JD: 'Excellent German and English skills, both written and spoken' - German declared only at A1",
+      "deadline": null,
+      "sponsorship": "not stated in JD",
+      "rank_note": "Industrial automation platform (zenon); German bar is explicit - flagged, decide deliberately"
+    },
+    {
+      "title": "Software Engineer for Dependable Systems (f/m/d)",
+      "company": "Hitachi Rail",
+      "location": "Vienna, Vienna, Austria",
+      "date": null,
+      "url": "https://at.linkedin.com/jobs/view/software-engineer-for-dependable-systems-f-m-d-4476037489",
+      "jobId": "4476037489",
+      "isActive": true,
+      "rank_score": 61,
+      "rank_verdict": "moderate fit",
+      "strengths": [
+        "Experienced C required; C++ beneficial - both primary skills",
+        "Embedded real-time systems for safety/security applications - RTOS/STB/dashcam background",
+        "Linux OS and development environment; protocol/distributed-systems design (N+1 failover, clock/frame sync at Barco)"
+      ],
+      "gaps": [
+        "Railway safety standards (EN 50128/Cenelec SIL-4 context) not claimed",
+        "Distributed consensus protocols not claimed",
+        "Virtualized systems knowledge secondary"
+      ],
+      "location_verdict": "PASS",
+      "language_gate": "PASS",
+      "language_note": "JD: 'Fluency in English language, fluency in German is beneficial' - German beneficial only, English required",
+      "deadline": null,
+      "sponsorship": "not stated in JD",
+      "rank_note": "Safety-critical TAS Platform middleware; up to 60% home office"
+    },
+    {
+      "title": "Senior C++ Engineer",
+      "company": "DuckDuckGo",
+      "location": "Austria (Remote)",
+      "date": null,
+      "url": "https://at.linkedin.com/jobs/view/senior-c-engineer-4478437184",
+      "jobId": "4478437184",
+      "isActive": true,
+      "rank_score": 60,
+      "rank_verdict": "moderate fit",
+      "strengths": [
+        "Advanced modern C++ (memory management, concurrency, performance profiling) - core strengths",
+        "Debuggers, profilers, large build systems - daily toolchain",
+        "7+ yrs requirement met (19+); end-to-end ownership culture fit"
+      ],
+      "gaps": [
+        "Chromium/browser codebase experience not claimed",
+        "C++23 not claimed (C++14/17/20 is)",
+        "Windows development (bonus) not claimed"
+      ],
+      "location_verdict": "PASS",
+      "language_gate": "PASS",
+      "language_note": null,
+      "deadline": null,
+      "sponsorship": "not stated in JD; remote-first company with Europe/RoW pay scale",
+      "rank_note": "Browser C++ (Chromium), remote-first; transparent EUR 157,350 for Europe/RoW"
+    },
+    {
+      "title": "ATM Service Engineer - Voice Solutions (all genders)",
+      "company": "Frequentis",
+      "location": "Vienna, Austria",
+      "date": null,
+      "url": "https://at.linkedin.com/jobs/view/atm-service-engineer-voice-solutions-all-genders-4441302826",
+      "jobId": "4441302826",
+      "isActive": true,
+      "rank_score": 57,
+      "rank_verdict": "moderate fit",
+      "strengths": [
+        "Voice communication systems for control centres - control-room domain adjacency (Barco)",
+        "Linux (Red Hat), TCP/IP, SIP, Wireshark/tcpdump troubleshooting - experience-backed",
+        "Production incident analysis and root-cause forensics at Lytx"
+      ],
+      "gaps": [
+        "3rd-level customer-facing service role - direct customer delivery not proven",
+        "SBCs, VMware/KVM hypervisors, Nessus not claimed",
+        "~25% international travel"
+      ],
+      "location_verdict": "PASS",
+      "language_gate": "PASS",
+      "language_note": "JD states 'excellent command of English'",
+      "deadline": null,
+      "sponsorship": "not stated in JD",
+      "rank_note": "MASS-POSTING NOTE: same role also posted as '- DE' variant (4442127943); this listing is the English one"
+    },
+    {
+      "title": "Embedded Software Developer fuer Welding (m/w/d)",
+      "company": "Fronius Oesterreich",
+      "location": "Thalheim bei Wels, Upper Austria, Austria",
+      "date": null,
+      "url": "https://at.linkedin.com/jobs/view/embedded-software-developer-fuer-welding-m-w-d-4478125070",
+      "jobId": "4478125070",
+      "isActive": true,
+      "rank_score": 54,
+      "rank_verdict": "moderate fit",
+      "strengths": [
+        "Embedded C/C++ for processors and real-time process control",
+        "Prozessor-nahe hardware development; architecture understanding"
+      ],
+      "gaps": [
+        "Control engineering (Regelungstechnik) for motor/arc regulation not claimed",
+        "Power electronics / welding domain new",
+        "VHDL basics not claimed"
+      ],
+      "location_verdict": "PASS",
+      "language_gate": "PASS",
+      "language_note": null,
+      "deadline": null,
+      "sponsorship": "not stated in JD",
+      "rank_note": "JD in German, no explicit language requirement; platform team for motor/arc regulation"
+    },
+    {
+      "title": "Embedded Software Engineer Automotive (m/w/d)",
+      "company": "TECCON Consulting GmbH",
+      "location": "Steyr, Upper Austria, Austria",
+      "date": null,
+      "url": "https://at.linkedin.com/jobs/view/embedded-software-engineer-automotive-m-w-d-4440201525",
+      "jobId": "4440201525",
+      "isActive": true,
+      "rank_score": 51,
+      "rank_verdict": "moderate fit",
+      "strengths": [
+        "C/C++ embedded development; Git; algorithms and software engineering practice"
+      ],
+      "gaps": [
+        "CODESYS (PLC) required - not claimed",
+        "Functional safety / automotive cybersecurity (ISO 26262 context) not claimed",
+        "Special-vehicles domain new"
+      ],
+      "location_verdict": "PASS",
+      "language_gate": "FLAG",
+      "language_note": "JD: 'sichere Kommunikation in Deutsch und Englisch' - confident German AND English communication required; German declared only at A1",
+      "deadline": null,
+      "sponsorship": "not stated in JD",
+      "rank_note": "Specialist vehicles; agency role (TECCON Gruppe)"
+    },
+    {
+      "title": "Senior Embedded Crypto Software Developer (m/f/d)",
+      "company": "NXP Semiconductors",
+      "location": "Gratkorn, Styria, Austria",
+      "date": null,
+      "url": "https://at.linkedin.com/jobs/view/senior-embedded-crypto-software-developer-m-f-d-4432106018",
+      "jobId": "4432106018",
+      "isActive": true,
+      "rank_score": 36,
+      "rank_verdict": "weak fit",
+      "strengths": [
+        "Embedded C development; ARM architecture familiarity",
+        "Security-adjacent practice: OpenSSL, secure coding, CodeQL findings resolution"
+      ],
+      "gaps": [
+        "Cryptography specialization (ECC/RSA/AES implementation, side-channel/fault-injection countermeasures) not claimed",
+        "Assembly not claimed",
+        "Cortex-M/RISC-V crypto library work is a distinct specialization"
+      ],
+      "location_verdict": "PASS",
+      "language_gate": "PASS",
+      "language_note": null,
+      "deadline": null,
+      "sponsorship": "not stated in JD",
+      "rank_note": "MASS-POSTING NOTE: same req also posted as 4431898489; crypto competence center - fundamental specialization mismatch"
+    },
+    {
+      "title": "Senior Staff Engineer Performance Engineering (f/m/div)",
+      "company": "Infineon Technologies",
+      "location": "Villach, Carinthia, Austria",
+      "date": null,
+      "url": "https://at.linkedin.com/jobs/view/senior-staff-engineer-performance-engineering-f-m-div-4479539006",
+      "jobId": "4479539006",
+      "isActive": true,
+      "rank_score": 30,
+      "rank_verdict": "poor fit",
+      "strengths": [
+        "Data-driven root-cause mindset transfers conceptually"
+      ],
+      "gaps": [
+        "Semiconductor manufacturing (fab) domain required - not claimed",
+        "KPI reporting / SQL / Tableau analytics stack not the profile",
+        "Role is manufacturing performance engineering, not software performance"
+      ],
+      "location_verdict": "PASS",
+      "language_gate": "PASS",
+      "language_note": "JD: 'Very good English language skills; German is considered a plus'",
+      "deadline": null,
+      "sponsorship": "not stated in JD",
+      "rank_note": "Tracker shows an Infineon application rejected 2026-09-18 (Automotive AI Inference Stack) - different role; this one is fab-manufacturing analytics"
+    }
+  ]
+}
