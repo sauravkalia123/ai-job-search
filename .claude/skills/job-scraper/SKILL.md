@@ -167,8 +167,11 @@ auto-downgraded.
 When a scored posting's `rank_score` exceeds 55, generate a tailored draft CV in the same
 breath — the JD text is already in context, so this is the cheap moment:
 
-- **File:** `cv/drafts/<company>_<role-slug>.html` — HTML only, built from the active
-  `saurav-html` master template. Fact-bound to the master CV: profile statement rewritten for
+- **File:** `cv/drafts/<name>.html` — HTML only, built from the active
+  `saurav-html` master template. The name comes from the helper, never improvised:
+  `python3 tools/cv_draft_name.py --company "<company>" --role "<role>" --country <CC>` →
+  `cv_saurav_<company>_<role>_<country>.html`, capped at 40 characters with a deterministic
+  hash suffix on truncation. Fact-bound to the master CV: profile statement rewritten for
   the JD, bullets reordered/reframed, keywords aligned — **zero new claims** (no skills,
   employers, metrics, or dates that the master doesn't contain).
 - **Auth line:** set the country-correct work-authorization line at generation time
