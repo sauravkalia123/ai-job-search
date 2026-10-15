@@ -28,6 +28,15 @@ EU/UK, Canada, Australia, New Zealand, Singapore, South Korea, Malaysia, UAE + r
 - **lever-search** (enabled, added 2026-10-15) - Lever boards, PER-ORG ONLY (no global search; robots Crawl-delay 1):
   `bun run .agents/skills/lever-search/cli/src/cli.ts search -o <org> --limit 15 --format json`
   Use for org tokens harvested from jobs.lever.co URLs.
+- **personio-search** (enabled, added 2026-10-15) - Personio career sites (EU/DE heavy), PER-ORG ONLY via public XML feed:
+  `bun run .agents/skills/personio-search/cli/src/cli.ts search -o <org> --limit 15 --format json`
+  Use for org tokens harvested from jobs.personio.com URLs (German postings common - Language Gate applies).
+- **teamtailor-search** (enabled, added 2026-10-15) - Teamtailor career sites (EU startups), PER-ORG ONLY via public jobs.json feed:
+  `bun run .agents/skills/teamtailor-search/cli/src/cli.ts search -o <org> --limit 15 --format json`
+  Use for org tokens harvested from teamtailor.com URLs.
+- **smartrecruiters-search** (enabled, added 2026-10-15) - SmartRecruiters boards, PER-ORG with server-side q search:
+  `bun run .agents/skills/smartrecruiters-search/cli/src/cli.ts search -o <org> -q "<keyword>" --limit 15 --format json`
+  Use for org tokens harvested from jobs.smartrecruiters.com URLs (TAPI, QantasGroup, Syntegon, ...).
 - **Danish demo portals** (jobindex, jobbank, jobdanmark, jobnet) ship **disabled** - not this candidate's market.
 
 More portals via `/add-portal` (user will feed additional search providers).
