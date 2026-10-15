@@ -162,6 +162,27 @@ language above your level (e.g. German at A1) is FLAG — score normally and car
 quoted requirement in `language_note` so the gap is visible without being
 auto-downgraded.
 
+### Step 3.5: Auto-draft Tailored CVs (rank_score > 55)
+
+When a scored posting's `rank_score` exceeds 55, generate a tailored draft CV in the same
+breath — the JD text is already in context, so this is the cheap moment:
+
+- **File:** `cv/drafts/<company>_<role-slug>.html` — HTML only, built from the active
+  `saurav-html` master template. Fact-bound to the master CV: profile statement rewritten for
+  the JD, bullets reordered/reframed, keywords aligned — **zero new claims** (no skills,
+  employers, metrics, or dates that the master doesn't contain).
+- **Auth line:** set the country-correct work-authorization line at generation time
+  (Germany → "Opportunity card holder"; India → none; everywhere else → "Sponsorship required").
+- **Draft marker:** first line inside `<body>`: `<!-- DRAFT - auto-generated, review before use -->`.
+- **Verify (zero tokens):** every draft must pass
+  `python3 tools/verify_draft.py --draft <file> --country <DE|IN|other>` — mechanical checks:
+  structure, HTML hygiene, draft marker, contact details, auth line, and fact-binding (years,
+  percent-metrics, employers ⊆ master). A draft that fails is fixed and re-verified, or dropped —
+  never stored unverified.
+- **Deferred to pick-time** (when the user chooses to apply): PDF compile, 2-page check, the full
+  verification checklist from the application workflow, and the cover letter. Drafts are never
+  "ready to send".
+
 ### Step 4: Deduplicate & Store
 
 1. Derive each entry's key with the helper, never by slugifying in the moment:

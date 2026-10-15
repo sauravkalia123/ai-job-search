@@ -197,7 +197,7 @@ Markets table:
 | South Korea | "South Korea" | KR |
 | Malaysia | "Malaysia" | MY |
 | UAE | "United Arab Emirates" | AE |
-| UK / EU | "United Kingdom", "Netherlands", "Sweden", "Belgium", "France" | GB, NL, SE, BE, FR |
+| UK / EU | "United Kingdom", "Netherlands", "Sweden", "Belgium", "France", "Ireland", "Poland", "Austria", "Switzerland", "Denmark", "Norway", "Finland", "Spain", "Italy", "Portugal" | GB, NL, SE, BE, FR, IE, PL, AT, CH, DK, NO, FI, ES, IT, PT |
 | Japan | "Japan" | JP |
 | Remote | "Remote" | `--remote remote` |
 
@@ -208,18 +208,21 @@ prefer precise terms over OR-chains): `webrtc`, `gstreamer`, `rtsp`, `ffmpeg`, `
 Broad-only (Moderate tier, run on /scrape broad or named focus): `android automotive`,
 `video conferencing`, `vms`, `a/b update`, `wayland`.
 
-## Sponsorship keyword rule (candidate instruction, 2026-10-13)
+## Sponsorship keyword rule (candidate instruction, 2026-10-15 — supersedes the 2026-10-13 ×2 rule)
 
-For **every market EXCEPT India**, run each keyword query twice: the plain keyword, and the
-keyword combined with sponsorship terms - postings that mention sponsorship are the ones that
-can actually hire a non-citizen:
+**Single pass everywhere: run only the plain keyword query, in every market including India.**
+The `"keyword visa sponsorship"` combined variants are retired — they were a strict subset of
+the plain results (a combined query can never return a job the plain query missed), so running
+both doubled call volume for a weak signal.
 
-- LinkedIn: `-q "<keyword>"` and `-q "<keyword> visa sponsorship"` (also try `"visa sponsorship"` alone as a query per market)
-- freehire: same `-q` variants
-- WebSearch fallbacks: `site:<board> <keyword> "visa sponsorship"` (and `"work visa"` / `"sponsorship available"` as variants)
+Sponsorship stance is instead assessed **at JD-scoring time**: the inline-ranking pipeline reads
+every gated-in posting's full text and records the sponsorship/eligibility verdict from the
+actual description (verified example: Arm's "we will meet sponsorship costs" vs Ubiquiti's
+"must live in Sweden and hold a valid work permit"). That signal is strictly better than
+keyword luck.
 
-India is exempt - the candidate is a citizen, no sponsorship needed, so the variant is skipped there.
-English-only postings: if a posting specifies no language, assume English (always passes the Language Gate).
+English-only postings: if a posting specifies no language, assume English (always passes the
+Language Gate).
 
 ## Solution-name search pass (candidate request, 2026-10-13)
 
@@ -227,7 +230,7 @@ Alongside the skill-keyword sweeps, run a dedicated pass of **solution/product-n
 postings often name the product domain ("build our OTT platform", "video conferencing team",
 "signage product") rather than the underlying skill. Every sweep runs these, one query per
 phrase, scoped per market (LinkedIn) or multi-country (freehire), with the 7-day window and the
-sponsorship variant rule (non-India) applied to each:
+sponsorship variant rule (retired 2026-10-15 — single plain pass everywhere) applied to each:
 
     "video conferencing" | "OTT platform" | "IPTV" | "set-top box" | "Android TV" |
     "smart TV" | "digital signage" | "video wall" | "video surveillance" | "VMS" |
@@ -245,7 +248,8 @@ Rules:
   explicit user instruction. Other Weak-tier solutions (telehealth, cloud gaming, IFE,
   UCaaS, DOOH, smart home, ...) are still never searched by default.
 - LinkedIn: `<phrase> -l "<market>" --jobage 7`. freehire: `-q "<phrase>" --country ... --jobage 7`.
-- Non-India markets: also run the `"visa sponsorship"`-combined variant per the rule above.
+- Retired (2026-10-15): the non-India `"visa sponsorship"`-combined variant — single plain pass
+  everywhere; sponsorship stance is recorded at JD-scoring time instead.
 - India: plain phrase only.
 
 ## Location Filter
