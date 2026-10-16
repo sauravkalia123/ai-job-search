@@ -38,6 +38,7 @@
   ul { margin-top: 3px; margin-bottom: 3px; padding-left: 20px; }
   li { font-size: 9.5pt; line-height: 1.4; margin-bottom: 2px; }
   .avoid-break { break-inside: avoid; }
+  @page { size: letter; margin: 0.4in; }
   @media print { body { padding: 0.2in 0.3in; } }
 </style>
 </head>
@@ -58,7 +59,7 @@
   <div class="section">
     <div class="section-title">Professional Summary</div>
     <div class="summary-text">
-      <strong>Staff Embedded Firmware Engineer — Camera &amp; Video Pipelines</strong> with <strong>19+ years</strong> shipping <strong>embedded C/C++ firmware</strong> for camera, video, and multimedia hardware. At <strong>Lytx</strong>, owns the dashcam device stack on <strong>NXP i.MX8 (Yocto Linux)</strong>: multi-camera <strong>V4L2</strong> capture, <strong>hardware codecs (NXP VPU)</strong>, recording duty cycle raised <strong>49% to ~100%</strong>, <strong>hardware-codec memory recovery (CMA 491 MB → 8 MB)</strong>, firmware optimized for <strong>performance and memory</strong>. Earlier: camera-side bring-up with silicon and hardware teams at Barco/Samsung; RTOS firmware and device drivers (<strong>I2C, SPI, UART</strong>) on ST chipsets. Deep expertise: <strong>C/C++, multithreading, RTOS concepts, device drivers, camera/video pipelines, debugging across the hardware boundary</strong>.
+      <strong>Staff Embedded Firmware Engineer — Camera &amp; Video Pipelines</strong> with <strong>19+ years</strong> shipping <strong>embedded C/C++ firmware</strong> for camera, video, and multimedia hardware. At <strong>Lytx</strong>, owns the dashcam device stack on <strong>NXP i.MX8 (Yocto Linux)</strong>: multi-camera <strong>V4L2</strong> capture, <strong>hardware codecs (NXP VPU)</strong>, recording duty cycle raised <strong>49% to ~100%</strong>, <strong>hardware-codec memory recovery (CMA 491 MB → 8 MB)</strong>, firmware optimized for <strong>performance and memory</strong>. Earlier: camera-side bring-up with silicon and hardware teams at Barco/Samsung; RTOS firmware and device drivers (<strong>I2C, SPI, UART</strong>) on ST chipsets.
     </div>
   </div>
 
@@ -67,7 +68,7 @@
     <ul class="core-skills-list" style="list-style: none; padding-left: 0;">
       <li><strong>• Programming &amp; Systems:</strong> C, C++14/17/20, Rust, Embedded C, Python, Bash</li>
       <li><strong>• Embedded Systems &amp; Drivers:</strong> I2C, SPI, UART, RS232, NAND/NOR Flash, Bootloaders, Device Drivers, Firmware Auto-Update, NXP i.MX8, camera subsystem (multi-camera capture, V4L2)</li>
-      <li><strong>• Multimedia &amp; Streaming:</strong> GStreamer, Pipewire, JackD, SDL2, FFmpeg, Janus, WebRTC (ICE, STUN/TURN, DTLS-SRTP, libnice), RTP/RTCP, HLS, MPEG-DASH, MP4/fMP4, DRM (Widevine, PlayReady), Video Wall, Layout Management, Audio mixing, H264, H265, hardware codecs (NXP VPU), clock and frame synchronization (PTP/IEEE 1588, framelock/genlock), AV streaming and decoding, echo cancellation (AEC), ALSA, Wayland/Weston</li>
+      <li><strong>• Multimedia &amp; Streaming:</strong> GStreamer, PipeWire, SDL2, FFmpeg, H264, H265, hardware codecs (NXP VPU), AV streaming and decoding, camera/video pipelines, clock and frame synchronization (PTP/IEEE 1588, framelock/genlock), Wayland/Weston</li>
       <li><strong>• Operating Systems:</strong> Linux, Embedded Linux (Yocto/BitBake), Tizen, Unix, RTOS, ARM Toolchain, systemd</li>
       <li><strong>• Debugging &amp; Quality:</strong> gdb, Valgrind, ASAN/TSAN/UBSan, core-dump analysis, Wireshark/tcpdump, load and soak testing, GoogleTest</li>
       <li><strong>• Concurrency &amp; Performance:</strong> Multithreading, atomics and memory ordering, mutex/shared_mutex, Intel TBB, thread pools, epoll/non-blocking I/O, GLib/GObject main loops</li>
@@ -102,26 +103,9 @@
       <ul>
         <li><strong>End-to-end owner of the media pipeline and the layout manager</strong> for control-room video walls playing <strong>16x HD, 8x FHD or 4x 4K simultaneous video streams</strong> with ultra-low latency</li>
         <li><strong>Desktop-as-video streaming:</strong> captured X.Org and Wayland desktops with GPU-accelerated GStreamer screen-scraping plugins, encoded and decoded them with Barco's proprietary codec, and streamed them out as live video; audio routed through JACK and PipeWire</li>
-        <li><strong>Remote interaction:</strong> mouse and keyboard control of remote sources through GStreamer navigation events, plus VNC (SDL2) and WebRTC for low-latency interactive video</li>
         <li><strong>Multi-display synchronization at two levels:</strong> clock sync — every display starts rendering at the same instant — via hardware sync with <strong>NVIDIA Quadro Sync II</strong> (framelock/genlock) and software sync with PTP (IEEE 1588) clocks; and frame sync — every display renders the same frame at the same time</li>
-        <li>Built the layout manager for multi-screen composition, scaling and window placement across the wall</li>
-        <li>Architected microservices with DBus, WebSockets and REST APIs; built secure remote-management interfaces; deployed CI/CD and automated testing</li>
-        <li>Implemented device discovery (Avahi/DHCP) and N+1 failover for vertical scalability</li>
       </ul>
-      <div class="tech-stack">Tech: C++17/20, GStreamer (incl. navigation events), PipeWire, JACK, X.Org, Wayland, OpenGL, SDL2, VNC, WebRTC, PTP (IEEE 1588), NVIDIA Quadro Sync II (framelock/genlock), Barco proprietary codec, Debian, Meson, Debian packaging, CI/CD, CoCo Framework</div>
-    </div>
-    <div class="job avoid-break">
-      <div class="job-header">
-        <span class="job-company">Logic Eastern India Pvt Ltd</span>
-        <span class="job-period">Jun 2007 – Aug 2009</span>
-      </div>
-      <div class="job-role">Senior Software Engineer | Noida, India</div>
-      <ul>
-        <li>Developed STB firmware and interactive UI for STMicroelectronics chipsets</li>
-        <li>Built transport stream parser, tuner drivers, channel search, and UI components</li>
-        <li>Implemented bare-metal bootloader with A/B OTA update logic and NAND/NOR flash device drivers for embedded Linux BSP — zero-brick guarantee via A/B fallback</li>
-      </ul>
-      <div class="tech-stack">Tech: C/C++, RTOS (ST-OS20), ST Toolchain</div>
+      <div class="tech-stack">Tech: C++17/20, GStreamer, PipeWire, JACK, X.Org, Wayland, OpenGL, SDL2, WebRTC, PTP (IEEE 1588), NVIDIA Quadro Sync II (framelock/genlock), Barco proprietary codec, Meson, CI/CD</div>
     </div>
     <div class="job avoid-break">
       <div class="job-header">
@@ -130,9 +114,18 @@
       </div>
       <div class="job-role">Senior Software Engineer | South Korea</div>
       <ul>
-        <li>Designed and deployed STB middleware on ST5105/ST5107 chipsets</li>
-        <li>Implemented Transport Stream parsing, channel data storage (transponder, PMT, A/V PID), and NIT parsing for auto updates</li>
-        <li>Built Auto/Manual search features with reliable tuner locking</li>
+        <li>Designed and deployed STB middleware on ST5105/ST5107 chipsets: Transport Stream parsing, channel data storage (transponder, PMT, A/V PID), NIT parsing for auto updates, and Auto/Manual search with reliable tuner locking</li>
+      </ul>
+      <div class="tech-stack">Tech: C/C++, RTOS (ST-OS20), ST Toolchain</div>
+    </div>
+    <div class="job avoid-break">
+      <div class="job-header">
+        <span class="job-company">Logic Eastern India Pvt Ltd</span>
+        <span class="job-period">Jun 2007 – Aug 2009</span>
+      </div>
+      <div class="job-role">Senior Software Engineer | Noida, India</div>
+      <ul>
+        <li>Implemented bare-metal bootloader with A/B OTA update logic and NAND/NOR flash device drivers for embedded Linux BSP — zero-brick guarantee via A/B fallback; built transport stream parser, tuner drivers, and channel search for STMicroelectronics chipsets</li>
       </ul>
       <div class="tech-stack">Tech: C/C++, RTOS (ST-OS20), ST Toolchain</div>
     </div>
@@ -158,15 +151,7 @@
     <div class="section-title">Languages</div>
     <div class="skills-row">
       <span class="skill-category">English:</span>
-      <span class="skill-item">Professional working proficiency</span>
-    </div>
-    <div class="skills-row">
-      <span class="skill-category">Hindi:</span>
-      <span class="skill-item">Native</span>
-    </div>
-    <div class="skills-row">
-      <span class="skill-category">German:</span>
-      <span class="skill-item">Beginner (A1) — actively learning</span>
+      <span class="skill-item">Professional working proficiency &nbsp;|&nbsp; <strong>Hindi:</strong> Native &nbsp;|&nbsp; <strong>German:</strong> Beginner (A1) — actively learning</span>
     </div>
   </div>
 
@@ -178,13 +163,6 @@
       <li>Device drivers and embedded protocols (I2C, SPI, UART)</li>
       <li>Chipset bring-up: design, bring-up, validation, commercialization</li>
       <li>Complex system-level debugging across firmware/hardware</li>
-    </ul>
-  </div>
-  <div class="section avoid-break">
-    <div class="section-title">Key Achievements</div>
-    <ul>
-      <li>Delivered video wall and streaming systems deployed in <strong>global control rooms</strong> and large-scale environments</li>
-      <li>Recognized with multiple awards at Samsung: <strong>Best Team Manager, Best Team Player, Best Code Reviewer</strong></li>
     </ul>
   </div>
 </div>

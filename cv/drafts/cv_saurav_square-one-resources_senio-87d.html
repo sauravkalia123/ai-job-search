@@ -202,6 +202,11 @@
     break-inside: avoid;
   }
 
+  @page {
+    size: letter;
+    margin: 0.4in;
+  }
+
   @media print {
     body {
       padding: 0.2in 0.3in;
@@ -241,16 +246,11 @@ Deep expertise: <strong>C, C++14/17/20 user-space multithreading (mutex, conditi
       <li><strong>• Programming &amp; Systems:</strong> C, C++14/17/20, Rust, Embedded C, Python, Bash</li>
       <li><strong>• Concurrency &amp; Performance:</strong> Multithreading, atomics and memory ordering, mutex/shared_mutex, Intel TBB, thread pools, epoll/non-blocking I/O, GLib/GObject main loops</li>
       <li><strong>• Operating Systems:</strong> Linux, Embedded Linux (Yocto/BitBake), Tizen, Unix, RTOS, ARM Toolchain, systemd</li>
-      <li><strong>• Multimedia &amp; Streaming:</strong> GStreamer, Pipewire, JackD, SDL2, FFmpeg, Janus, WebRTC (ICE, STUN/TURN, DTLS-SRTP, libnice), RTP/RTCP, HLS, MPEG-DASH, MP4/fMP4, DRM (Widevine, PlayReady), Video Wall, Layout Management, Audio mixing, H264, H265, hardware codecs (NXP VPU), clock and frame synchronization (PTP/IEEE 1588, framelock/genlock), AV streaming and decoding, echo cancellation (AEC), ALSA, Wayland/Weston</li>
+      <li><strong>• Multimedia &amp; Streaming:</strong> GStreamer, PipeWire, FFmpeg, Janus, WebRTC (ICE, STUN/TURN, DTLS-SRTP, libnice), RTP/RTCP, HLS, MPEG-DASH, MP4/fMP4, H264, H265, hardware codecs (NXP VPU), clock and frame synchronization (PTP/IEEE 1588)</li>
       <li><strong>• Streaming Protocols &amp; Formats:</strong> RTSP, SRT, MPEG-TS, multicast, LL-HLS, CMAF, VP8/VP9, AV1, AAC, Opus</li>
-      <li><strong>• Product &amp; Solution Domains:</strong> Video conferencing, OTT, IPTV, set-top box, smart TV, digital signage, video walls, control rooms, video surveillance (VMS/NVR, multi-stream decode), fleet dashcam telematics, event data recorder (EDR), in-vehicle multimedia, live streaming, embedded multimedia</li>
       <li><strong>• Embedded Systems &amp; Drivers:</strong> I2C, SPI, UART, RS232, NAND/NOR Flash, Bootloaders, Device Drivers, Firmware Auto-Update, NXP i.MX8, camera subsystem (multi-camera capture, V4L2)</li>
-      <li><strong>• Networking &amp; Protocols:</strong> TCP/UDP sockets, Kafka, MQTT, DBus, REST APIs, WebSockets, SNMP</li>
-      <li><strong>• Security:</strong> OpenSSL (TLS, AES-GCM), certificate chains, secure coding, GitHub Advanced Security (CodeQL)</li>
-      <li><strong>• Cloud &amp; Observability:</strong> AWS (EKS, NLB, EC2), Docker, Kubernetes, New Relic, structured logging</li>
+      <li><strong>• Networking &amp; Protocols:</strong> TCP/UDP sockets, Kafka, MQTT, DBus, REST APIs, WebSockets</li>
       <li><strong>• Debugging &amp; Quality:</strong> gdb, Valgrind, ASAN/TSAN/UBSan, core-dump analysis, Wireshark/tcpdump, load and soak testing, GoogleTest</li>
-      <li><strong>• Tools &amp; Frameworks:</strong> CMake, UML, OpenGL, SonarQube, JIRA, Agile, CI/CD, Jenkins, Git, SVN, Perforce, AI-assisted development (Claude Code)</li>
-      <li><strong>• Databases &amp; Config:</strong> SQLite, Redis, Consul, FreeTDS, ODBC</li>
     </ul>
   </div>
 
@@ -258,7 +258,7 @@ Deep expertise: <strong>C, C++14/17/20 user-space multithreading (mutex, conditi
   <div class="section">
     <div class="section-title">Work Experience</div>
 
-    <div class="job avoid-break">
+    <div class="job">
       <div class="job-header">
         <span class="job-company">Lytx Inc</span>
         <span class="job-period">Dec 2025 – Present</span>
@@ -267,30 +267,21 @@ Deep expertise: <strong>C, C++14/17/20 user-space multithreading (mutex, conditi
       <ul>
         <li>Lead <strong>Mediacore</strong> — streaming engine capturing dashcam video and outputting WebRTC, HLS, or recordings</li>
         <li>Optimized pipelines to sustain <strong>100+ concurrent live streams per node</strong> across <strong>700k+ deployed devices</strong></li>
-        <li>Achieved <strong>98.6% session success rate (592/600 WebRTC sessions)</strong> through targeted optimizations</li>
         <li>Eliminated <strong>84% of memory growth</strong> in GStreamer processes using Valgrind and custom instrumentation for multi-day stability</li>
-        <li>Integrated <strong>AI/ML driver monitoring</strong> (fatigue, drowsiness, seatbelt, unsafe driving) into real-time pipeline</li>
-        <li>Resolved high-concurrency bottlenecks via buffer flow control, thread tuning, and back pressure handling</li>
-      </ul>
-      <div class="job-role" style="margin-top:4px;">Cloud media server — C++17, GStreamer, WebRTC, HLS, epoll, TBB, AWS EKS</div>
-      <ul>
-        <li>Load-tested up to <strong>600 concurrent WebRTC sessions</strong> and <strong>3,000-session runs</strong>; verified <strong>zero session leaks across 4,286 sessions</strong> and <strong>99.3% session-start success</strong></li>
-        <li>Root-caused a production server hang: a socket <strong>fd double-close</strong> was recycled into a GStreamer bus poll pipe, spinning one thread at <strong>100% CPU</strong> and stalling the whole <strong>350-worker pool</strong>; fixed with an atomic single-owner fd lifecycle</li>
-        <li>Fixed worker-pool exhaustion (<strong>2,000-thread pool</strong> drained by half-open TCP connections) with TCP keepalive and idle timeouts; fixed dropped connections during <strong>250-device reconnect storms</strong> (undersized listen backlog)</li>
-        <li>Root-caused the residual <strong>1.5% ICE failure rate</strong> to ICE timer and STUN/TURN topology, using statistical analysis across concurrency levels</li>
-        <li>Found and fixed a <strong>critical unauthenticated remote-code-execution</strong> vulnerability (shell injection) with a 3-layer defense; resolved GitHub Advanced Security (CodeQL) findings</li>
-        <li>Added a native C++ <strong>health endpoint</strong>, crash/core-dump handling, no-media watchdogs and structured telemetry for New Relic</li>
       </ul>
       <div class="job-role" style="margin-top:4px;">Dashcam device (multi-camera, NXP i.MX8, Yocto Linux) — recorder, storage, playback UI</div>
       <ul>
         <li>Raised main-camera recording duty cycle from <strong>49% to ~100%</strong> by finding a boot-script stall of <strong>12.6 hours/day</strong> (one process fork per line over a <strong>5.4M-line</strong> log)</li>
         <li>Fixed a cross-thread race in the recording index that permanently lost aux-camera footage: <strong>recording gaps cut from 171 to 2</strong>, <strong>25+ hours</strong> of video recovered, passed a <strong>21-hour soak</strong></li>
-        <li>Fixed a GStreamer hang that pinned hardware-codec memory (CMA free <strong>491 MB → 8 MB</strong>) and drove a camera restart loop</li>
-        <li>Fixed green-screen playback (VFR → CFR encoding) and cut on-device playback load: AES-GCM decrypt to RAM, H.264 level rewrite to fit the hardware decoder's memory, decoder lifecycle and watchdog</li>
         <li>Diagnosed recording-index outages (SQLite disk-full from an unrotated <strong>450 MB/day</strong> log); migrated components to <strong>Yocto Scarthgap</strong> and modern C++17</li>
         <li>Built AI-assisted engineering tooling (Claude Code): a log profiler that summarises a <strong>292 MB / 2.5M-line</strong> log in ~25 lines, and a code index across 9 repos, cutting triage from hours to minutes</li>
       </ul>
-      <div class="tech-stack">Tech: C++17/20, Embedded Linux (Yocto/BitBake), ARM (NXP i.MX8), GStreamer, WebRTC, HLS, MP4, H.264, OpenSSL (AES-GCM, TLS), SQLite, MQTT, systemd, AWS EKS, Docker, Kubernetes, New Relic, Jenkins, Valgrind, ASAN/TSAN, gdb, Wireshark, Python</div>
+      <div class="job-role" style="margin-top:4px;">Cloud media server — C++17, GStreamer, WebRTC, HLS, epoll, TBB, AWS EKS</div>
+      <ul>
+        <li>Root-caused a production server hang: a socket <strong>fd double-close</strong> was recycled into a GStreamer bus poll pipe, spinning one thread at <strong>100% CPU</strong> and stalling the whole <strong>350-worker pool</strong>; fixed with an atomic single-owner fd lifecycle</li>
+        <li>Found and fixed a <strong>critical unauthenticated remote-code-execution</strong> vulnerability (shell injection) with a 3-layer defense; resolved GitHub Advanced Security (CodeQL) findings</li>
+      </ul>
+      <div class="tech-stack">Tech: C++17/20, Embedded Linux (Yocto/BitBake), ARM (NXP i.MX8), GStreamer, WebRTC, HLS, MP4, H.264, OpenSSL (AES-GCM, TLS), SQLite, MQTT, systemd, AWS EKS, Docker, Kubernetes, Jenkins, Valgrind, ASAN/TSAN, gdb, Wireshark, Python</div>
     </div>
 
     <div class="job avoid-break">
@@ -301,8 +292,6 @@ Deep expertise: <strong>C, C++14/17/20 user-space multithreading (mutex, conditi
       <div class="job-role">Computer Engineer | Dubai, UAE</div>
       <ul>
         <li>Architected real-time streaming platform from scratch: GStreamer/Janus media plane, C++17 + Rust middleware, Kafka event bus</li>
-        <li>Built Kafka-based distributed messaging backbone for high-throughput, low-latency inter-service communication</li>
-        <li>Improved system responsiveness through architecture and pipeline tuning</li>
         <li>Supervised team of <strong>4 engineers</strong> — owned architecture, code quality, and delivery</li>
       </ul>
       <div class="tech-stack">Tech: C++17/20, Rust, GStreamer, Kafka, Janus, Python</div>
@@ -316,19 +305,10 @@ Deep expertise: <strong>C, C++14/17/20 user-space multithreading (mutex, conditi
       <div class="job-role">Technical Specialist — Control Rooms | Noida, India</div>
       <ul>
         <li><strong>End-to-end owner of the media pipeline and the layout manager</strong> for control-room video walls playing <strong>16x HD, 8x FHD or 4x 4K simultaneous video streams</strong> with ultra-low latency</li>
-        <li><strong>Desktop-as-video streaming:</strong> captured X.Org and Wayland desktops with GPU-accelerated GStreamer screen-scraping plugins, encoded and decoded them with Barco's proprietary codec, and streamed them out as live video; audio routed through JACK and PipeWire</li>
-        <li><strong>Remote interaction:</strong> mouse and keyboard control of remote sources through GStreamer navigation events, plus VNC (SDL2) and WebRTC for low-latency interactive video</li>
-        <li><strong>Multi-display synchronization at two levels:</strong>
-          <ul>
-            <li><strong>Clock sync</strong>, so every display starts rendering at the same instant: hardware sync with <strong>NVIDIA Quadro Sync II</strong> cards (framelock/genlock), software sync with PTP (IEEE 1588) clocks</li>
-            <li><strong>Frame sync</strong>, so every display renders the same frame at the same time, for seamless content across the whole wall</li>
-          </ul>
-        </li>
+        <li><strong>Multi-display synchronization:</strong> hardware clock sync with <strong>NVIDIA Quadro Sync II</strong> (framelock/genlock) and PTP (IEEE 1588) software clocks, plus frame sync so every display renders the same frame at the same time</li>
         <li>Built the layout manager for multi-screen composition, scaling and window placement across the wall</li>
-        <li>Architected microservices with DBus, WebSockets and REST APIs; built secure remote-management interfaces; deployed CI/CD and automated testing</li>
-        <li>Implemented device discovery (Avahi/DHCP) and N+1 failover for vertical scalability</li>
       </ul>
-      <div class="tech-stack">Tech: C++17/20, GStreamer (incl. navigation events), PipeWire, JACK, X.Org, Wayland, OpenGL, SDL2, VNC, WebRTC, PTP (IEEE 1588), NVIDIA Quadro Sync II (framelock/genlock), Barco proprietary codec, Debian, Meson, Debian packaging, CI/CD, CoCo Framework</div>
+      <div class="tech-stack">Tech: C++17/20, GStreamer, PipeWire, JACK, X.Org, Wayland, OpenGL, SDL2, WebRTC, PTP (IEEE 1588), NVIDIA Quadro Sync II, Debian, Meson, CI/CD</div>
     </div>
 
     <div class="job avoid-break">
@@ -338,17 +318,12 @@ Deep expertise: <strong>C, C++14/17/20 user-space multithreading (mutex, conditi
       </div>
       <div class="job-role">Chief Engineer | Noida, India</div>
       <ul>
-        <li>Developed SoC-based Signage solution with simultaneous audio, dual video, PDF, and text playback</li>
-        <li>Implemented video wall extension with frame-accurate synchronization across multiple TVs</li>
-        <li>Integrated OTT apps (Netflix, Amazon Prime) with DRM-secure streaming (Widevine/PlayReady)</li>
-        <li>Developed Hotel TV features as IoT gateway and centralized control interface</li>
-        <li>Implemented SNMP-based remote monitoring and control for multiple TVs</li>
-        <li>Built multi-threaded content manager parsing XML metadata for playback scheduling</li>
         <li>Managed <strong>30 engineers</strong> across architecture, development, and code quality — delivered MagicInfo, a production-grade Signage and Video Wall Solution</li>
+        <li>Integrated OTT apps (Netflix, Amazon Prime) with DRM-secure streaming (Widevine/PlayReady)</li>
       </ul>
       <div class="tech-stack">Tech: C/C++, Linux, Tizen OS, ARM Toolchain, GStreamer, OTT, DRM (Widevine, PlayReady)</div>
     </div>
-    
+
     <div class="job avoid-break">
       <div class="job-header">
         <span class="job-company">HCL Technologies India</span>
@@ -356,11 +331,8 @@ Deep expertise: <strong>C, C++14/17/20 user-space multithreading (mutex, conditi
       </div>
       <div class="job-role">Lead Engineer | Bengaluru, India</div>
       <ul>
-        <li>Designed storage middleware features: Audio Description (AD) and Retention Limit policies</li>
-        <li>Created HDD content management layer for SoC-based platforms handling media storage lifecycle</li>
-        <li>Supervised team of <strong>4 engineers</strong> — oversaw design (HLD/DLD), development, and code quality</li>
+        <li>Supervised team of <strong>4 engineers</strong> — oversaw design (HLD/DLD), development, and code quality for storage middleware on SoC-based platforms</li>
       </ul>
-      <div class="tech-stack">Tech: C++, ARM Toolchain</div>
     </div>
 
     <div class="job avoid-break">
@@ -370,11 +342,8 @@ Deep expertise: <strong>C, C++14/17/20 user-space multithreading (mutex, conditi
       </div>
       <div class="job-role">Senior Software Engineer | South Korea</div>
       <ul>
-        <li>Designed and deployed STB middleware on ST5105/ST5107 chipsets</li>
-        <li>Implemented Transport Stream parsing, channel data storage (transponder, PMT, A/V PID), and NIT parsing for auto updates</li>
-        <li>Built Auto/Manual search features with reliable tuner locking</li>
+        <li>Designed and deployed STB middleware on ST5105/ST5107 chipsets: Transport Stream parsing, channel data storage and auto-update (NIT) handling</li>
       </ul>
-      <div class="tech-stack">Tech: C/C++, RTOS (ST-OS20), ST Toolchain</div>
     </div>
 
     <div class="job avoid-break">
@@ -384,11 +353,8 @@ Deep expertise: <strong>C, C++14/17/20 user-space multithreading (mutex, conditi
       </div>
       <div class="job-role">Senior Software Engineer | Noida, India</div>
       <ul>
-        <li>Developed STB firmware and interactive UI for STMicroelectronics chipsets</li>
-        <li>Built transport stream parser, tuner drivers, channel search, and UI components</li>
         <li>Implemented bare-metal bootloader with A/B OTA update logic and NAND/NOR flash device drivers for embedded Linux BSP — zero-brick guarantee via A/B fallback</li>
       </ul>
-      <div class="tech-stack">Tech: C/C++, RTOS (ST-OS20), ST Toolchain</div>
     </div>
   </div>
 
@@ -424,29 +390,6 @@ Deep expertise: <strong>C, C++14/17/20 user-space multithreading (mutex, conditi
       <span class="skill-category">German:</span>
       <span class="skill-item">Beginner (A1) — actively learning</span>
     </div>
-  </div>
-
-  <!-- TECHNICAL FOCUS AREAS -->
-  <div class="section avoid-break">
-    <div class="section-title">Technical Focus Areas</div>
-    <ul>
-            <li>User-space C/C++ on embedded Linux: multithreading and synchronization, asynchronous and event-driven design</li>
-      <li>Yocto Project: recipes, MACHINE and DISTRO configuration, package and application integration, BSP maintenance</li>
-      <li>Kernel and boot: configuration and customization of Linux kernel and U-Boot, device tree (DTS/DTSI)</li>
-      <li>Board bring-up and hardware integration on ARM (NXP i.MX8), on-target debugging with gdb</li>
-      <li>Supporting stack: CMake, Python tooling, systemd services, MQTT, SQLite, Git with code review, CI/CD (Jenkins)</li>
-      </ul>
-  </div>
-  
-  <!-- KEY ACHIEVEMENTS -->
-  <div class="section avoid-break">
-    <div class="section-title">Key Achievements</div>
-    <ul>
-      <li>Delivered video wall and streaming systems deployed in <strong>global control rooms</strong> and large-scale environments</li>
-      <li>Recognized with multiple awards at Samsung: <strong>Best Team Manager, Best Team Player, Best Code Reviewer</strong></li>
-      <li>Successfully led architecture and delivery of <strong>multiple production-grade multimedia platforms</strong></li>
-      <li>Received appreciation from <strong>Sony Japan</strong> for high-quality implementation</li>
-    </ul>
   </div>
 </div>
 </body>

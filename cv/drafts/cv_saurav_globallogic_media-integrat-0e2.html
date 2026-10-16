@@ -38,6 +38,7 @@
   ul { margin-top: 3px; margin-bottom: 3px; padding-left: 20px; }
   li { font-size: 9.5pt; line-height: 1.4; margin-bottom: 2px; }
   .avoid-break { break-inside: avoid; }
+  @page { size: letter; margin: 0.4in; }
   @media print { body { padding: 0.2in 0.3in; } }
 </style>
 </head>
@@ -90,13 +91,22 @@
         <li>Achieved <strong>98.6% session success rate (592/600 WebRTC sessions)</strong> through targeted optimizations</li>
         <li>Eliminated <strong>84% of memory growth</strong> in GStreamer processes using Valgrind and custom instrumentation for multi-day stability</li>
         <li>Integrated <strong>AI/ML driver monitoring</strong> (fatigue, drowsiness, seatbelt, unsafe driving) into real-time pipeline</li>
-        <li>Resolved high-concurrency bottlenecks via buffer flow control, thread tuning, and back pressure handling</li>
         <li>Load-tested up to <strong>600 concurrent WebRTC sessions</strong> and <strong>3,000-session runs</strong>; verified <strong>zero session leaks across 4,286 sessions</strong> and <strong>99.3% session-start success</strong></li>
         <li>Root-caused a production server hang: a socket <strong>fd double-close</strong> was recycled into a GStreamer bus poll pipe, spinning one thread at <strong>100% CPU</strong> and stalling the whole <strong>350-worker pool</strong>; fixed with an atomic single-owner fd lifecycle</li>
-        <li>Fixed worker-pool exhaustion (<strong>2,000-thread pool</strong> drained by half-open TCP connections) with TCP keepalive and idle timeouts; fixed dropped connections during <strong>250-device reconnect storms</strong> (undersized listen backlog)</li>
-        <li>Added a native C++ <strong>health endpoint</strong>, crash/core-dump handling, no-media watchdogs and structured telemetry for New Relic</li>
       </ul>
       <div class="tech-stack">Tech: C++17/20, Embedded Linux (Yocto/BitBake), ARM (NXP i.MX8), GStreamer, WebRTC, HLS, MP4, H.264, OpenSSL (AES-GCM, TLS), SQLite, MQTT, systemd, AWS EKS, Docker, Kubernetes, New Relic, Jenkins, Valgrind, ASAN/TSAN, gdb, Wireshark, Python</div>
+    </div>
+    <div class="job avoid-break">
+      <div class="job-header">
+        <span class="job-company">Voizzit Information Technology</span>
+        <span class="job-period">Jan 2025 – Nov 2025</span>
+      </div>
+      <div class="job-role">Computer Engineer | Dubai, UAE</div>
+      <ul>
+        <li>Architected real-time streaming platform from scratch: GStreamer/Janus media plane, C++17 + Rust middleware, Kafka event bus</li>
+        <li>Supervised team of <strong>4 engineers</strong> — owned architecture, code quality, and delivery</li>
+      </ul>
+      <div class="tech-stack">Tech: C++17/20, Rust, GStreamer, Kafka, Janus, Python</div>
     </div>
     <div class="job avoid-break">
       <div class="job-header">
@@ -109,25 +119,8 @@
         <li><strong>Desktop-as-video streaming:</strong> captured X.Org and Wayland desktops with GPU-accelerated GStreamer screen-scraping plugins, encoded and decoded them with Barco's proprietary codec, and streamed them out as live video; audio routed through JACK and PipeWire</li>
         <li><strong>Remote interaction:</strong> mouse and keyboard control of remote sources through GStreamer navigation events, plus VNC (SDL2) and WebRTC for low-latency interactive video</li>
         <li><strong>Multi-display synchronization at two levels:</strong> clock sync — every display starts rendering at the same instant — via hardware sync with <strong>NVIDIA Quadro Sync II</strong> (framelock/genlock) and software sync with PTP (IEEE 1588) clocks; and frame sync — every display renders the same frame at the same time</li>
-        <li>Built the layout manager for multi-screen composition, scaling and window placement across the wall</li>
-        <li>Architected microservices with DBus, WebSockets and REST APIs; built secure remote-management interfaces; deployed CI/CD and automated testing</li>
-        <li>Implemented device discovery (Avahi/DHCP) and N+1 failover for vertical scalability</li>
       </ul>
-      <div class="tech-stack">Tech: C++17/20, GStreamer (incl. navigation events), PipeWire, JACK, X.Org, Wayland, OpenGL, SDL2, VNC, WebRTC, PTP (IEEE 1588), NVIDIA Quadro Sync II (framelock/genlock), Barco proprietary codec, Debian, Meson, Debian packaging, CI/CD, CoCo Framework</div>
-    </div>
-    <div class="job avoid-break">
-      <div class="job-header">
-        <span class="job-company">Voizzit Information Technology</span>
-        <span class="job-period">Jan 2025 – Nov 2025</span>
-      </div>
-      <div class="job-role">Computer Engineer | Dubai, UAE</div>
-      <ul>
-        <li>Architected real-time streaming platform from scratch: GStreamer/Janus media plane, C++17 + Rust middleware, Kafka event bus</li>
-        <li>Built Kafka-based distributed messaging backbone for high-throughput, low-latency inter-service communication</li>
-        <li>Improved system responsiveness through architecture and pipeline tuning</li>
-        <li>Supervised team of <strong>4 engineers</strong> — owned architecture, code quality, and delivery</li>
-      </ul>
-      <div class="tech-stack">Tech: C++17/20, Rust, GStreamer, Kafka, Janus, Python</div>
+      <div class="tech-stack">Tech: C++17/20, GStreamer (incl. navigation events), PipeWire, JACK, X.Org, Wayland, OpenGL, SDL2, VNC, WebRTC, PTP (IEEE 1588), NVIDIA Quadro Sync II (framelock/genlock), Barco proprietary codec, Debian, Meson, CI/CD</div>
     </div>
     <div class="job avoid-break">
       <div class="job-header">
@@ -136,12 +129,8 @@
       </div>
       <div class="job-role">Chief Engineer | Noida, India</div>
       <ul>
-        <li>Developed SoC-based Signage solution with simultaneous audio, dual video, PDF, and text playback</li>
         <li>Implemented video wall extension with frame-accurate synchronization across multiple TVs</li>
         <li>Integrated OTT apps (Netflix, Amazon Prime) with DRM-secure streaming (Widevine/PlayReady)</li>
-        <li>Developed Hotel TV features as IoT gateway and centralized control interface</li>
-        <li>Implemented SNMP-based remote monitoring and control for multiple TVs</li>
-        <li>Built multi-threaded content manager parsing XML metadata for playback scheduling</li>
         <li>Managed <strong>30 engineers</strong> across architecture, development, and code quality — delivered MagicInfo, a production-grade Signage and Video Wall Solution</li>
       </ul>
       <div class="tech-stack">Tech: C/C++, Linux, Tizen OS, ARM Toolchain, GStreamer, OTT, DRM (Widevine, PlayReady)</div>
@@ -181,19 +170,8 @@
   </div>
 
   <div class="section avoid-break">
-    <div class="section-title">Technical Focus Areas</div>
-    <ul>
-      <li>C++ system-level media streaming and playback platforms</li>
-      <li>Multimedia pipeline design, optimization, and debugging (GStreamer, FFmpeg)</li>
-      <li>Linux internals: IPC, services/daemons, boot-up flows</li>
-      <li>Production forensics: core dumps, memory issues, performance bottlenecks</li>
-      <li>Technical leadership via code review and root-cause analysis</li>
-    </ul>
-  </div>
-  <div class="section avoid-break">
     <div class="section-title">Key Achievements</div>
     <ul>
-      <li>Delivered video wall and streaming systems deployed in <strong>global control rooms</strong> and large-scale environments</li>
       <li>Recognized with multiple awards at Samsung: <strong>Best Team Manager, Best Team Player, Best Code Reviewer</strong></li>
       <li>Received appreciation from <strong>Sony Japan</strong> for high-quality implementation</li>
     </ul>
