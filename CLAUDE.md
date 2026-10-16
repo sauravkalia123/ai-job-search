@@ -142,7 +142,7 @@ After creating or updating a CV or cover letter, re-read the generated file and 
 
 ### Compiled PDF verification (MANDATORY - never skip)
 Both documents MUST be compiled and visually inspected via the Read tool on the PDF output. "Looks fine in the source" is not acceptable - page-break decisions are unpredictable. Iterate until these all pass:
-- [ ] CV compiled with the active template's command: `cd cv && rm -f main_<company>_<role>.pdf && google-chrome --headless --disable-gpu --no-sandbox --no-pdf-header-footer --print-to-pdf=main_<company>_<role>.pdf main_<company>_<role>.html` (see the ACTIVE-TEMPLATE block in `05-cv-templates.md`; LaTeX commands below apply only if the stock moderncv template is re-activated - lualatex for CVs, xelatex for cover letters)
+- [ ] CV compiled with the active template's command: `cd cv && rm -f main_<company>_<role>.pdf && weasyprint main_<company>_<role>.html main_<company>_<role>.pdf` (see the ACTIVE-TEMPLATE block in `05-cv-templates.md`; LaTeX commands below apply only if the stock moderncv template is re-activated - lualatex for CVs, xelatex for cover letters)
 - [ ] **CV is exactly 2 pages** - not 1, not 3
 - [ ] **No orphaned entries** - a job/education title must never sit at the bottom of a page with its bullets spilling to the next page (do not put `.avoid-break` on a job block taller than one page)
 - [ ] **Cover letter is exactly 1 page** - signature block must fit with the body, never overflow

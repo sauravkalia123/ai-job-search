@@ -15,7 +15,7 @@ framework_version: 1.4.6
 > - **Manifest:** `templates/cv/saurav-html/TEMPLATE.md` — read this for style rules and known pitfalls before drafting
 > - **Master content reference:** `cv/master_cv.html` / `cv/master_cv.md` — the candidate's detailed base CV; the content pool every tailored CV draws from (facts still come from `01-candidate-profile.md`)
 > - **Source extension:** `.html` (not `.tex` unless the template's own toolchain is LaTeX)
-> - **Compile command:** `cd cv && rm -f main_<company>_<role>.pdf && google-chrome --headless --disable-gpu --no-sandbox --no-pdf-header-footer --print-to-pdf=main_<company>_<role>.pdf main_<company>_<role>.html` (not the command named in the stock guidance below — `/apply`'s compile step must use this instead). Run it from the output directory.
+> - **Compile command:** `cd cv && rm -f main_<company>_<role>.pdf && weasyprint main_<company>_<role>.html main_<company>_<role>.pdf` (not the command named in the stock guidance below — `/apply`'s compile step must use this instead). Run it from the output directory; the HTML carries its own `@page` rule, so no extra flags are needed.
 > - **Fonts:** Times New Roman / system serif
 > - **Page limit:** exactly 2 page(s)
 > - **Output file:** `cv/main_<company>_<role>.html`; the template is a single self-contained file, no assets to copy

@@ -202,6 +202,15 @@
     break-inside: avoid;
   }
 
+  /* Page setup for paged output (WeasyPrint; previously Chrome's defaults).
+     Letter + 0.4in margins reproduce the geometry the drafts are laid out
+     for; WeasyPrint's own default is A4 with ~2cm margins. Do not add a
+     second @page margin - page margins stack with the body padding. */
+  @page {
+    size: letter;
+    margin: 0.4in;
+  }
+
   @media print {
     body {
       padding: 0.2in 0.3in;

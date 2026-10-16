@@ -2,16 +2,16 @@
 
 - **Type:** CV
 - **Source extension:** .html
-- **Engine/toolchain:** headless Google Chrome (print-to-pdf)
+- **Engine/toolchain:** WeasyPrint 67 (HTML/CSS → PDF)
 - **Page limit:** 2 page(s)
 - **Fonts:** Times New Roman / system serif (system font - must be installed; present on Linux via Liberation Serif metric-compatible substitute)
 - **Class/packages:** none - plain HTML/CSS, single file
 
 ## Compile command
 
-    cd <output dir> && rm -f <file>.pdf && google-chrome --headless --disable-gpu --no-sandbox --no-pdf-header-footer --print-to-pdf=<file>.pdf <file>.html
+    cd <output dir> && rm -f <file>.pdf && weasyprint <file>.html <file>.pdf
 
-(`--no-pdf-header-footer` suppresses Chrome's default URL/date/page-count header. Chrome 155 tested. If an older Chrome rejects that flag, use `--print-to-pdf-no-header`.)
+(Tested with WeasyPrint 67; it replaces the previous headless-Chrome command. The draft's CSS carries the `@page { size: letter; margin: 0.4in; }` rule - that is what reproduces the old Chrome geometry, because WeasyPrint's own defaults are A4 with ~2cm margins. `tools/compile_draft_pdfs.py` injects the same rule at compile time, so drafts written before the rule existed still compile identically.)
 
 ## Style rules
 
@@ -30,5 +30,5 @@
 
 - `.avoid-break` on a `.job` block taller than one printed page forces a page break and leaves the previous page half empty (observed on the master CV's Lytx block). Fix: split the employer into multiple `.job` blocks, drop `avoid-break` on that block, or cut bullets.
 - HTML escaping: write `&` as `&amp;`, `<`/`>` in text as `&lt;`/`&gt;` (C++ template args, `->`). The master CV uses plain `->` safely, but a raw `<` followed by a letter will be parsed as a tag and silently swallow text.
-- Chrome print margins: the template's own body padding is the only margin; do not add `@page` margins, they stack and inflate the page count.
-- The PDF text layer from Chrome is clean UTF-8 (no `(cid:)` artifacts); still run the standard text-extraction check after compiling, because the two-column skill rows extract in DOM order (label then items) which is fine, but verify the contact details appear as literal text.
+- Page margins stack: the `@page` margin (0.4in) plus the print body padding (0.2in/0.3in) is the entire margin; do not add another `@page` margin, they stack and inflate the page count. The `@page` rule is load-bearing - without it WeasyPrint falls back to A4 with ~2cm margins and the layout shifts.
+- The WeasyPrint text layer is clean UTF-8 (no `(cid:)` artifacts); still run the standard text-extraction check after compiling, because the two-column skill rows extract in DOM order (label then items) which is fine, but verify the contact details appear as literal text.
