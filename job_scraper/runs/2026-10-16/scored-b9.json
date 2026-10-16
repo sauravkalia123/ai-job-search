@@ -1,0 +1,604 @@
+{
+ "batch": "b9",
+ "scores": [
+  {
+   "id": "4475682384",
+   "market": "Australia",
+   "isActive": true,
+   "rank_score": null,
+   "rank_verdict": "eligibility fail",
+   "dim": null,
+   "strengths": [],
+   "gaps": [],
+   "location_verdict": "FAIL",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Right to live and work in Australia required (eligibility fail)",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": null,
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null,
+   "eligibility": "You must have the right to live and work in Australia to apply for this job."
+  },
+  {
+   "id": "4478389027",
+   "market": "Australia",
+   "isActive": true,
+   "rank_score": null,
+   "rank_verdict": "eligibility fail",
+   "dim": null,
+   "strengths": [],
+   "gaps": [],
+   "location_verdict": "FAIL",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Existing work rights required (eligibility fail)",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": null,
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null,
+   "eligibility": "Work rights: Please note to apply for this role you must already have the right to lawfully work and live in Australia."
+  },
+  {
+   "id": "4479113518",
+   "market": "Australia",
+   "isActive": true,
+   "rank_score": 58,
+   "rank_verdict": "moderate fit",
+   "dim": {
+    "tech": 52,
+    "exp": 56,
+    "behav": 78,
+    "career": 56
+   },
+   "strengths": [
+    "C++ systems depth at scale (100+ concurrent streams per node, 700k+ dashcams) matches the 'comfortable in C++ inside a large third-party codebase' and reliability-at-volume requirements.",
+    "Owned a technical domain end to end (Barco media pipeline, Lytx Mediacore) - architecture, trade-offs, and living with the consequences - matching the second-Staff-Engineer ownership brief.",
+    "Hardest-problem debugging (races, incident response) plus design review and mentoring map to the reliability and 'raise the level of engineers' duties."
+   ],
+   "gaps": [
+    "Chromium/browser rendering-engine experience ('worked inside it, not just around it') is absent - core requirement.",
+    "Strong Java backend (Canva's product language) and PDF accessibility/compliance (PDF/UA, WCAG) not in profile."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "Canva's own Export team role, reposted via a mining job board (uWorkin).",
+   "draft": true,
+   "draft_file": "cv/drafts/cv_saurav_canva_staff-software-engin-64f.html",
+   "draft_config_path": "/tmp/opencode/drafts/b9/4479113518.json"
+  },
+  {
+   "id": "4450080364",
+   "market": "Australia",
+   "isActive": true,
+   "rank_score": 56,
+   "rank_verdict": "moderate fit",
+   "dim": {
+    "tech": 52,
+    "exp": 54,
+    "behav": 74,
+    "career": 52
+   },
+   "strengths": [
+    "10+ years of highly concurrent systems work: thread pools, atomics/memory ordering, epoll, TBB, plus production forensics on worker-pool exhaustion and backpressure/tail-latency failure modes.",
+    "Systems-language depth in C/C++ (19+ years) with performance profiling (Valgrind, ASAN/TSAN, gdb) matches the debugging and performance-tuning requirement.",
+    "Staff-level technical leadership and mentoring (teams of 4-30, code-review culture) matches the force-multiplier expectation."
+   ],
+   "gaps": [
+    "Team writes production code in Rust (not a profile language); database/storage internals (cache management, log-based recovery, replicated state machines) are absent.",
+    "No database or cloud-storage service background - domain transfer is from multi-tenant media streaming."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "Storage Layer Services team - database internals implemented in Rust.",
+   "draft": true,
+   "draft_file": "cv/drafts/cv_saurav_mongodb_staff-engineer_au.html",
+   "draft_config_path": "/tmp/opencode/drafts/b9/4450080364.json"
+  },
+  {
+   "id": "4345574979",
+   "market": "Australia",
+   "isActive": true,
+   "rank_score": 52,
+   "rank_verdict": "moderate fit",
+   "dim": {
+    "tech": 50,
+    "exp": 50,
+    "behav": 72,
+    "career": 45
+   },
+   "strengths": [
+    "Systems programming in C/C++ with CPU/GPU optimisation and debugging matches the core skill set; real-time, memory-constrained pipeline experience transfers.",
+    "GPU-accelerated pipeline work (OpenGL, hardware codecs, display synchronisation) gives adjacent graphics experience for a rendering team."
+   ],
+   "gaps": [
+    "Modern graphics APIs (Metal/Vulkan/DirectX), shader authoring and linear-algebra-heavy rendering pipelines are absent.",
+    "No mobile/iOS or tile-based deferred rendering experience."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "Hobart/Sydney on-site; rendering-engine role - graphics, not media streaming.",
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4441221775",
+   "market": "Australia",
+   "isActive": true,
+   "rank_score": 44,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 40,
+    "exp": 42,
+    "behav": 65,
+    "career": 38
+   },
+   "strengths": [
+    "High-performance real-time C++ systems experience (GStreamer pipelines, hardware codecs, memory/latency optimisation) matches the real-time, edge-compute engineering requirement.",
+    "Camera-feed processing background (multi-camera capture, V4L2, recording/streaming) is adjacent to perception-pipeline integration.",
+    "Rigorous production debugging and profiling (Valgrind, ASAN/TSAN, race/memory forensics) matches the fundamentals bar."
+   ],
+   "gaps": [
+    "Bespoke computer-vision algorithm development (calibration, multi-view geometry, 3D reconstruction, photogrammetry) - the core of the role - is absent; no ADAS/CV-algorithm positioning.",
+    "No applied deep-learning deployment experience for perception models."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "Defence-tech; offer contingent on a cleared background check; CV-algorithm substance - tier discipline applied.",
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4470952456",
+   "market": "Australia",
+   "isActive": true,
+   "rank_score": 52,
+   "rank_verdict": "moderate fit",
+   "dim": {
+    "tech": 45,
+    "exp": 50,
+    "behav": 75,
+    "career": 50
+   },
+   "strengths": [
+    "The JD explicitly accepts C/C++ familiarity as translation for its Go stack; 19+ years of C/C++ systems work plus cloud-served media infrastructure aligns with the language and cloud-systems requirements.",
+    "Remote-first, ownership-driven culture with mentoring and design input matches an independent, evidence-driven, end-to-end owner."
+   ],
+   "gaps": [
+    "Observability domain (Loki/Prometheus, log query engines, storage layers) and Go production experience are absent.",
+    "Kubernetes-centric operations and database/storage-layer work are light in the profile."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "Remote-first, hiring in Australia/Singapore; observability databases team (Loki).",
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4465774667",
+   "market": "Australia",
+   "isActive": true,
+   "rank_score": 58,
+   "rank_verdict": "moderate fit",
+   "dim": {
+    "tech": 58,
+    "exp": 58,
+    "behav": 72,
+    "career": 52
+   },
+   "strengths": [
+    "Deep embedded Linux ownership - Yocto/BitBake images on ARM (i.MX8), bootloaders, device drivers and kernel-level debugging - matches the secure Linux image and lifecycle requirements.",
+    "Hands-on technical leadership (teams up to 30, code-review culture) with production forensics and soak-test discipline matches the lead role's L3/reliability mandate.",
+    "Firmware A/B OTA and secure-update design plus OpenSSL/secure coding map to OS hardening and supply-chain duties."
+   ],
+   "gaps": [
+    "SRE tooling stack (SLO/SLI frameworks, Terraform/IaC, Kubernetes, SBOM/supply-chain tooling) is not in the profile; fleet is Ubuntu Classic/Core.",
+    "Defence/counter-drone domain and nation-state-grade security practices are new."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "Counter-drone defence; platform/SRE-leaning Linux lead.",
+   "draft": true,
+   "draft_file": "cv/drafts/cv_saurav_droneshield_linux-product--6a4.html",
+   "draft_config_path": "/tmp/opencode/drafts/b9/4465774667.json"
+  },
+  {
+   "id": "4477492983",
+   "market": "Australia",
+   "isActive": true,
+   "rank_score": 43,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 40,
+    "exp": 35,
+    "behav": 70,
+    "career": 38
+   },
+   "strengths": [
+    "Daily agentic-development practice (Claude Code tooling, specs and guardrails for AI output) matches the 'agentic fluency' requirement closely.",
+    "Staff-level ownership of ambiguous problems, solution design and cross-functional delivery matches the senior staff IC scope."
+   ],
+   "gaps": [
+    "Primary stack TypeScript/Node.js with React frontends and cloud microservices - outside the profile's systems/media skill set.",
+    "Hospitality/payments consumer domain is new."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "AI-agent-native engineering culture (AFR-profiled); stack off-profile (TS/Node/React).",
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4465772706",
+   "market": "Australia",
+   "isActive": true,
+   "rank_score": 32,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 30,
+    "exp": 25,
+    "behav": 58,
+    "career": 28
+   },
+   "strengths": [
+    "Team leadership with hands-on engineering (teams of 4-30; architecture and quality ownership) matches the lead team structure.",
+    "Embedded C/C++ firmware and Linux-based development environments are adjacent to supporting tooling."
+   ],
+   "gaps": [
+    "FPGA design (Verilog/VHDL/SystemVerilog, Vivado/Quartus) and DSP/RF/SDR signal processing - the core requirements - are entirely absent.",
+    "No board bring-up/schematic-level hardware debugging or electronic-warfare domain background."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "Hardware EW team lead - FPGA/DSP craft, not software streaming.",
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4480125927",
+   "market": "New Zealand",
+   "isActive": true,
+   "rank_score": 73,
+   "rank_verdict": "good fit",
+   "dim": {
+    "tech": 72,
+    "exp": 78,
+    "behav": 75,
+    "career": 68
+   },
+   "strengths": [
+    "Embedded Linux firmware for connected video devices (NXP i.MX8, Yocto) with live streaming, recording and cloud connectivity at 700k+ devices is direct experience for security-video products.",
+    "C/C++ and Linux/embedded-product requirements (3+ years each) exceeded with 19+ years; recording reliability improved 49% to 100% duty cycle, gaps 171 to 2, 21-hour soak.",
+    "Security-sensitive media work (OpenSSL AES-GCM, fixed critical unauthenticated RCE) and developer-driven AI workflows (Claude Code) match named WE VALUE items."
+   ],
+   "gaps": [
+    "Image-processing/computer-vision knowledge is only lightly evidenced (AI/ML detection integration, not CV development).",
+    "GitHub Actions specifics and stated US/Asia travel are minor frictions."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - NZ posting silent; states only 'not eligible for US visa sponsorship'",
+   "deadline": null,
+   "fit": "high",
+   "rank_note": "Resideo (Honeywell Home group) - connected security-video firmware; closest NZ domain match.",
+   "draft": true,
+   "draft_file": "cv/drafts/cv_saurav_resideo_senior-engineer-fi-937.html",
+   "draft_config_path": "/tmp/opencode/drafts/b9/4480125927.json"
+  },
+  {
+   "id": "4467373514",
+   "market": "New Zealand",
+   "isActive": true,
+   "rank_score": 42,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 35,
+    "exp": 40,
+    "behav": 70,
+    "career": 35
+   },
+   "strengths": [
+    "Linux systems depth and production incident forensics (root-cause of hangs, leaks, connection storms; soak testing) support the reliability and incident-management duties.",
+    "Observability/telemetry experience (New Relic, structured logging, watchdogs) matches the observability requirement."
+   ],
+   "gaps": [
+    "Core stack is AWS + Terraform + Kubernetes/ECS with Python/Ruby/Go - largely outside the profile's credited skills.",
+    "SRE-function craft (SLOs, platform-scale on-call ownership) is a different track from product embedded/media engineering."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": null,
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4477014984",
+   "market": "New Zealand",
+   "isActive": true,
+   "rank_score": null,
+   "rank_verdict": "eligibility fail",
+   "dim": null,
+   "strengths": [],
+   "gaps": [],
+   "location_verdict": "FAIL",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Right to live and work in New Zealand required (eligibility fail)",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": null,
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null,
+   "eligibility": "You must have the right to live and work in New Zealand to apply for this job."
+  },
+  {
+   "id": "4479762842",
+   "market": "New Zealand",
+   "isActive": true,
+   "rank_score": 68,
+   "rank_verdict": "good fit",
+   "dim": {
+    "tech": 75,
+    "exp": 75,
+    "behav": 68,
+    "career": 55
+   },
+   "strengths": [
+    "Embedded Linux + Yocto/BSP experience is directly on-profile (i.MX8 BSP, Yocto Scarthgap migration, kernel/device-tree fixes); the 8+ years requirement is exceeded many times over.",
+    "C/C++ with Python/Bash scripting, bootloaders, kernel configuration and system integration matches the core responsibilities.",
+    "Precision-timing adjacency: PTP (IEEE 1588) clock synchronisation and frame-sync work at Barco bridges to the Frequency & Timing Systems business unit."
+   ],
+   "gaps": [
+    "Formal requirements-engineering (marketing objectives to sign-off specs) is not a documented primary responsibility.",
+    "Semiconductor timing/frequency domain specifics are new, though PTP work is a strong bridge."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "medium",
+   "rank_note": "Frequency & Timing Systems BU; Yocto/BSP platform role - strong on-profile stack.",
+   "draft": true,
+   "draft_file": "cv/drafts/cv_saurav_microchip-technology_senio-490.html",
+   "draft_config_path": "/tmp/opencode/drafts/b9/4479762842.json"
+  },
+  {
+   "id": "4449370685",
+   "market": "New Zealand",
+   "isActive": true,
+   "rank_score": 34,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 25,
+    "exp": 30,
+    "behav": 68,
+    "career": 30
+   },
+   "strengths": [
+    "Real-time interaction systems (WebRTC media server, 100+ concurrent streams) share the latency-sensitive engineering mindset of conversational AI.",
+    "Mentoring, architecture review and scalable backend ownership transfer at the systems level."
+   ],
+   "gaps": [
+    "Primary stack Node.js/TypeScript/JavaScript with LLM/Generative-AI integration - absent from the profile.",
+    "React and cloud-native (AWS/Azure/GCP) delivery not in credited skills; role is backend web AI, not media systems."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "Convai (via Probe CX) - conversational-AI backend; off-profile stack.",
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4469845957",
+   "market": "New Zealand",
+   "isActive": true,
+   "rank_score": 76,
+   "rank_verdict": "strong fit",
+   "dim": {
+    "tech": 75,
+    "exp": 78,
+    "behav": 78,
+    "career": 75
+   },
+   "strengths": [
+    "10+ years embedded firmware in C and proven architecture ownership: dashcam device firmware at 700k+ devices (NXP i.MX8, Yocto/ARM) is the same craft as the firmware-architecture mandate.",
+    "Telematics domain match: Lytx fleet dashcam products are the same product class as Teletrac Navman's connected-vehicle portfolio.",
+    "Mentoring, architecture/design/code review leadership and roadmap influence align with the CTO-reporting architect scope."
+   ],
+   "gaps": [
+    "Vehicle-bus integration specifics (CAN-style feature development) are hardware-near areas not in credited skills.",
+    "Portfolio-level product definition is a step up from component-level ownership."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "high",
+   "rank_note": "Teletrac Navman (Vontier) - fleet telematics firmware; direct Lytx-domain analog.",
+   "draft": true,
+   "draft_file": "cv/drafts/cv_saurav_vontier_software-firmware--b91.html",
+   "draft_config_path": "/tmp/opencode/drafts/b9/4469845957.json"
+  },
+  {
+   "id": "4474873961",
+   "market": "New Zealand",
+   "isActive": true,
+   "rank_score": 30,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 20,
+    "exp": 26,
+    "behav": 65,
+    "career": 25
+   },
+   "strengths": [
+    "Staff-level technical leadership, architecture guidance and mentoring of engineers match the leadership half of the role.",
+    "Long-running product engineering discipline - code quality, testing frameworks, cross-functional collaboration - transfers."
+   ],
+   "gaps": [
+    "Core stack is web: JavaScript/HTML/CSS, SPAs, React/AngularJS/VueJS, Rails - outside the profile's systems/media skill set.",
+    "EdTech web-application domain (browser performance profiling, 70M-user SPA) is a different engineering discipline."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "EdTech web platform; frontend/full-stack stack off-profile.",
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4478189085",
+   "market": "New Zealand",
+   "isActive": true,
+   "rank_score": 59,
+   "rank_verdict": "moderate fit",
+   "dim": {
+    "tech": 60,
+    "exp": 55,
+    "behav": 72,
+    "career": 55
+   },
+   "strengths": [
+    "Named fundamentals - concurrency, architecture, APIs, testing, design patterns - are his daily craft (C++ concurrency; 98.6% session success at 100+ streams per node; microservices/REST).",
+    "Principal-level ownership of mission-critical, scalable systems (Mediacore platform, Barco control-room pipeline) matches the seniority and 'fault-tolerant at scale' framing."
+   ],
+   "gaps": [
+    "Rust (bonus requirement) and relational/NoSQL data-modelling depth are light.",
+    "Product domain (AI auto-parts marketplace SaaS) is new; distributed-systems experience is media-shaped."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship (offers relocation support)",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "AI auto-parts SaaS; offers relocation support; office-first (Auckland/Christchurch).",
+   "draft": true,
+   "draft_file": "cv/drafts/cv_saurav_partly_principal-software--044.html",
+   "draft_config_path": "/tmp/opencode/drafts/b9/4478189085.json"
+  },
+  {
+   "id": "4479252493",
+   "market": "New Zealand",
+   "isActive": true,
+   "rank_score": 74,
+   "rank_verdict": "good fit",
+   "dim": {
+    "tech": 75,
+    "exp": 80,
+    "behav": 72,
+    "career": 68
+   },
+   "strengths": [
+    "7+ years embedded firmware in C exceeded (19+ years) with device-level ownership: recording pipeline, drivers, Yocto/ARM and firmware testing/soak discipline.",
+    "Telematics product match: dashcam fleet devices (Lytx) are the same product class as Teletrac Navman's vehicle-asset firmware.",
+    "CMake/cross-compilation toolchains, Python/Bash scripting, CI/CD and agile collaboration match the named tooling requirements."
+   ],
+   "gaps": [
+    "Vehicle-bus (CAN) feature integration is hardware-near and not in credited skills.",
+    "'Senior' scope with strong documentation/maintenance duties is below current staff-level ownership."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "high",
+   "rank_note": "Teletrac Navman (Vontier) - telematics firmware; direct Lytx-domain analog.",
+   "draft": true,
+   "draft_file": "cv/drafts/cv_saurav_vontier_senior-firmware-en-dfe.html",
+   "draft_config_path": "/tmp/opencode/drafts/b9/4479252493.json"
+  },
+  {
+   "id": "4479758872",
+   "market": "New Zealand",
+   "isActive": true,
+   "rank_score": 64,
+   "rank_verdict": "good fit",
+   "dim": {
+    "tech": 68,
+    "exp": 68,
+    "behav": 65,
+    "career": 55
+   },
+   "strengths": [
+    "Embedded C/C++ systems programming with IPC, networking and management interfaces (DBus, MQTT, REST/WebSockets) matches the interface-layer mandate.",
+    "Secure design is on-profile: OpenSSL (TLS/AES-GCM), access control, secure coding and a fixed unauthenticated RCE.",
+    "Embedded Linux on hardware platforms (i.MX8, Yocto), cross-compilation/toolchains, automated tests and CI match the platform requirements."
+   ],
+   "gaps": [
+    "gNMI/gRPC/YANG/protobuf management-plane tooling is absent; REST is the closest interface experience.",
+    "Telecom/network-device domain specifics are new."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "medium",
+   "rank_note": "Frequency & Timing BU; embedded API/management-plane role - strong adjacent stack.",
+   "draft": true,
+   "draft_file": "cv/drafts/cv_saurav_microchip-technology_senio-46e.html",
+   "draft_config_path": "/tmp/opencode/drafts/b9/4479758872.json"
+  }
+ ]
+}

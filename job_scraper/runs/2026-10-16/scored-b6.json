@@ -1,0 +1,932 @@
+{
+ "batch": "b6",
+ "scores": [
+  {
+   "id": "4478730790",
+   "market": "Malaysia",
+   "isActive": true,
+   "rank_score": 37,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 35,
+    "exp": 35,
+    "behav": 55,
+    "career": 30
+   },
+   "strengths": [
+    "Multimedia subsystem domain (camera/video pipelines, bandwidth/latency/QoS, multi-stream) matches his real-time video pipeline background (GStreamer, hardware codecs).",
+    "Preferred area 'Linux drivers, V4L2, camera/video driver flows' is moderate-tier awareness from embedded Linux/Yocto device work."
+   ],
+   "gaps": [
+    "Core is ASIC/SoC front-end design: RTL (Verilog/SystemVerilog), micro-architecture, AXI/AHB/APB, CDC/RDC - no chip-design experience in profile.",
+    "No MIPI/DisplayPort IP integration, tapeout or silicon bring-up background."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "XPENG 'Turing Chip' SoC program - chip-design role, not software.",
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4477970073",
+   "market": "Malaysia",
+   "isActive": true,
+   "rank_score": 53,
+   "rank_verdict": "moderate fit",
+   "dim": {
+    "tech": 50,
+    "exp": 55,
+    "behav": 55,
+    "career": 52
+   },
+   "strengths": [
+    "End-to-end media platform delivery across Barco (video walls/control rooms), Samsung (signage, OTT) and Lytx (streaming) maps to media service continuity and content delivery.",
+    "Systems integration and platform architecture experience (microservices, DBus/WebSockets/REST, CI/CD) matches 'solution architecture, systems integration' requirements."
+   ],
+   "gaps": [
+    "No broadcast headend/playout or IPBC workflow experience - broadcast-specific domain (playout, ingest automation) is new.",
+    "Role leans governance, roadmaps and stakeholder management over hands-on engineering."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "Malaysian incumbent telco; broadcast TV modernization programme.",
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4477291996",
+   "market": "Malaysia",
+   "isActive": true,
+   "rank_score": 32,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 30,
+    "exp": 30,
+    "behav": 50,
+    "career": 25
+   },
+   "strengths": [
+    "Leadership at scale: managed a 30-engineer organisation and led teams of 4, with multi-site/cross-country collaboration experience.",
+    "Media technology platform familiarity (streaming, media pipelines) relevant to 'media tech platforms, workflow automation concepts'."
+   ],
+   "gaps": [
+    "Requires 5+ years Director-level post-production media operations (Mastering, QC, Delivery, Packaging, Audio) - a different discipline.",
+    "Operational leadership role, not engineering; no studio/OTT client-facing operations track record."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "Iyuno is a localization provider (Korean-backed); role is post-production ops leadership.",
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4469862418",
+   "market": "Malaysia",
+   "isActive": true,
+   "rank_score": 43,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 40,
+    "exp": 42,
+    "behav": 55,
+    "career": 40
+   },
+   "strengths": [
+    "Real-time collaboration troubleshooting transfer: WebRTC (ICE/STUN/TURN), RTP/RTCP and media-server debugging map to Cisco Collaboration/Webex issue types.",
+    "Production forensics discipline (root-cause RCA, post-mortems, log/traffic analysis) suits the 'proactive problem resolution' scope."
+   ],
+   "gaps": [
+    "Requires CCNP Collaboration (or equivalent) certification plus hands-on CUCM/Webex Calling - not in profile.",
+    "Customer-facing consulting/delivery role vs product engineering background; contact-centre/SIP telephony stack is new."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": null,
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4476069921",
+   "market": "Malaysia",
+   "isActive": true,
+   "rank_score": 33,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 32,
+    "exp": 32,
+    "behav": 55,
+    "career": 25
+   },
+   "strengths": [
+    "C++ and Linux systems work with strong debugging and performance analysis (a listed responsibility).",
+    "Security exposure: fixed a critical unauthenticated RCE, OpenSSL (TLS/AES-GCM), CodeQL remediation."
+   ],
+   "gaps": [
+    "Enterprise application stack (Java/.NET, Tomcat/JBoss, web and mobile apps) is outside profile.",
+    "Product-security/compliance focus (FIPS, Common Criteria, encryption key management) not his domain."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "AMD Penang IT ('Business Enterprise Applications') - enterprise security role, not embedded/media.",
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4476411479",
+   "market": "Malaysia",
+   "isActive": true,
+   "rank_score": 44,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 45,
+    "exp": 42,
+    "behav": 60,
+    "career": 36
+   },
+   "strengths": [
+    "C++ with deep concurrency and high-availability experience in mission-critical systems (worker-pool forensics, back-pressure, HA failover).",
+    "Write-code-and-mentor expectation matches his hands-on staff pattern."
+   ],
+   "gaps": [
+    "Deep MT4/MT5 ecosystem + Manager API knowledge and expert C#/.NET are core requirements - absent.",
+    "Liquidity/price-feed integration and regulated-broker environment (CySEC, MiFID II) are new."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Visa sponsorship offered: 'Visa Sponsorship and Relocation Assistance (If applicable)'; posting also asks for eligibility/legal authorization to work in-country",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": null,
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4411189939",
+   "market": "Malaysia",
+   "isActive": true,
+   "rank_score": 47,
+   "rank_verdict": "moderate fit",
+   "dim": {
+    "tech": 50,
+    "exp": 50,
+    "behav": 50,
+    "career": 40
+   },
+   "strengths": [
+    "Linux platform deployment/integration and multi-layer troubleshooting (application/system/network) - direct from embedded Linux plus production forensics.",
+    "IP traffic analysis: SIP/RTP signaling paths and session handling align with his WebRTC/RTP media-session debugging."
+   ],
+   "gaps": [
+    "Ops/support role: rotational on-call and escalation engineering - less platform-building scope.",
+    "Telecom carrier-service environment (lab/UAT/production) is new; Splunk/Prometheus/Grafana stack not evidenced."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": null,
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4477612803",
+   "market": "Malaysia",
+   "isActive": true,
+   "rank_score": 32,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 30,
+    "exp": 30,
+    "behav": 55,
+    "career": 25
+   },
+   "strengths": [
+    "Platform engineering fundamentals: CI/CD, Git, testing, system reliability; AI-assisted tooling (Claude Code) adjacent to 'AI-assisted decision support'.",
+    "Real-time streaming platform exposure at scale (streaming analytics adjacency)."
+   ],
+   "gaps": [
+    "Data-engineering core: pipelines/ETL, SQL/NoSQL modelling, Kafka/Spark - weak tier, not creditable.",
+    "AI/ML frameworks (PyTorch, TensorFlow, LangChain) and MLOps - not in profile."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "Semiconductor-manufacturing automation/AI platform - data-engineering heavy.",
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4477610893",
+   "market": "Malaysia",
+   "isActive": true,
+   "rank_score": 58,
+   "rank_verdict": "moderate fit",
+   "dim": {
+    "tech": 72,
+    "exp": 78,
+    "behav": 50,
+    "career": 32
+   },
+   "strengths": [
+    "Direct C/C++ embedded Linux: device drivers, bootloaders, BSP/Yocto, device tree, RTOS (ST-OS20) and board bring-up match the embedded developer profile.",
+    "Full SDLC ownership (requirements to testing) with code-review culture (Samsung Best Code Reviewer) and unit/integration testing (GoogleTest, SonarQube).",
+    "AI-based coding tools are an explicit plus - daily Claude Code use for development and triage."
+   ],
+   "gaps": [
+    "Role scoped for 3-7 years ('low- to mid-level') - overqualified at 19+ years; seniority mismatch.",
+    "Two-way radio domain (LTE/DMR specifications) is new."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "Mid-level scope - likely overqualified; kept for Penang relocation option.",
+   "draft": true,
+   "draft_file": "cv/drafts/cv_saurav_sapphire-stream-technology-f7c.html",
+   "draft_config_path": "/tmp/opencode/drafts/b6/4477610893.json"
+  },
+  {
+   "id": "4478178231",
+   "market": "Malaysia",
+   "isActive": true,
+   "rank_score": 37,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 30,
+    "exp": 30,
+    "behav": 65,
+    "career": 35
+   },
+   "strengths": [
+    "Performance-obsessed, hands-on squad-lead pattern (profiling, load testing, incident forensics) matches the role's core.",
+    "AI-native engineering is mandatory - Claude Code is in his daily workflow."
+   ],
+   "gaps": [
+    "PHP/Laravel/Node.js/Next.js stack and AWS/K8s platform ownership are outside profile.",
+    "MySQL/PostgreSQL sharding and RabbitMQ/Kafka event architecture at fintech scale - not his domain."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "FundedNext (prop-firm trading platform) - fintech infrastructure role.",
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4439914500",
+   "market": "United Kingdom",
+   "isActive": true,
+   "rank_score": 49,
+   "rank_verdict": "moderate fit",
+   "dim": {
+    "tech": 45,
+    "exp": 48,
+    "behav": 55,
+    "career": 50
+   },
+   "strengths": [
+    "Embedded software engineering at scale: C/C++, Linux, driver/platform bring-up (NXP i.MX8, Yocto) across SoC-based platforms.",
+    "Performance optimization of real-time pipelines (latency/throughput/memory) and deep system-level debugging/triage."
+   ],
+   "gaps": [
+    "Minimum 4+ years AI/ML software and CV/DL frameworks (PyTorch/TensorFlow/OpenCV) - ML development not in profile (integration only).",
+    "Customer/partner applications engineering (reference-design support) not evidenced."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": null,
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4441974709",
+   "market": "United Kingdom",
+   "isActive": true,
+   "rank_score": 59,
+   "rank_verdict": "moderate fit",
+   "dim": {
+    "tech": 50,
+    "exp": 58,
+    "behav": 70,
+    "career": 62
+   },
+   "strengths": [
+    "MVV team owns core audio/video WebRTC infrastructure - his Mediacore (WebRTC/HLS) and Janus/GStreamer platform work is directly relevant; media-conference-server/SFU concepts are in his domain.",
+    "Production reliability: RCA, post-mortems and performance-bottleneck investigation match the System Reliability responsibility.",
+    "Mentorship and quality practices (code reviews, CI/CD, load testing) match 'Mentorship & Quality'."
+   ],
+   "gaps": [
+    "Required expert-level Java/Spring Boot and TypeScript microservices - not in profile; significant upskilling.",
+    "Kubernetes/Terraform/GCP DevOps depth is light vs the DevOps & Infrastructure requirement."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": null,
+   "draft": true,
+   "draft_file": "cv/drafts/cv_saurav_symphony_senior-software-e-37d.html",
+   "draft_config_path": "/tmp/opencode/drafts/b6/4441974709.json"
+  },
+  {
+   "id": "4432544451",
+   "market": "United Kingdom",
+   "isActive": true,
+   "rank_score": 76,
+   "rank_verdict": "strong fit",
+   "dim": {
+    "tech": 72,
+    "exp": 75,
+    "behav": 75,
+    "career": 80
+   },
+   "strengths": [
+    "Media processing pipelines and video formats: MP4/H.264, codecs, recording/playback - the core of Video Forensics capabilities.",
+    "Video evidence at scale: 700k+ dashcam devices, 100+ streams/node, 98.6% WebRTC session success - matches 'video evidence at scale'.",
+    "Technical quality bar and mentoring across levels (Best Code Reviewer; teams of 4-30) matches staff-level expectations."
+   ],
+   "gaps": [
+    "Browser-native tooling stack (TypeScript/React, .NET) desirable but not in profile.",
+    "London hybrid Tue-Fri onsite requires relocation to the UK."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "high",
+   "rank_note": "Posting silent on sponsorship; notes 'some roles may require legal eligibility to work in a firearms environment'.",
+   "draft": true,
+   "draft_file": "cv/drafts/cv_saurav_axon_senior-software-engin-ef2.html",
+   "draft_config_path": "/tmp/opencode/drafts/b6/4432544451.json"
+  },
+  {
+   "id": "4451916673",
+   "market": "United Kingdom",
+   "isActive": true,
+   "rank_score": 65,
+   "rank_verdict": "good fit",
+   "dim": {
+    "tech": 70,
+    "exp": 62,
+    "behav": 65,
+    "career": 62
+   },
+   "strengths": [
+    "WebRTC and real-time media systems depth (ICE/STUN/TURN, DTLS-SRTP, Janus, HLS) is exactly the infrastructure LiveKit sells.",
+    "Production debugging in customer-like environments: ICE failures, reconnect storms, fd/thread-pool forensics - matches 'tricky technical issues'.",
+    "Prototyping and architecture ability: built a streaming platform from scratch (Voizzit) - fits reference implementations and architecture sessions."
+   ],
+   "gaps": [
+    "FDE is customer-facing: solutions/field-engineering experience not evidenced.",
+    "Go/Node-TS backend and cloud-distributed systems emphasis beyond his C++/media center."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "medium",
+   "rank_note": null,
+   "draft": true,
+   "draft_file": "cv/drafts/cv_saurav_livekit_forward-deployed-e-f41.html",
+   "draft_config_path": "/tmp/opencode/drafts/b6/4451916673.json"
+  },
+  {
+   "id": "4458784202",
+   "market": "United Kingdom",
+   "isActive": true,
+   "rank_score": 82,
+   "rank_verdict": "strong fit",
+   "dim": {
+    "tech": 85,
+    "exp": 85,
+    "behav": 80,
+    "career": 78
+   },
+   "strengths": [
+    "8+ years Linux user-space C/C++ with POSIX APIs, sockets and multithreading, and system services - exact requirement match.",
+    "Technical leadership and mentoring of 3-4 engineers while staying hands-on (Voizzit lead of 4; Samsung 30-engineer organisation).",
+    "Debugging toolkit (gdb, Valgrind, ASAN/TSAN) plus Git/CI-CD/Python automation called out in the posting."
+   ],
+   "gaps": [
+    "Client and product undisclosed (recruiter ad) - domain depth cannot be assessed; FPGA/telecoms platform experience is beneficial-only."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "high",
+   "rank_note": "Recruiting agency (MRL Consulting Group) posting on behalf of an unnamed client.",
+   "draft": true,
+   "draft_file": "cv/drafts/cv_saurav_mrl-consulting-group_embed-12c.html",
+   "draft_config_path": "/tmp/opencode/drafts/b6/4458784202.json"
+  },
+  {
+   "id": "4468923246",
+   "market": "United Kingdom",
+   "isActive": true,
+   "rank_score": 40,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 32,
+    "exp": 38,
+    "behav": 70,
+    "career": 35
+   },
+   "strengths": [
+    "Staff-IC scope (technical direction across teams while remaining hands-on) matches his leadership pattern.",
+    "High-concurrency/high-performance debugging and reliability improvement evidence."
+   ],
+   "gaps": [
+    "Java 21/Spring, Go, Node.js/TypeScript, Kafka, AWS/Kubernetes stack - outside profile.",
+    "Distributed backend systems at a trading broker - new domain."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": null,
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4479814057",
+   "market": "United Kingdom",
+   "isActive": true,
+   "rank_score": 52,
+   "rank_verdict": "moderate fit",
+   "dim": {
+    "tech": 45,
+    "exp": 50,
+    "behav": 70,
+    "career": 50
+   },
+   "strengths": [
+    "True staff IC with platform ownership - matches his hands-on architect pattern.",
+    "Fully agentic engineering: Claude Code/Codex/Cursor fluency is a stated prerequisite - he works this way daily."
+   ],
+   "gaps": [
+    "Python/JavaScript/AWS SaaS stack outside his embedded/media center (posting says stack is not decisive).",
+    "Domain is SaaS data/AI interpretation, not real-time media."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "Posted in agency voice for an unnamed £25M-backed SaaS scale-up; £150k staff-IC role.",
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4403620528",
+   "market": "United Kingdom",
+   "isActive": true,
+   "rank_score": 36,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 30,
+    "exp": 30,
+    "behav": 70,
+    "career": 30
+   },
+   "strengths": [
+    "Ownership/minimal-process culture (engineers run projects end-to-end) matches his behavioral profile.",
+    "AI tooling culture (Claude/Cursor budgets) aligns with his AI-assisted workflow."
+   ],
+   "gaps": [
+    "Product engineering in TypeScript/React/GraphQL - web stack outside profile.",
+    "Role expects shipping user-facing SaaS features; no product-engineering track record."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "Ashby mass-posts this role continuously ('seen this role posted before') - pipeline ad.",
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4410800369",
+   "market": "United Kingdom",
+   "isActive": true,
+   "rank_score": 40,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 30,
+    "exp": 35,
+    "behav": 65,
+    "career": 40
+   },
+   "strengths": [
+    "Systems debugging and root-cause depth across the stack (production forensics, core dumps, memory/concurrency).",
+    "Sponsorship explicitly offered: 'We do sponsor visas!'"
+   ],
+   "gaps": [
+    "Deep hands-on Kubernetes internals (scheduler, controllers, apiserver/etcd) required - infrastructure tier not in profile.",
+    "Role expects 12+ years of large-scale infrastructure work; his center is media/embedded."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Explicit sponsorship: 'We do sponsor visas!'",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": null,
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4477571631",
+   "market": "United Kingdom",
+   "isActive": true,
+   "rank_score": null,
+   "rank_verdict": "eligibility fail",
+   "dim": null,
+   "strengths": [],
+   "gaps": [],
+   "location_verdict": "FAIL",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Security clearance required - citizenship-gated (eligibility fail)",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": null,
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null,
+   "eligibility": "Successful applicants will need to be eligible for Security Clearance."
+  },
+  {
+   "id": "4469861764",
+   "market": "Netherlands",
+   "isActive": true,
+   "rank_score": 74,
+   "rank_verdict": "good fit",
+   "dim": {
+    "tech": 75,
+    "exp": 75,
+    "behav": 75,
+    "career": 70
+   },
+   "strengths": [
+    "Real-time image/video processing in C++ with GStreamer (explicitly preferred) - his daily stack at Lytx and Barco.",
+    "Pipeline optimisation for latency/throughput/memory on camera hardware matches 'optimize video processing pipelines and data flows'.",
+    "Hands-on hardware integration and verification (camera bring-up, soak testing) fits the physically hands-on role."
+   ],
+   "gaps": [
+    "CUDA/GPU programming is required - not in profile (GPU work was GStreamer screen capture, not CUDA).",
+    "Matrix-operations-heavy math for tracking algorithms beyond pipeline work."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "high",
+   "rank_note": "Defense-sector employer (Thales Nederland, Hengelo); posting states no clearance requirement.",
+   "draft": true,
+   "draft_file": "cv/drafts/cv_saurav_thales_c-software-engineer-db7.html",
+   "draft_config_path": "/tmp/opencode/drafts/b6/4469861764.json"
+  },
+  {
+   "id": "4478302100",
+   "market": "Netherlands",
+   "isActive": true,
+   "rank_score": 34,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 28,
+    "exp": 30,
+    "behav": 60,
+    "career": 30
+   },
+   "strengths": [
+    "Real-time ingest/summarisation of audio/video content is adjacent to his streaming pipelines.",
+    "Ownership/build-fast culture and founding-engineer scope."
+   ],
+   "gaps": [
+    "LLM/ML in production (RAG, embeddings, fine-tuning) - not in profile.",
+    "Cloud/data stack (AWS/GCP, Docker/K8s, Spark/Kafka, TypeScript/Python backend) - data-engineering tier."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "Remote (Europe) founding role at seed-stage AI news platform.",
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4462153929",
+   "market": "Netherlands",
+   "isActive": true,
+   "rank_score": 36,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 25,
+    "exp": 30,
+    "behav": 60,
+    "career": 40
+   },
+   "strengths": [
+    "Streaming playback domain: HLS, DRM (Widevine/PlayReady), VOD/OTT delivery - relevant to Connected TV.",
+    "Large-scale app architecture/testability (soak, CI/CD) transferable."
+   ],
+   "gaps": [
+    "Requires 5+ years Swift/tvOS + UIKit and consumer-app shipping - mobile tier, not in profile.",
+    "App-layer role (Connected TV apps), not media pipeline engineering."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "WBD/CNN Connected TV (tvOS apps).",
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4466288165",
+   "market": "Netherlands",
+   "isActive": true,
+   "rank_score": 35,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 25,
+    "exp": 30,
+    "behav": 55,
+    "career": 38
+   },
+   "strengths": [
+    "Live playback expertise adjacency: HLS, live edge/latency, ABR concepts, DRM integration (Widevine/PlayReady).",
+    "QoE mindset: 98.6% WebRTC session success, load tests, analytics-driven debugging."
+   ],
+   "gaps": [
+    "6+ years iOS development (Swift/Objective-C) and AVPlayer tuning - mobile, not in profile.",
+    "Contract role requiring 6-7h daily US PST overlap."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "Contract role via Kake (remote engineering community); US PST overlap required.",
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4475236680",
+   "market": "Netherlands",
+   "isActive": true,
+   "rank_score": 69,
+   "rank_verdict": "good fit",
+   "dim": {
+    "tech": 70,
+    "exp": 70,
+    "behav": 75,
+    "career": 65
+   },
+   "strengths": [
+    "Embedded Linux + ARM platforms (NXP i.MX8, Yocto) with camera/image pipelines and hardware integration - the role's core.",
+    "C++ and Python software development, Docker and CI/CD exactly as listed.",
+    "Technical leadership while hands-on (design reviews, mentoring) matches the explicit ask."
+   ],
+   "gaps": [
+    "Industrial machine-vision specifics (illumination, industrial cameras, Triton inference deployment) not evidenced.",
+    "Dutch language skills preferred (role operates in English)."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": "Dutch language skills preferred (not a stated requirement); role works in English.",
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "medium",
+   "rank_note": null,
+   "draft": true,
+   "draft_file": "cv/drafts/cv_saurav_jbt-marel_embedded-vision--d80.html",
+   "draft_config_path": "/tmp/opencode/drafts/b6/4475236680.json"
+  },
+  {
+   "id": "4341929909",
+   "market": "Netherlands",
+   "isActive": true,
+   "rank_score": 32,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 25,
+    "exp": 30,
+    "behav": 60,
+    "career": 25
+   },
+   "strengths": [
+    "Systems performance debugging at scale (profiling, root-cause, memory optimisation).",
+    "Mentoring/technical leadership at staff scope."
+   ],
+   "gaps": [
+    "Large-scale distributed data systems (Delta Lake, storage formats, exabyte scale) - data-engineering tier.",
+    "15+ years building distributed backend systems as primary focus."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "Databricks Delta team - data platform role.",
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4439234497",
+   "market": "Netherlands",
+   "isActive": true,
+   "rank_score": 35,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 28,
+    "exp": 30,
+    "behav": 65,
+    "career": 30
+   },
+   "strengths": [
+    "Technical leadership/mentoring and code-review-driven quality culture.",
+    "Low-latency/high-throughput systems background (non-blocking I/O, concurrency)."
+   ],
+   "gaps": [
+    "Java/Spring Boot/WebFlux and GCP serverless stack - not in profile.",
+    "Payments domain (PCI DSS, SEPA, reconciliation) is new."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "Fintech (Cegid/Shine) payments platform.",
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4479291831",
+   "market": "Netherlands",
+   "isActive": true,
+   "rank_score": 49,
+   "rank_verdict": "moderate fit",
+   "dim": {
+    "tech": 45,
+    "exp": 45,
+    "behav": 70,
+    "career": 45
+   },
+   "strengths": [
+    "C/C++ performance engineering: latency/throughput/memory profiling with real production metrics.",
+    "Embedded Linux/ARM foundation (NXP i.MX8, hardware-software integration) and systems debugging."
+   ],
+   "gaps": [
+    "OS/kernel development (CPU scheduling, DVFS, power/thermal) is a core requirement - no kernel-level experience.",
+    "Android kernel/AOSP and GPU driver exposure absent; 100% onsite Amsterdam."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "Recruiter ad (European Tech Recruit) for an unnamed client; 100% onsite Amsterdam.",
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4431740090",
+   "market": "Netherlands",
+   "isActive": true,
+   "rank_score": 52,
+   "rank_verdict": "moderate fit",
+   "dim": {
+    "tech": 45,
+    "exp": 50,
+    "behav": 70,
+    "career": 50
+   },
+   "strengths": [
+    "Proven staff-level technical leadership across domains (Mediacore, Voizzit, Samsung 30-engineer org).",
+    "High-scale real-time systems (100+ streams/node, 700k+ devices) demonstrate scalability engineering."
+   ],
+   "gaps": [
+    "Go/Ruby on Rails/MySQL/Elasticsearch/Kafka web scale (2M req/min) - adjacent but new stack and domain.",
+    "E-commerce marketplace domain; role is cloud backend, not media pipelines."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": null,
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4479567738",
+   "market": "Netherlands",
+   "isActive": true,
+   "rank_score": 59,
+   "rank_verdict": "moderate fit",
+   "dim": {
+    "tech": 60,
+    "exp": 58,
+    "behav": 70,
+    "career": 52
+   },
+   "strengths": [
+    "19 years of C/C++ systems programming: large codebases, multithreading, memory/performance optimisation - the core ask.",
+    "Industrial-strength software lifecycle: STB firmware, control-room pipelines, cloud media engine; debugging depth (gdb, Valgrind, ASAN/TSAN).",
+    "Code-review and mentoring habits match the success measures (reviews, leading features)."
+   ],
+   "gaps": [
+    "Database/query-engine internals are new (posting says DB experience is not a requirement).",
+    "Query execution/distribution is a different problem domain from media pipelines."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "Remote-in-Netherlands C++ core-systems role; DB domain explicitly not required.",
+   "draft": true,
+   "draft_file": "cv/drafts/cv_saurav_mongodb_senior-software-en-1fa.html",
+   "draft_config_path": "/tmp/opencode/drafts/b6/4479567738.json"
+  }
+ ]
+}

@@ -1,0 +1,918 @@
+{
+ "batch": "b3",
+ "scores": [
+  {
+   "id": "4479527067",
+   "market": "Canada",
+   "isActive": true,
+   "rank_score": 84,
+   "rank_verdict": "strong fit",
+   "dim": {
+    "tech": 88,
+    "exp": 85,
+    "behav": 76,
+    "career": 82
+   },
+   "strengths": [
+    "Real-time video platform across capture, processing, encoding, rendering — 19+ years in exactly this stack (GStreamer, WebRTC, H.264/H.265, camera capture on embedded devices).",
+    "Production performance and reliability at scale: Lytx Mediacore sustains 100+ concurrent streams per node with 98.6% WebRTC session success; deep socket/thread-pool forensics.",
+    "Hardware/OS/application-layer debugging: dashcam device work on NXP i.MX8/Yocto (CMA memory leak, VFR-to-CFR, 21-hour soak)."
+   ],
+   "gaps": [
+    "Security screening required (Microsoft Cloud Background Check) to clear on hire.",
+    "Cross-platform breadth (Windows/macOS integration) not evidenced — profile is embedded-Linux-centric."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "high",
+   "rank_note": "Cloud background check is standard screening, not a citizenship-gated clearance; Canadian sponsorship stance unverified in posting.",
+   "draft": true,
+   "draft_file": "cv/drafts/cv_saurav_microsoft_senior-software--d6f.html",
+   "draft_config_path": "/tmp/opencode/drafts/b3/4479527067.json"
+  },
+  {
+   "id": "4479058699",
+   "market": "Canada",
+   "isActive": true,
+   "rank_score": 57,
+   "rank_verdict": "moderate fit",
+   "dim": {
+    "tech": 65,
+    "exp": 62,
+    "behav": 55,
+    "career": 45
+   },
+   "strengths": [
+    "Live OTT pipeline substance: HLS/MPEG-DASH, DRM (Widevine/PlayReady), encoding/packaging and troubleshooting across 19+ years of streaming.",
+    "Deep-dive diagnostics with Wireshark-class tooling and Python/Bash automation — matches the 'deep-dive diagnostics' and telemetry requirements.",
+    "Codec expertise in H.264/H.265 aligns with 'video streaming standards and compression codecs'."
+   ],
+   "gaps": [
+    "AWS Media Services stack (Elemental/MediaLive/MediaPackage/CloudFront) and SSAI not in profile — only adjacent AWS experience (EKS/NLB/EC2).",
+    "Role type skews to operations/support (deploy, monitor, optimize) rather than build-and-debug engineering."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": "French listed only as 'required for positions in Quebec'; this Toronto/GTHA posting is not a Quebec position.",
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": "2026-10-27",
+   "fit": "low",
+   "rank_note": "Unionized live-OTT operations role; hybrid arrangement requires being based in Canada.",
+   "draft": true,
+   "draft_file": "cv/drafts/cv_saurav_bell_media-technology-anal-1ff.html",
+   "draft_config_path": "/tmp/opencode/drafts/b3/4479058699.json"
+  },
+  {
+   "id": "4390680664",
+   "market": "Canada",
+   "isActive": true,
+   "rank_score": 75,
+   "rank_verdict": "strong fit",
+   "dim": {
+    "tech": 80,
+    "exp": 82,
+    "behav": 72,
+    "career": 66
+   },
+   "strengths": [
+    "Camera/video processor applications map to 19+ years of camera pipelines and multimedia firmware (multi-camera capture, codecs, recording).",
+    "Embedded firmware on RTOS/Linux with C/C++ and Python — direct match to the posting's must-haves.",
+    "Evidence-driven debugging across software/hardware boundaries (codec memory pinning, VFR-to-CFR, soaks)."
+   ],
+   "gaps": [
+    "Image quality/tuning and deep-learning computer vision (object detection) are nice-to-haves not in profile.",
+    "Automotive customer-application engineering exposure is limited."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "high",
+   "rank_note": "Application-engineering flavor (customer enablement); posting asks 4-6 years, candidate is far more senior.",
+   "draft": true,
+   "draft_file": "cv/drafts/cv_saurav_indie-inc_senior-firmware--002.html",
+   "draft_config_path": "/tmp/opencode/drafts/b3/4390680664.json"
+  },
+  {
+   "id": "4478146942",
+   "market": "Canada",
+   "isActive": true,
+   "rank_score": 61,
+   "rank_verdict": "good fit",
+   "dim": {
+    "tech": 62,
+    "exp": 65,
+    "behav": 64,
+    "career": 54
+   },
+   "strengths": [
+    "C++ on Linux edge devices with device connectivity, monitoring and hardware validation — 19+ years of embedded/edge systems work.",
+    "Multi-camera capture and video pipelines (Lytx multi-camera dashcam platform) match the core multi-camera stack.",
+    "Full-lifecycle ownership: dashcam platform from device firmware to cloud ingest."
+   ],
+   "gaps": [
+    "LiDAR signal processing and sensor fusion (3-D detection, geo-tracking) sit in the Weak/no-credit tier — genuine upskilling.",
+    "Go/Elixir services, field deployment and customer-delivery work are outside current scope."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "medium",
+   "rank_note": null,
+   "draft": true,
+   "draft_file": "cv/drafts/cv_saurav_invision-ai_senior-systems-a93.html",
+   "draft_config_path": "/tmp/opencode/drafts/b3/4478146942.json"
+  },
+  {
+   "id": "4433524662",
+   "market": "Canada",
+   "isActive": true,
+   "rank_score": 38,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 35,
+    "exp": 30,
+    "behav": 65,
+    "career": 35
+   },
+   "strengths": [
+    "Staff-level technical leadership, mentoring and engineering-standards scope match the role.",
+    "The JD's AI-adoption expectations (Claude Code, agentic workflows) align with candidate's AI-assisted engineering tooling."
+   ],
+   "gaps": [
+    "React/Redux/TypeScript front-end architecture is the core requirement — candidate is not a front-end engineer.",
+    "Growth/SEO/A-B experimentation domain is unrelated to real-time media pipelines."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": null,
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4478751051",
+   "market": "Canada",
+   "isActive": true,
+   "rank_score": 44,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 42,
+    "exp": 40,
+    "behav": 68,
+    "career": 38
+   },
+   "strengths": [
+    "Distributed, latency-critical systems background (concurrency, fd/thread-pool forensics, high-availability media servers).",
+    "10+ years requirement exceeded; technical lead and mentor track record across teams."
+   ],
+   "gaps": [
+    "Cloud-native distributed infrastructure work (write concerns, cross-region TLS, failover automation) is a different specialization from real-time media.",
+    "Hyperscaler-scale distributed-systems experience not evidenced."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": null,
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4366684038",
+   "market": "Canada",
+   "isActive": true,
+   "rank_score": 57,
+   "rank_verdict": "moderate fit",
+   "dim": {
+    "tech": 55,
+    "exp": 55,
+    "behav": 70,
+    "career": 55
+   },
+   "strengths": [
+    "Embedded firmware/device-driver fundamentals: bootloaders, A/B OTA, NAND/NOR flash drivers, I2C/SPI/UART, hardware bring-up.",
+    "Linux/RTOS-adjacent work and Yocto/BitBake build systems in evidence (Yocto Scarthgap migration at Lytx).",
+    "C/C++ code-footprint and performance discipline matches the firmware role."
+   ],
+   "gaps": [
+    "Ethernet MAC/PHY/switch/SR-IOV/PCIe communication-driver specifics are not in profile.",
+    "Functional-safety culture (AUTOSAR/MISRA/ISO 26262/ASPICE) — Weak tier, no experience."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "100% remote per JD; substance is safety-critical communication-device drivers.",
+   "draft": true,
+   "draft_file": "cv/drafts/cv_saurav_ethernovia_sr-embedded-sof-91c.html",
+   "draft_config_path": "/tmp/opencode/drafts/b3/4366684038.json"
+  },
+  {
+   "id": "4371086903",
+   "market": "Canada",
+   "isActive": true,
+   "rank_score": 31,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 25,
+    "exp": 30,
+    "behav": 45,
+    "career": 32
+   },
+   "strengths": [
+    "Technical leadership at scale (30 engineers at Samsung) matches director-level scope."
+   ],
+   "gaps": [
+    "ML engineering/infrastructure (recommendations, personalization, TensorFlow/PyTorch, Databricks) entirely outside candidate's domain.",
+    "People-management-heavy ML leadership role — poor direction alignment and maintenance/management friction."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": null,
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4476854634",
+   "market": "Canada",
+   "isActive": true,
+   "rank_score": 27,
+   "rank_verdict": "poor fit",
+   "dim": {
+    "tech": 30,
+    "exp": 22,
+    "behav": 42,
+    "career": 20
+   },
+   "strengths": [
+    "Video recording/streaming and pipeline experience touches the AV/broadcast requirement.",
+    "Strong troubleshooting discipline (production forensics) transfers to meeting/AV support."
+   ],
+   "gaps": [
+    "Role is operational A/V support (cameras, lighting, audio, ticketing) — below engineering scope.",
+    "3-5 years Technical Specialist/customer-support profile mismatch; VoIP/video-network ops not the candidate's track."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": null,
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4471139876",
+   "market": "Canada",
+   "isActive": true,
+   "rank_score": 33,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 25,
+    "exp": 28,
+    "behav": 62,
+    "career": 30
+   },
+   "strengths": [
+    "Distributed systems and performance debugging partially transfers (concurrency, high-throughput servers).",
+    "Python working proficiency plus AI-assisted engineering (Claude Code) fits the AI-fluency expectation."
+   ],
+   "gaps": [
+    "Data-platform stack (Spark/Kafka/Flink, Iceberg/Trino, Airflow/DBT, SQL/SparkSQL) is outside the profile.",
+    "Data engineering is a held-back, non-target domain."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": null,
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4412795567",
+   "market": "Denmark",
+   "isActive": true,
+   "rank_score": 57,
+   "rank_verdict": "moderate fit",
+   "dim": {
+    "tech": 55,
+    "exp": 58,
+    "behav": 68,
+    "career": 52
+   },
+   "strengths": [
+    "Real-time low-latency pipelines at scale: 100+ concurrent streams per node, 98.6% WebRTC session success (WebRTC is a listed plus).",
+    "Audio in the pipeline: JACK/PipeWire/ALSA routing plus A/V synchronisation and AEC exposure (Barco) support high-throughput audio infrastructure.",
+    "Foundational-infrastructure ownership with production forensics (load tests, session leaks, ICE analysis)."
+   ],
+   "gaps": [
+    "Golang ('Master of Golang') not in profile.",
+    "SIP/SIPREC telephony protocols and emergency-dispatch/healthcare domain are awareness-level only."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": null,
+   "draft": true,
+   "draft_file": "cv/drafts/cv_saurav_corti_senior-backend-engin-e79.html",
+   "draft_config_path": "/tmp/opencode/drafts/b3/4412795567.json"
+  },
+  {
+   "id": "4381008158",
+   "market": "Denmark",
+   "isActive": true,
+   "rank_score": 74,
+   "rank_verdict": "good fit",
+   "dim": {
+    "tech": 70,
+    "exp": 78,
+    "behav": 75,
+    "career": 75
+   },
+   "strengths": [
+    "Embedded Linux camera device platform (NXP i.MX8, Yocto) directly analogous to Veo's camera system: recording, storage, playback, diagnostics.",
+    "C and Python cover two of the three stack languages (C/Rust/Python) — 'fluency in at least two' satisfied.",
+    "Fleet-scale reliability/observability work (soaks, watchdogs, telemetry, Yocto upgrades) matches the reliability focus."
+   ],
+   "gaps": [
+    "Rust and BLE/GATT/Wi-Fi application-layer work not in profile.",
+    "Cloud integrations (OpenTelemetry, AWS S3) limited; cloud work has been media-serving focused."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "high",
+   "rank_note": null,
+   "draft": true,
+   "draft_file": "cv/drafts/cv_saurav_veo-technologies_senior-so-04e.html",
+   "draft_config_path": "/tmp/opencode/drafts/b3/4381008158.json"
+  },
+  {
+   "id": "4424773755",
+   "market": "Denmark",
+   "isActive": true,
+   "rank_score": 37,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 30,
+    "exp": 32,
+    "behav": 62,
+    "career": 35
+   },
+   "strengths": [
+    "Staff-level technical direction, mentoring and high-performance production debugging transfer.",
+    "Streaming/event-driven concepts loosely map to their streaming-architecture modernisation."
+   ],
+   "gaps": [
+    "Core stack (Java/Spring, TypeScript/React/Angular, AWS, Kubernetes, Terraform) is Weak-tier/no-credit.",
+    "Blockchain analytics domain and full-stack product feature work are off the candidate's track."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": null,
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4477662400",
+   "market": "Denmark",
+   "isActive": true,
+   "rank_score": 41,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 40,
+    "exp": 45,
+    "behav": 42,
+    "career": 38
+   },
+   "strengths": [
+    "Engineering leadership at scale (30 engineers, architecture/quality ownership) matches domain-leadership scope.",
+    "Media-platform company (content production/delivery for media enterprises) is adjacent to candidate's media background."
+   ],
+   "gaps": [
+    "Role explicitly 'not expected to be hands-on' — people-management-heavy: friction with candidate's hands-on profile.",
+    "Cloud platform/SaaS transformation (Kubernetes, IaC, developer platforms, cloud economics) is not the candidate's specialization."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "Same JD also posted for Oslo (4477654734); director-level people leadership.",
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4476286543",
+   "market": "Denmark",
+   "isActive": true,
+   "rank_score": 68,
+   "rank_verdict": "good fit",
+   "dim": {
+    "tech": 70,
+    "exp": 72,
+    "behav": 72,
+    "career": 60
+   },
+   "strengths": [
+    "Embedded C/C++ on ARM SoCs with RTOS/embedded Linux — 19+ years across device firmware from boot to application.",
+    "Low-latency audio/video streaming and synchronisation experience (AEC, JACK/PipeWire, A/V sync).",
+    "Debugging across software/hardware boundaries with testing/verification discipline (soaks, CodeQL, verification cycles)."
+   ],
+   "gaps": [
+    "Bluetooth LE audio/data (GATT) not in profile.",
+    "Medical-device regulatory development lifecycle is a new environment."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": "Danish listed as 'a plus' only — not a requirement; English fluency is the stated bar.",
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": "2026-10-18",
+   "fit": "medium",
+   "rank_note": null,
+   "draft": true,
+   "draft_file": "cv/drafts/cv_saurav_oticon-medical_senior-embe-aef.html",
+   "draft_config_path": "/tmp/opencode/drafts/b3/4476286543.json"
+  },
+  {
+   "id": "4341859955",
+   "market": "Denmark",
+   "isActive": true,
+   "rank_score": 46,
+   "rank_verdict": "moderate fit",
+   "dim": {
+    "tech": 45,
+    "exp": 42,
+    "behav": 68,
+    "career": 40
+   },
+   "strengths": [
+    "15+ years bar exceeded; low-level systems debugging, performance measurement and optimisation on large production systems is the candidate's strength.",
+    "Technical leadership, mentoring and multi-team project leadership match senior-staff expectations."
+   ],
+   "gaps": [
+    "Data/AI platform domain (Delta Lake, Spark, lakehouse, SQL storage engines) absent.",
+    "Target stack is large-scale distributed data services — different from real-time media systems."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": null,
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4474896883",
+   "market": "Denmark",
+   "isActive": true,
+   "rank_score": 33,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 22,
+    "exp": 28,
+    "behav": 65,
+    "career": 32
+   },
+   "strengths": [
+    "Staff-level ownership: end-to-end product development, architecture and mentoring without people management matches the profile.",
+    "Stack includes Claude Code — candidate's AI-assisted engineering is a genuine cultural overlap."
+   ],
+   "gaps": [
+    "PHP/Laravel/Angular/PostgreSQL stack — 'expert knowledge in at least one layer' is required and not held.",
+    "GRC/compliance domain unrelated to media."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Visa support if needed (posting states 'along with visa support if needed')",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": null,
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4477692916",
+   "market": "Denmark",
+   "isActive": true,
+   "rank_score": 34,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 25,
+    "exp": 30,
+    "behav": 65,
+    "career": 30
+   },
+   "strengths": [
+    "Video/data product company adjacency (sports camera platform) and product-team collaboration style.",
+    "Python working proficiency is a partial match to backend requirements."
+   ],
+   "gaps": [
+    "Full-stack web (TypeScript/Node/React/Django/PGSQL) is the core requirement — front-end/web is held-back tier.",
+    "Product UI work is far from the embedded media-pipeline career track."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": null,
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4479030360",
+   "market": "Denmark",
+   "isActive": true,
+   "rank_score": null,
+   "rank_verdict": "eligibility fail",
+   "dim": null,
+   "strengths": [],
+   "gaps": [],
+   "location_verdict": "FAIL",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "No visa sponsorship offered by employer - eligibility fail",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "Posting also requires candidates located in Copenhagen or clearly relocating.",
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null,
+   "eligibility": "Please note: We do not offer visa sponsorship for this role. We do not offer relocation services."
+  },
+  {
+   "id": "4479583175",
+   "market": "Denmark",
+   "isActive": true,
+   "rank_score": 62,
+   "rank_verdict": "good fit",
+   "dim": {
+    "tech": 65,
+    "exp": 60,
+    "behav": 75,
+    "career": 55
+   },
+   "strengths": [
+    "Systems programming in C++14/17/20 at scale: concurrency, memory optimisation, performance tuning on production serving paths.",
+    "Large-codebase root-cause forensics (fd double-close in a 350-worker pool; 2,000-thread exhaustion; reconnect storms).",
+    "Code-review culture fit — 'give and solicit feedback in code reviews'; mentoring record."
+   ],
+   "gaps": [
+    "Database/query-engine internals are a new domain (SQLite operational use only).",
+    "Distributed query-system experience not evidenced."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "medium",
+   "rank_note": "Remote in Denmark; C++ systems substance strong, DB internals a learnable gap.",
+   "draft": true,
+   "draft_file": "cv/drafts/cv_saurav_mongodb_senior-software-en-0a2.html",
+   "draft_config_path": "/tmp/opencode/drafts/b3/4479583175.json"
+  },
+  {
+   "id": "4479055228",
+   "market": "Norway",
+   "isActive": true,
+   "rank_score": 79,
+   "rank_verdict": "strong fit",
+   "dim": {
+    "tech": 80,
+    "exp": 80,
+    "behav": 75,
+    "career": 80
+   },
+   "strengths": [
+    "Embedded Linux platform engineering with hardware-near software (OS layers, hardware services, drivers) — 19+ years.",
+    "Graphics/display pipelines: GPU-accelerated GStreamer capture (OpenGL, X.Org/Wayland) and PTP/framelock multi-display synchronisation at Barco.",
+    "Hardware video accelerators and GPU programming from codec work (NXP VPU, hardware codecs)."
+   ],
+   "gaps": [
+    "Android development ('embedded Linux or Android') not in profile — Linux/Tizen background only.",
+    "Audio/media processing is adjacent; collaboration with those disciplines is routine."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "high",
+   "rank_note": null,
+   "draft": true,
+   "draft_file": "cv/drafts/cv_saurav_cisco_embedded-software-en-e0c.html",
+   "draft_config_path": "/tmp/opencode/drafts/b3/4479055228.json"
+  },
+  {
+   "id": "4420700962",
+   "market": "Norway",
+   "isActive": true,
+   "rank_score": null,
+   "rank_verdict": "eligibility fail",
+   "dim": null,
+   "strengths": [],
+   "gaps": [],
+   "location_verdict": "FAIL",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Security clearance required (Norwegian Armed Forces collaboration) - eligibility fail",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "Defence/UAV domain; clearance gated on nationality/residency in practice.",
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null,
+   "eligibility": "All employees at Six Robotics are required to undergo a security clearance due to our close collaboration with the Norwegian Armed Forces."
+  },
+  {
+   "id": "4477654734",
+   "market": "Norway",
+   "isActive": true,
+   "rank_score": 41,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 40,
+    "exp": 45,
+    "behav": 42,
+    "career": 38
+   },
+   "strengths": [
+    "Engineering leadership at scale (30 engineers, architecture/quality ownership) matches domain-leadership scope.",
+    "Media-platform company (content production/delivery for media enterprises) is adjacent to candidate's media background."
+   ],
+   "gaps": [
+    "Role explicitly 'not expected to be hands-on' — people-management-heavy: friction with candidate's hands-on profile.",
+    "Cloud platform/SaaS transformation (Kubernetes, IaC, developer platforms, cloud economics) is not the candidate's specialization."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "Same JD as the Copenhagen posting (4477662400); based at one of Aarhus/Copenhagen/Hamburg/Oslo/Malaga offices.",
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4478550557",
+   "market": "Norway",
+   "isActive": true,
+   "rank_score": 75,
+   "rank_verdict": "strong fit",
+   "dim": {
+    "tech": 72,
+    "exp": 75,
+    "behav": 75,
+    "career": 78
+   },
+   "strengths": [
+    "Multi-camera video pipelines are core domain: Lytx multi-camera dashcam platform and Barco multi-stream video walls.",
+    "C++ core plus Python, video codecs (H.264/H.265) and hardware decode match the 'passion for video' software role.",
+    "Low-latency media serving (WebRTC at Lytx/Voizzit) aligns with Cisco's meeting-experience products."
+   ],
+   "gaps": [
+    "Automatic camera-switching/composition perception logic (room intelligence/ML perception) is adjacent-to-new.",
+    "Meeting-device UX specifics are a new product context."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "high",
+   "rank_note": null,
+   "draft": true,
+   "draft_file": "cv/drafts/cv_saurav_cisco_software-engineer_no.html",
+   "draft_config_path": "/tmp/opencode/drafts/b3/4478550557.json"
+  },
+  {
+   "id": "4469962700",
+   "market": "Norway",
+   "isActive": true,
+   "rank_score": null,
+   "rank_verdict": "eligibility fail",
+   "dim": null,
+   "strengths": [],
+   "gaps": [],
+   "location_verdict": "FAIL",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "EEA citizenship or valid work permit required - eligibility fail",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": "Also a VP people-leadership role ('operating a level removed from the code'); location FAIL per gates.",
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null,
+   "eligibility": "Visa requirements: For EU/EEA -Citizenship or valid work permit and for UK -British citizenship or indefinite leave to remain."
+  },
+  {
+   "id": "4459412614",
+   "market": "Norway",
+   "isActive": true,
+   "rank_score": 68,
+   "rank_verdict": "good fit",
+   "dim": {
+    "tech": 65,
+    "exp": 67,
+    "behav": 75,
+    "career": 68
+   },
+   "strengths": [
+    "Embedded Linux platform work on ARM (NXP i.MX8, Yocto) with kernel-adjacent debugging: boot-path stalls, memory pinning, hangs.",
+    "Strong C plus Python/Bash automation for build/test tooling.",
+    "Evidence-driven debugging across the software/hardware boundary (soaks, memory forensics, production fixes)."
+   ],
+   "gaps": [
+    "Linux kernel driver authoring/porting (Device Tree, pinctrl, GKI, mainline rebase) beyond current scope.",
+    "Manufacturing stages EVT/DVT/PVT and vendor BSP tree maintenance not in direct experience."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "medium",
+   "rank_note": "JD welcomes remote members based in Norway or Europe; Oslo hub preferred.",
+   "draft": true,
+   "draft_file": "cv/drafts/cv_saurav_neat_embedded-platform-eng-3a9.html",
+   "draft_config_path": "/tmp/opencode/drafts/b3/4459412614.json"
+  },
+  {
+   "id": "4479041851",
+   "market": "Norway",
+   "isActive": true,
+   "rank_score": 54,
+   "rank_verdict": "moderate fit",
+   "dim": {
+    "tech": 52,
+    "exp": 50,
+    "behav": 72,
+    "career": 50
+   },
+   "strengths": [
+    "Modern C++ (14/17/20) with multithreading, memory management and benchmark-driven optimisation — core requirement match.",
+    "OpenGL and GPU-accelerated rendering/pipelines from Barco control-room work.",
+    "Tech-lead/mentoring and architecture-review track record."
+   ],
+   "gaps": [
+    "3-D computational geometry, mesh processing, spatial indexing (Octrees/BVH) and BIM/CAD formats (IFC/RVT/DWG) — no experience.",
+    "Rust and WebGPU/DirectX/WebGL rendering frameworks beyond OpenGL are gaps."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": null,
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4460108927",
+   "market": "Norway",
+   "isActive": true,
+   "rank_score": 40,
+   "rank_verdict": "weak fit",
+   "dim": {
+    "tech": 30,
+    "exp": 30,
+    "behav": 70,
+    "career": 42
+   },
+   "strengths": [
+    "Principal-level systems engineering: performance, concurrency and production debugging; open-source-style code review culture fits.",
+    "AI-accelerated development is genuinely in the candidate's practice (Claude Code tooling)."
+   ],
+   "gaps": [
+    "Core Java is the required language (Elasticsearch is almost entirely Java) — candidate is C++/systems.",
+    "Vector search algorithms (HNSW/IVF), Lucene and search-platform scale — no experience."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": null,
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4469468871",
+   "market": "Norway",
+   "isActive": true,
+   "rank_score": 50,
+   "rank_verdict": "moderate fit",
+   "dim": {
+    "tech": 45,
+    "exp": 50,
+    "behav": 70,
+    "career": 45
+   },
+   "strengths": [
+    "Backend services, hardware telemetry and real-time dashboards are adjacent to dashcam cloud/device work (MQTT, device integrations).",
+    "Senior IC with mentoring and architecture influence matches 'shape the architecture, mentor the team'."
+   ],
+   "gaps": [
+    "Stack gap: Kotlin/Java/Go with GCP, Pub/Sub, Protobuf — production languages to date are C++/Python.",
+    "Logistics terminal operations domain unrelated to media."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Unverified - posting silent on sponsorship / work permit",
+   "deadline": null,
+   "fit": "low",
+   "rank_note": null,
+   "draft": false,
+   "draft_file": null,
+   "draft_config_path": null
+  },
+  {
+   "id": "4458965994",
+   "market": "Norway",
+   "isActive": true,
+   "rank_score": 63,
+   "rank_verdict": "good fit",
+   "dim": {
+    "tech": 60,
+    "exp": 65,
+    "behav": 72,
+    "career": 60
+   },
+   "strengths": [
+    "Embedded firmware product leadership: serial-production hardware-software products from concept (STB firmware at Logic Eastern/Intek; dashcam device at Lytx).",
+    "Team leadership (30 engineers at Samsung; 4-engineer teams) plus technical sub-system ownership.",
+    "Manufacturing-cycle debugging and quality/reliability practices (soaks, root-cause fixes, production support)."
+   ],
+   "gaps": [
+    "Robotics/mechanism/electronics design-review depth (warehouse robots) not evidenced — firmware interface knowledge only.",
+    "NPD-level agile planning across suppliers/manufacturing is partially new."
+   ],
+   "location_verdict": "PASS",
+   "language_gate": "PASS",
+   "language_note": null,
+   "sponsorship": "Explicitly welcomes applications from across Europe ('We welcome applications from candidates across Europe who are open to relocating to Norway')",
+   "deadline": "2026-10-31",
+   "fit": "medium",
+   "rank_note": "Title states relocation to Norway required; no visa-sponsorship statement beyond the Europe-welcome line.",
+   "draft": true,
+   "draft_file": "cv/drafts/cv_saurav_autostore_lead-engineer-ro-aab.html",
+   "draft_config_path": "/tmp/opencode/drafts/b3/4458965994.json"
+  }
+ ]
+}
