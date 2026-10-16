@@ -2,7 +2,7 @@
 
 - **Type:** CV
 - **Source extension:** .html
-- **Engine/toolchain:** WeasyPrint 67 (HTML/CSS → PDF)
+- **Engine/toolchain:** WeasyPrint (HTML/CSS → PDF; tested with 62.3)
 - **Page limit:** 2 page(s)
 - **Fonts:** Times New Roman / system serif (system font - must be installed; present on Linux via Liberation Serif metric-compatible substitute)
 - **Class/packages:** none - plain HTML/CSS, single file
@@ -11,7 +11,7 @@
 
     cd <output dir> && rm -f <file>.pdf && weasyprint <file>.html <file>.pdf
 
-(Tested with WeasyPrint 67; it replaces the previous headless-Chrome command. The draft's CSS carries the `@page { size: letter; margin: 0.4in; }` rule - that is what reproduces the old Chrome geometry, because WeasyPrint's own defaults are A4 with ~2cm margins. `tools/compile_draft_pdfs.py` injects the same rule at compile time, so drafts written before the rule existed still compile identically.)
+(Tested with WeasyPrint 62.3; it replaces the previous headless-Chrome command. The draft's CSS carries the `@page { size: letter; margin: 0.4in; }` rule - that is what reproduces the old Chrome geometry, because WeasyPrint's own defaults are A4 with ~2cm margins. `tools/compile_draft_pdfs.py` injects the same rule at compile time, so drafts written before the rule existed still compile identically.)
 
 ## Style rules
 
