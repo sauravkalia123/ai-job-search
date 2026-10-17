@@ -19,12 +19,78 @@ framework_version: 1.4.6
 > - **Fonts:** Times New Roman / system serif
 > - **Page limit:** exactly 2 page(s)
 > - **Output file:** `cv/main_<company>_<role>.html`; the template is a single self-contained file, no assets to copy
-> - **Work-authorization header line (hard rule, from the candidate profile):** Germany → "Opportunity card holder"; India → omit the span entirely; rest of world → "Sponsorship required". Phone is always the India number, written `+918527089555`.
+> - **Work-authorization header line (hard rule, from the candidate profile):** Germany → "Germany Opportunity card holder"; India → omit the span entirely; rest of world → "Sponsorship required". Phone is always the India number, written `+918527089555`.
 <!-- END ACTIVE-TEMPLATE -->
+
+## Batch HTML CV upgrades and recovery (mandatory)
+
+This repository may contain many auto-generated HTML drafts under `cv/drafts/`. An HTML
+upgrade is **not complete** when the source file passes `verify_draft.py`: its PDF must be
+rebuilt from that exact source and must pass the two-page and text-layer gates too.
+
+When upgrading more than one draft:
+
+1. Make an explicit manifest of the files in the batch before editing. Do not infer the
+   batch later from timestamps alone, and do not rerun a content rewrite after a restart
+   until `git diff` and the manifest show which files already changed.
+2. After each source edit, run the zero-token HTML verifier with the posting's actual
+   country (`DE`, `IN`, or `OTHER`). Never use the wrong country merely to make the check
+   pass.
+3. Rebuild the PDF from the current HTML. For the complete draft pool, use:
+
+   ```bash
+   python3 tools/compile_draft_pdfs.py --force
+   ```
+
+   For one selected draft, remove its old PDF first and compile it directly:
+
+   ```bash
+   rm -f cv/drafts/pdf/<stem>.pdf
+   weasyprint cv/drafts/<stem>.html cv/drafts/pdf/<stem>.pdf
+   pdfinfo cv/drafts/pdf/<stem>.pdf | grep '^Pages:'
+   python3 tools/verify_pdf.py cv/drafts/pdf/<stem>.pdf \
+     --pages 2 --contains 'Saurav Kalia' \
+     --contains sauravkalia@gmail.com
+   ```
+
+   `compile_draft_pdfs.py` reuses a PDF only when it is newer than its HTML source;
+   `--force` is required when the template, CSS, fonts, or WeasyPrint toolchain changed
+   without changing the HTML. An old PDF or an old `compile_report.md` is never evidence
+   that the current HTML passed.
+4. Treat any page count other than exactly 2 as a failure. Extract text from both pages
+   and visually inspect both pages before reporting success. In particular, look for a
+   third page containing only Languages, Education, or another trailing section, and for
+   a job title or `Tech:` line separated from its bullets.
+5. Fix overflow by relevance-weighted content cuts or by condensing a low-priority
+   trailing section. Do not shrink fonts, silently change page geometry, or delete
+   role-defining evidence just to force pagination. Re-run both HTML and PDF checks after
+   every layout edit, then report the actual `N/N` results.
+
+If the process is interrupted, resume from the changed files and current outputs. Do not
+assume that the presence of a PDF means it corresponds to the current HTML.
+
+## Master evidence versus CV presentation (mandatory)
+
+The candidate profile and master files are allowed to contain detailed evidence so the assistant can tailor accurately. That evidence is **not** a command to reproduce the wording in a CV. Every tailored CV must apply this separation:
+
+- **Evidence layer:** preserve the underlying facts, metrics, technologies, diagnostic findings, and implementation context for selection and interview preparation.
+- **Presentation layer:** write a concise senior-engineer narrative focused on scope, ownership, outcome, and the few technologies relevant to the target role.
+- Never copy a forensic investigation verbatim as a default bullet. Convert it to the senior-level outcome first. Example: a detailed file-descriptor/thread-pool investigation becomes “Resolved production stability and scalability issues in high-concurrency media services,” unless the job description specifically requires low-level socket or concurrency debugging.
+- Keep implementation-level detail only when it directly supports a named requirement in the job description, a strong differentiator for the role, or a likely interview talking point. Use one selected detail, not the entire investigation log.
+- The master CV is a **content reference**, not a ready-to-send final CV. Do not copy its full Work Experience, Core Skills, Technical Focus Areas, or Key Achievements sections into a tailored CV.
+
+### Senior-level default style
+
+- Use outcome-first bullets: ownership or scope → result → one supporting technology when useful.
+- Prefer 4–6 bullets for the most recent role, 2–4 for other relevant roles, and 1–3 for older roles.
+- Keep default bullets readable in one or two lines where possible. Avoid semicolon chains, nested diagnostic timelines, and lists of every remediation step.
+- Do not turn every tool in the evidence layer into a skill claim. Mention only the tools that support the target role's narrative.
+- Core Skills must contain **5–6 compact categories**, with a deliberate selection of major competencies. Do not use an exhaustive technology inventory as the default skills section.
+- The optional solution/protocol keyword bank is a lookup source. Select individual supported terms only when relevant; never reproduce the bank as a section or append it to improve keyword count.
 
 ## Solution keyword bank (tailoring source)
 
-The master CV (`cv/master_cv.md` / `cv/master_cv.html`) carries two extra skills rows - **"Streaming Protocols & Formats"** (RTSP, SRT, MPEG-TS, multicast, LL-HLS, CMAF, VP8/VP9, AV1, AAC, Opus) and **"Product & Solution Domains"** (video conferencing/UC, OTT, IPTV, STB, smart TV, digital signage, DOOH, video walls, control rooms, VMS/NVR, dashcam telematics, EDR, DMS/OMS, in-vehicle multimedia, cloud gaming, telehealth). When a posting names one of these solutions or keywords, weave the matching term into the tailored CV's summary, skills, or experience bullets - **only as far as the Keyword Policy in `01-candidate-profile.md` allows** (it also lists the held-back terms - ISO 26262/ASIL/AUTOSAR, AAOS/QNX/CarPlay, DeepStream/OpenVINO/TensorRT, GMSL/FPD-Link, etc. - that must never be added). Space on a 2-page CV is finite: pull only the rows relevant to the target role, never the whole bank.
+The optional protocol, format, product, and solution vocabulary is maintained in the candidate profile (`.claude/skills/job-application-assistant/01-candidate-profile.md`), not as a default section of the master CV. Treat it as a lookup bank only: when a posting names a supported term, select the smallest relevant set and place it in the tailored summary, skills, or evidence-backed experience bullets. **Never copy the bank as a block**, and never add terms restricted by the Keyword Policy. Space on a 2-page CV is finite, so unrelated solution names and keyword-only details must stay out.
 
 ## Template: LaTeX moderncv (Banking Style)
 
@@ -158,13 +224,13 @@ When the role sits outside your home domain, **lead with the domain-transfer arg
 
 <!-- SETUP: Populated from ~/code/data/cv.md by /setup Path B -->
 **For embedded C++ / multimedia-streaming roles (primary direction):**
-> Principal-level embedded C++ engineer with 19+ years architecting real-time video streaming systems at scale: 100+ concurrent WebRTC/HLS streams per node across 700k+ dashcam devices at Lytx, and GPU-accelerated control-room video walls (16x HD simultaneous streams, frame-accurate PTP/genlock synchronization) at Barco. Deep expertise across GStreamer, WebRTC, and embedded Linux (Yocto/ARM), from device drivers and bootloaders to cloud media servers on EKS.
+> Principal-level embedded C++ engineer with 19+ years architecting real-time video streaming systems at scale: 100+ concurrent WebRTC/HLS streams per node across 700k+ dashcam devices at Lytx, and GPU-accelerated control-room video walls (16x HD simultaneous streams, frame-accurate PTP/genlock synchronization) at Barco. Deep expertise in GStreamer, WebRTC, C++ concurrency and embedded Linux user-space/media platforms; Yocto/ARM, firmware and device interaction are supporting exposure rather than kernel or deep device-driver specialization.
 
 **For video-streaming platform / WebRTC backend roles:**
 > Streaming-platform engineer with 19+ years building the media plane end to end: WebRTC and HLS delivery (98.6% session success at 600-session load, zero leaks across 4,286 sessions), GStreamer/Janus media servers, Kafka-backed event buses, and production debugging at the socket and thread level (fd lifecycles, back pressure, ICE/STUN/TURN topology). Owned platforms from greenfield architecture (Voizzit) to 700k-device scale (Lytx).
 
 **For embedded Linux / firmware / BSP roles:**
-> Embedded Linux engineer with 19+ years shipping ARM-based multimedia devices: NXP i.MX8 dashcams on Yocto (raised recording duty cycle from 49% to ~100%, passed 21-hour soaks), Tizen signage platforms at Samsung, and STB firmware with bare-metal A/B-OTA bootloaders. Comfortable from NAND/NOR flash drivers and device trees up through GStreamer pipelines and hardware codecs (NXP VPU).
+> Embedded Linux and real-time media engineer with 19+ years shipping ARM-based multimedia products: NXP i.MX8 dashcams with Yocto as a supporting platform, Tizen signage platforms at Samsung, and STB middleware and firmware. Strongest in C/C++ user-space media pipelines, GStreamer, WebRTC, performance debugging and production reliability; Yocto, BSP, firmware and device interaction are adjacent evidence, not kernel or deep device-driver specialization.
 
 Statements labeled *[Used for: <company>_<role>]* were extracted from archived application drafts by `/setup` Path A. They are **phrasing references, never fact sources**: when drafting from one, every factual claim still comes from `01-candidate-profile.md` - a past tailored draft does not vouch for its own accuracy.
 
@@ -270,6 +336,10 @@ After writing the CV and before presenting to the user, always compile and visua
 2. Check the output page count: must be exactly 2
 3. Read the PDF via the Read tool and visually inspect both pages
 4. Check for **orphaned entries**: a `\cventry` title line must never sit alone at the bottom of page 1 with its bullets on page 2
+
+For the active HTML template, use the HTML compile command from the active-template block,
+then run `pdfinfo`/`tools/verify_pdf.py` against the generated PDF. Never validate an HTML
+draft against a PDF that predates the HTML or the active template.
 
 ### Fixing common page-break problems
 
@@ -379,6 +449,11 @@ Cut the lowest-total-score line first, regardless of which section it sits in.
 - Do not mechanically cut from the bottom of a static section list without checking relevance. "Cut the oldest role first" is wrong if that role is literally about the skill the posting asks for.
 - Do not cut the one concrete example the cover letter leans on. Relevance is measured against the cover letter you wrote, not just the job posting — interviewers will have read both.
 - Do not cut to fit if the fit is borderline (2.02 pages). Prefer `\enlargethispage{2-3\baselineskip}` on a late section for near-misses; reserve content cuts for genuine overflow (content on page 3 that is more than a single trailing section).
+
+For the HTML template, a trailing section on page 3 is still a failed two-page CV. First
+check whether an unbreakable `.avoid-break` block is cascading the overflow; split or
+condense that block only when the resulting page break keeps the title, bullets, and `Tech:`
+line together. Then apply the relevance-weighted cutting rules above.
 
 ## Recommended Section Order
 

@@ -30,7 +30,7 @@ KNOWN_EMPLOYERS = [
 PLACEHOLDERS = ["{{", "}}", "TODO", "FIXME", "Lorem", "TBD", "[year]", "XXX"]
 
 AUTH_LINES = {
-    "DE": "Opportunity card holder",
+    "DE": "Germany Opportunity card holder",
     "IN": None,
     "OTHER": "Sponsorship required",
 }
@@ -58,6 +58,23 @@ def check_hygiene(html: str, results: list) -> None:
     for p in PLACEHOLDERS:
         if p.lower() in html.lower():
             results.append(("hygiene", f"no leftover placeholder '{p}'", False))
+    results.append(("hygiene", "no current-residence or relocation statement", "open to relocation" not in html.casefold()))
+    for heading in ("Streaming Protocols &amp; Formats", "Product &amp; Solution Domains"):
+        results.append(("hygiene", f"no copied keyword-bank heading '{heading}'", heading not in html))
+
+
+def check_presentation(html: str, results: list) -> None:
+    """Keep the default draft readable instead of allowing evidence-bank dumps."""
+    skills = re.search(
+        r'<ul[^>]*class=["\'][^"\']*core-skills-list[^"\']*["\'][^>]*>(.*?)</ul>',
+        html,
+        re.I | re.S,
+    )
+    if skills:
+        rows = len(re.findall(r"<li\b", skills.group(1), re.I))
+        results.append(("presentation", f"Core Skills has 5–6 rows (found {rows})", 5 <= rows <= 6))
+    else:
+        results.append(("presentation", "Core Skills section uses the compact template", False))
 
 
 def check_draft_marker(html: str, results: list) -> None:
@@ -74,14 +91,20 @@ def check_contact(html: str, results: list) -> None:
 def check_auth_line(html: str, country: str, results: list) -> None:
     c = (country or "OTHER").upper()
     required = AUTH_LINES.get("DE" if c == "DE" else "IN" if c == "IN" else "OTHER")
-    has_oca = "Opportunity card holder" in html
+    has_oca = "Germany Opportunity card holder" in html
     has_spons = "Sponsorship required" in html
+    has_legacy_oca = "Opportunity card holder" in html and not has_oca
+    has_any_oca = has_oca or has_legacy_oca
     if required is None:
-        results.append(("auth-line", f"country {c}: neither auth line present", not (has_oca or has_spons)))
+        results.append(("auth-line", f"country {c}: neither auth line present", not (has_any_oca or has_spons)))
     else:
         results.append(("auth-line", f"country {c}: contains '{required}'", required in html))
-        wrong = "Sponsorship required" if required == "Opportunity card holder" else "Opportunity card holder"
+        wrong = "Sponsorship required" if required == "Germany Opportunity card holder" else "Germany Opportunity card holder"
         results.append(("auth-line", f"country {c}: wrong line '{wrong}' absent", wrong not in html))
+        if required == "Germany Opportunity card holder":
+            results.append(("auth-line", f"country {c}: legacy auth line absent", not has_legacy_oca))
+        else:
+            results.append(("auth-line", f"country {c}: legacy auth line absent", not has_legacy_oca))
 
 
 def check_facts(html: str, master: str, results: list) -> None:
@@ -124,6 +147,7 @@ def main() -> int:
     results: list = []
     check_structure(html, results)
     check_hygiene(html, results)
+    check_presentation(html, results)
     check_draft_marker(html, results)
     check_contact(html, results)
     check_auth_line(html, args.country, results)

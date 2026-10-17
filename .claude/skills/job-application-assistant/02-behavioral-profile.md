@@ -22,8 +22,8 @@ Saurav Kalia's behavioral profile identifies them as a **hands-on technical lead
 
 ## Strongest Behaviors
 - **Evidence-driven debugging:** Tracks failures to their physical cause with numbers, not guesses - fd double-close in a 350-worker pool, CMA leak 491 MB -> 8 MB, 12.6 h/day boot-script stall found in a 5.4M-line log. *[Inferred from CV - Lytx bullets]*
-- **Quality culture:** Best Code Reviewer award; enforced architecture and code quality as a manager; resolved CodeQL findings; three-layer defense on a critical RCE. *[Inferred from CV]*
-- **Delivery under constraints:** Fixed hardware/OS-level failures (codec memory, VFR->CFR, SQLite disk-full) within product schedules; 21-hour soaks passed. *[Inferred from CV]*
+- **Quality culture:** Best Code Reviewer award; enforced architecture and code quality as a manager; applied a three-layer defense to a critical RCE. *[Inferred from CV]*
+- **Delivery under constraints:** Fixed hardware/OS-level failures (codec memory and VFR->CFR playback) within product schedules; 21-hour soaks passed. *[Inferred from CV]*
 - **Tooling initiative:** Built AI-assisted engineering tooling (Claude Code) that cut triage from hours to minutes. *[Inferred from CV]*
 
 ## How You Work Best

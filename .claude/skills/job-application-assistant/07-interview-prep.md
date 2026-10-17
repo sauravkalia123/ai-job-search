@@ -34,7 +34,7 @@ are quoted verbatim from the CV - do not inflate them. -->
 ### 3. Dashcam recording-index race (Quality under hardware constraints)
 **S:** On the NXP i.MX8 dashcam (Yocto Linux), a cross-thread race in the recording index permanently lost auxiliary-camera footage; separately, a boot-script stall idled the recorder 12.6 hours/day, and a GStreamer hang pinned hardware-codec memory (CMA free fell 491 MB -> 8 MB).
 **T:** Make multi-camera recording reliable on constrained hardware without a recall.
-**A:** Fixed the race, found the boot-script stall (one process fork per line over a 5.4M-line log), fixed the codec-memory hang, fixed green-screen playback (VFR -> CFR), moved AES-GCM decrypt to RAM, rewrote H.264 levels to fit the hardware decoder, and migrated components to Yocto Scarthgap + C++17.
+**A:** Fixed the race, found the boot-script stall (one process fork per line over a 5.4M-line log), fixed the codec-memory hang, fixed green-screen playback (VFR -> CFR), improved decoder lifecycle handling, and migrated components to Yocto Scarthgap + C++17.
 **R:** Recording duty cycle raised from 49% to ~100%; recording gaps cut from 171 to 2; 25+ hours of footage recovered; 21-hour soak passed.
 **Use for:** "Tell me about working close to hardware", "How do you test embedded systems?", "A time you fixed something everyone thought was impossible"
 
@@ -48,7 +48,7 @@ are quoted verbatim from the CV - do not inflate them. -->
 ### 5. Finding a critical unauthenticated RCE (Security responsibility)
 **S:** During work on the cloud media server, an unauthenticated remote-code-execution path (shell injection) existed in the service.
 **T:** Eliminate the vulnerability and harden the codebase.
-**A:** Fixed it with a 3-layer defense and resolved the GitHub Advanced Security (CodeQL) findings; added a native C++ health endpoint, crash/core-dump handling, no-media watchdogs, and structured New Relic telemetry.
+**A:** Fixed it with a 3-layer defense; added a native C++ health endpoint, crash/core-dump handling, no-media watchdogs, and structured New Relic telemetry.
 **R:** RCE closed with layered mitigation; observability and crash-handling improvements landed in the same push.
 **Use for:** "Tell me about a security issue you handled", "How do you balance speed and safety?"
 

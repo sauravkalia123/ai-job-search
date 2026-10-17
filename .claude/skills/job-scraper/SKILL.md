@@ -175,7 +175,7 @@ breath — the JD text is already in context, so this is the cheap moment:
   the JD, bullets reordered/reframed, keywords aligned — **zero new claims** (no skills,
   employers, metrics, or dates that the master doesn't contain).
 - **Auth line:** set the country-correct work-authorization line at generation time
-  (Germany → "Opportunity card holder"; India → none; everywhere else → "Sponsorship required").
+  (Germany → "Germany Opportunity card holder"; India → none; everywhere else → "Sponsorship required").
 - **Draft marker:** first line inside `<body>`: `<!-- DRAFT - auto-generated, review before use -->`.
 - **Verify (zero tokens):** every draft must pass
   `python3 tools/verify_draft.py --draft <file> --country <DE|IN|other>` — mechanical checks:
@@ -184,7 +184,9 @@ breath — the JD text is already in context, so this is the cheap moment:
   never stored unverified.
 - **Deferred to pick-time** (when the user chooses to apply): PDF compile, 2-page check, the full
   verification checklist from the application workflow, and the cover letter. Drafts are never
-  "ready to send".
+  "ready to send". At pick-time, follow the batch/restart and PDF gate in
+  `.claude/skills/job-application-assistant/05-cv-templates.md`; rebuild PDFs from the current
+  HTML rather than trusting an existing cached PDF or report.
 
 ### Step 4: Deduplicate & Store
 

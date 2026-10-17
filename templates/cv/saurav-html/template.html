@@ -221,19 +221,17 @@
 <body>
 <div class="page">
 
-  <!-- HEADER -->
-  <!-- [WORK_AUTH_LINE] rule (mandatory, from candidate profile):
-       Germany applications -> "Opportunity card holder"
-       India applications   -> omit the work-auth span entirely
-       Rest of world        -> "Sponsorship required"                               -->
+  <!-- HEADER
+       This is a reusable output skeleton. Do not add the candidate's current
+       residence or a relocation statement to the contact row. The optional
+       work-authorization span is resolved from the target country before the
+       draft is written; for India, remove the span and its separator entirely. -->
   <div class="header">
     <h1>[YOUR_NAME]</h1>
     <div class="contact-row">
       [YOUR_PHONE] <span class="separator">|</span>
       [YOUR_EMAIL] <span class="separator">|</span>
-      [YOUR_LINKEDIN_URL] <span class="separator">|</span>
-      [YOUR_CITY], [YOUR_COUNTRY] — Open to Relocation <span class="separator">|</span>
-      [WORK_AUTH_LINE]
+      [YOUR_LINKEDIN_URL][OPTIONAL_WORK_AUTH_SPAN]
     </div>
   </div>
 
@@ -255,9 +253,10 @@
     <div class="section-title">Core Skills</div>
     <ul class="core-skills-list" style="list-style: none; padding-left: 0;">
       <li><strong>• [CATEGORY_1]:</strong> [SKILLS_1]</li>
-      <li><strong>• [CATEGORY_2]:</strong> [SKILLS_2]</li>
-      <li><strong>• [CATEGORY_3]:</strong> [SKILLS_3]</li>
-      <li><strong>• [CATEGORY_4]:</strong> [SKILLS_4]</li>
+       <li><strong>• [CATEGORY_2]:</strong> [SKILLS_2]</li>
+       <li><strong>• [CATEGORY_3]:</strong> [SKILLS_3]</li>
+       <li><strong>• [CATEGORY_4]:</strong> [SKILLS_4]</li>
+       <li><strong>• [CATEGORY_5]:</strong> [SKILLS_5]</li>
     </ul>
   </div>
 

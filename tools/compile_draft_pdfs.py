@@ -9,6 +9,7 @@ layer contains name/email/phone, no (cid:) glyphs. Writes a report.
 Zero model tokens — fully mechanical.
 """
 
+import argparse
 import glob
 import json
 import logging
@@ -101,10 +102,16 @@ def collect():
     return pool
 
 
-def compile_pdf(html_path, pdf_path):
-    # Resume: a PDF compiled in an earlier pass is left in place (WeasyPrint
-    # takes ~10s per draft, so re-runs stay cheap).
-    if os.path.exists(pdf_path) and os.path.getsize(pdf_path) > 1000:
+def compile_pdf(html_path, pdf_path, force=False):
+    # Reuse only a usable PDF that is at least as new as its HTML source.  The
+    # old size-only cache made an interrupted CV upgrade look complete while
+    # leaving every PDF stale after the HTML changed.
+    cached_is_current = (
+        os.path.exists(pdf_path)
+        and os.path.getsize(pdf_path) > 1000
+        and os.path.getmtime(pdf_path) >= os.path.getmtime(html_path)
+    )
+    if cached_is_current and not force:
         return True
     if os.path.exists(pdf_path):
         os.remove(pdf_path)
@@ -129,6 +136,13 @@ def pdf_text(pdf_path):
 
 
 def main():
+    ap = argparse.ArgumentParser(description="Compile and mechanically verify draft CV PDFs.")
+    ap.add_argument(
+        "--force",
+        action="store_true",
+        help="rebuild every PDF even when the existing PDF is newer than its HTML source",
+    )
+    args = ap.parse_args()
     os.makedirs(PDF_DIR, exist_ok=True)
     pool = collect()
     targets = [(v, d, t, c) for (v, d, t, c) in pool.values() if os.path.exists(d)]
@@ -139,7 +153,7 @@ def main():
         stem = os.path.splitext(os.path.basename(draft))[0]
         pdf_path = os.path.join(PDF_DIR, stem + ".pdf")
         print(f"  [{i}/{len(targets)}] {stem}.pdf", flush=True)
-        ok = compile_pdf(draft, pdf_path)
+        ok = compile_pdf(draft, pdf_path, force=args.force)
         if not ok:
             rows.append((verdict, company, title, draft, pdf_path, "COMPILE FAILED", []))
             continue
