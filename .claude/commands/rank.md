@@ -89,7 +89,7 @@ Back in the main context, for each scored job:
 1. Compute the overall score with the weighting from `04-job-evaluation.md` (Technical 30%, Experience 25%, Behavioral 15%, Career Alignment 30%; location is unweighted).
 2. Map to the framework's verdict bands (Strong Fit 75+, Good Fit 60-74, Moderate Fit 45-59, Weak Fit 30-44, Poor Fit <30).
 3. **Location veto:** `FAIL` (e.g. requires relocation) excludes the job from the shortlist no matter the score - list it separately with the reason. `FLAG` (e.g. heavy travel) stays in the ranking but carries a visible ⚠ marker for the user to judge.
-4. **Language veto:** `language_gate: FAIL` (posting requires a language the candidate hasn't declared at all) excludes the job from the shortlist, same as a location FAIL - list it under "Excluded" with the quoted requirement from `language_note`. `language_gate: FLAG` (declared language, requirement reads above the declared level) stays in the ranking with a visible ⚠ marker and `language_note` shown alongside the score, same treatment as a location FLAG.
+4. **Language veto:** `language_gate: FAIL` (posting explicitly requires any non-English language) excludes the job from the shortlist, same as a location FAIL - list it under "Excluded" with the quoted requirement from `language_note`. An unspecified language and any English requirement are PASS; there is no language-level FLAG under the candidate's binary rule.
 5. **Deadline urgency:** a deadline within 7 days gets a 🔥 marker and wins ties. A deadline that has already passed moves the job to `expired`. Take the deadline from the scoring agent's Step 2 JSON for a job scored in this run, and from the `deadline` Step 1's `candidates` already returned for one that already carries it - a stored value costs no fetch, so urgency is re-derived on every run without re-reading the posting. When both exist and disagree, the freshly scored value wins and replaces the stored one. A stored value that does not parse as `YYYY-MM-DD` is skipped for urgency as well - rule 6's defensive-parse rule applies wherever a stored deadline is compared.
 6. **Expiry sweep over already-ranked entries.** Before presenting, check the stored `deadline` of every `ranked` entry this run did not re-score:
 
@@ -101,8 +101,8 @@ Back in the main context, for each scored job:
 
 7. **Staleness flag:** a job whose stored `posted_date` is more than **30 days** old at
    rank time stays in the ranking but carries a visible ⚠ marker with its age spelled out
-   alongside the score (e.g. "⚠ posted 2024-05-13, 27 months ago") - same treatment as a
-   location or language FLAG, for the user to judge. Age is a signal, never a veto: the
+   alongside the score (e.g. "⚠ posted 2024-05-13, 27 months ago") - same visible treatment as
+   a location FLAG, for the user to judge. Age is a signal, never a veto: the
    posting that motivated this rule was 27 months old *and still live*, so excluding on
    age would wrongly bury real openings - and a stale posting with a future stored
    `deadline` is still open by the stronger signal, so the flag notes the deadline too
@@ -170,14 +170,14 @@ Swept <S> previously ranked entries (<E> newly expired, <C> closing soon).
 
 ### Excluded
 - <Title> at <Company> - location FAIL: requires relocation - [Link](...)
-- <Title> at <Company> - language FAIL: requires fluent Polish (not in your Languages table) - [Link](...)
+- <Title> at <Company> - language FAIL: explicitly requires fluent Polish - [Link](...)
 - <Title> at <Company> - expired <date> - [Link](...)
 ```
 
 Rules for the presentation:
 
 - Every table (shortlist, below threshold, excluded) includes the posting URL as a clickable link - use the `url` in `apply`'s output (not the entry's key, which for some portals is a company+title composite rather than the URL), so this never requires an extra lookup. Never drop the link for brevity.
-- A shortlisted job with `language_gate: FLAG` gets a ⚠ marker next to its Title (same treatment as a location FLAG) and its `language_note` quoted in that job's "Why these ranked highest" writeup, so the language-level gap is visible without digging into the raw JSON.
+- A job with `language_gate: FAIL` is excluded and its explicit non-English requirement is quoted in the exclusion reason. Fresh evaluations do not create a language-level FLAG: unspecified language and English are PASS, while explicit non-English is FAIL.
 - Every claim traces to fetched posting text or the profile - no invented details.
 - Say explicitly that these are **triage scores from the posting text only**, and that `/apply` will re-evaluate with company research before anything is drafted.
 - Then ask: "Want to apply to any of these? Give me the number(s) and I'll start with the full `/apply` workflow."

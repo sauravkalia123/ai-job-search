@@ -69,10 +69,12 @@ Open to relocation **worldwide**, with priority interest in: Canada, Europe, Aus
 
 ### CV Presentation Rules
 - Treat the candidate profile and master CV as an evidence source, not prose to copy wholesale.
+- Treat the scraper's 48 Strong search keywords and solution-name phrases as discovery inputs only; they are not the CV's skills list and must never be pasted into a CV as a keyword inventory.
 - Default to concise senior-engineer wording: scope, ownership, outcome, and only the target role's relevant technologies.
 - Keep forensic debugging chains, individual remediation steps, and complete keyword inventories in the evidence layer. Include them in a CV only when the job description specifically benefits from that detail.
 - Use 5–6 compact Core Skills categories; never reproduce the full technology or solution bank as a skills section.
 - Do not place the candidate's current residence or a relocation statement in the CV contact header.
+- For relevant roles, lead with the evidence-backed positioning: C++ concurrency, GStreamer/WebRTC/media platforms, real-time video reliability and performance, embedded Linux user-space applications, production debugging, and technical leadership. Select the actual supporting facts from the master CV rather than inventing or importing search terms.
 
 ### Certifications
 - (none recorded)

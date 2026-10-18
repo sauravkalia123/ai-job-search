@@ -73,6 +73,12 @@ assume that the presence of a PDF means it corresponds to the current HTML.
 
 The candidate profile and master files are allowed to contain detailed evidence so the assistant can tailor accurately. That evidence is **not** a command to reproduce the wording in a CV. Every tailored CV must apply this separation:
 
+The scraper's Strong-keyword and solution-name catalogs are **search tools only**. Do not turn the
+48 search keywords or the solution phrases into a generic CV skills dump. A posting discovered by
+one of those terms is a signal about what to emphasize, not permission to claim the term. The
+tailored CV must use the candidate's actual evidence-backed skill set, then prioritize the subset
+that matches the role.
+
 - **Evidence layer:** preserve the underlying facts, metrics, technologies, diagnostic findings, and implementation context for selection and interview preparation.
 - **Presentation layer:** write a concise senior-engineer narrative focused on scope, ownership, outcome, and the few technologies relevant to the target role.
 - Never copy a forensic investigation verbatim as a default bullet. Convert it to the senior-level outcome first. Example: a detailed file-descriptor/thread-pool investigation becomes “Resolved production stability and scalability issues in high-concurrency media services,” unless the job description specifically requires low-level socket or concurrency debugging.
@@ -87,6 +93,19 @@ The candidate profile and master files are allowed to contain detailed evidence 
 - Do not turn every tool in the evidence layer into a skill claim. Mention only the tools that support the target role's narrative.
 - Core Skills must contain **5–6 compact categories**, with a deliberate selection of major competencies. Do not use an exhaustive technology inventory as the default skills section.
 - The optional solution/protocol keyword bank is a lookup source. Select individual supported terms only when relevant; never reproduce the bank as a section or append it to improve keyword count.
+
+### Strongest positioning for relevant roles
+
+For roles aligned with the candidate's evidence, prioritize the following narrative rather than
+the search catalog itself: C++14/17/20 and multithreading; GStreamer, WebRTC, HLS and RTP/RTSP;
+real-time video and multimedia platforms; streaming reliability, latency, memory and performance
+optimization; dashcam/telematics, OTT, surveillance, broadcast and control-room video; embedded
+Linux user-space applications; technical leadership, architecture, code reviews and mentoring;
+and production debugging with measurable outcomes. Use the strongest verified evidence where it
+helps the target role, such as 100+ concurrent streams per node across 700k+ devices, 98.6% WebRTC
+session success, 84% less observed GStreamer memory growth, 49% to approximately 100% recording
+duty cycle, recording gaps reduced from 171 to 2, and teams of 4–30 engineers. These are tailoring
+priorities, not a replacement for checking the actual master CV and candidate profile.
 
 ## Solution keyword bank (tailoring source)
 

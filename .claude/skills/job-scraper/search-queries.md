@@ -37,7 +37,20 @@ EU/UK, Canada, Australia, New Zealand, Singapore, South Korea, Malaysia, UAE + r
 - **smartrecruiters-search** (enabled, added 2026-10-15) - SmartRecruiters boards, PER-ORG with server-side q search:
   `bun run .agents/skills/smartrecruiters-search/cli/src/cli.ts search -o <org> -q "<keyword>" --limit 15 --format json`
   Use for org tokens harvested from jobs.smartrecruiters.com URLs (TAPI, QantasGroup, Syntegon, ...).
-- **Danish demo portals** (jobindex, jobbank, jobdanmark, jobnet) ship **disabled** - not this candidate's market.
+- **ind-sponsors-search** (enabled) - Netherlands IND-recognised-sponsor job aggregator:
+  `bun run .agents/skills/ind-sponsors-search/cli/src/cli.ts search -q "<keyword>" --limit 15 --format json`
+  External listing URLs must be verified before applying; use only low-volume personal searches.
+- **undutchables-search** (enabled) - Netherlands international vacancy board, defaulting to English IT/Engineering:
+  `bun run .agents/skills/undutchables-search/cli/src/cli.ts search -q "<keyword>" --limit 15 --format json`
+  The filtered query URLs are disallowed by the portal's robots.txt; use only low-volume personal searches.
+- **togetherabroad-search** (enabled) - Netherlands international/English and ICT vacancy board:
+  `bun run .agents/skills/togetherabroad-search/cli/src/cli.ts search -q "<keyword>" --limit 15 --format json`
+  Detail results preserve the portal URL and any external employer application URL.
+- **Danish portals** (enabled for this workspace):
+  - **jobindex-search** - Jobindex.dk nationwide Danish job board.
+  - **jobbank-search** - Akademikernes Jobbank for academic/highly educated roles.
+  - **jobdanmark-search** - Jobdanmark nationwide job listings.
+  - **jobnet-search** - official Danish public employment portal.
 
 More portals via `/add-portal` (user will feed additional search providers).
 
@@ -53,6 +66,7 @@ Per-country boards (WebSearch fallback):
 - **Germany:** stepstone.de, arbeitsagentur.de, xing.com/jobs, indeed.com/de
 - **Europe:** eures.europa.eu, welcometothejungle.com, berlinstartupjobs.com
 - **UK:** uk.indeed.com, totaljobs.com
+- **Netherlands:** indsponsors.nl, undutchables.nl, togetherabroad.nl, indeed.nl, werkenbijdeoverheid.nl
 - **Canada:** jobbank.gc.ca, indeed.com/ca, eluta.ca
 - **Australia:** seek.com.au, jora.com · **New Zealand:** seek.co.nz, trademe.co.nz/jobs
 - **Singapore:** mycareersfuture.gov.sg, jobstreet.com.sg · **South Korea:** saramin.co.kr, jobkorea.co.kr
@@ -168,9 +182,13 @@ when the user names them.
 
 ## Master Keyword Inventory (tiered - candidate taxonomy, 2026-10-13)
 
-Keywords are tiered exactly as in `04-job-evaluation.md`. **Strong and Moderate tiers are the
-active search pool. Weak-tier keywords are NOT searched by default** (they would only surface
-roles that score down); they run only on explicit user request or `/scrape broad`.
+Keywords are tiered exactly as in `04-job-evaluation.md`. **This entire inventory is a search
+catalog, not a CV skills section.** It exists to discover and classify job postings. Search
+keywords and solution phrases must never be copied wholesale into a CV. The CV uses only the
+separate evidence-backed skill set and experience in `01-candidate-profile.md`, `cv/master_cv.*`,
+and the active CV template. **Strong and Moderate tiers are the active search pool. Weak-tier
+keywords are NOT searched by default** (they would only surface roles that score down); they run
+only on explicit user request or `/scrape broad`.
 
 - **Titles (always):** staff software engineer, principal software engineer, staff engineer, senior software engineer, senior staff engineer, software architect, tech lead
 - **Strong tier (active):** C, embedded C, C++14/17/20, concurrency, multithreading, Linux, embedded Linux **user-space/media platforms**, RTOS, GStreamer, FFmpeg, WebRTC, RTP/RTCP, RTSP, HLS, MPEG-DASH, MP4, H.264, H.265, video streaming, real-time media, low-latency video, video pipeline, camera pipeline, media server, multi-stream processing, multi-stream decoding, audio/video synchronization, digital signage, video wall, IPTV, OTT, set-top box, STB, smart TV, Tizen, video telematics, dashcam, live view, video recording, Widevine, PlayReady, DRM, performance optimization, memory optimization, multicast video, embedded multimedia, video playback, live transcoding
@@ -232,6 +250,11 @@ postings often name the product domain ("build our OTT platform", "video confere
 phrase, scoped per market (LinkedIn) or multi-country (freehire), with the 7-day window and the
 sponsorship variant rule (retired 2026-10-15 — single plain pass everywhere) applied to each:
 
+**Search-only rule:** these solution/product phrases are discovery probes. They are not a list of
+skills to paste into a CV. When a result is selected, tailor the CV only with the role-relevant,
+factually supported technologies, domains, responsibilities and outcomes already present in the
+candidate evidence and master CV.
+
     "video conferencing" | "OTT platform" | "IPTV" | "set-top box" | "Android TV" |
     "smart TV" | "digital signage" | "video wall" | "video surveillance" | "VMS" |
     "dashcam" | "video telematics" | "media server" | "live streaming" |
@@ -265,8 +288,9 @@ Never drop a job for location. Sponsorship wording -> Eligibility Gate (`04-job-
 ## Language Filter
 
 Working languages: English (professional), Hindi (native), German (A1, learning). Apply the
-Language Gate: a required undeclared language excludes the posting; German above A1 is flagged,
-not dropped. Queries stay English worldwide; Korean variants for local boards only:
+Language Gate: unspecified language and English are PASS; any explicitly required non-English
+language is FAIL. Do not infer a language requirement from the language of the advertisement.
+Queries stay English worldwide; Korean variants for local boards only:
 임베디드 리눅스 (embedded Linux), C++ 멀티미디어 (C++ multimedia), 펌웨어 (firmware).
 
 ## Date Filter

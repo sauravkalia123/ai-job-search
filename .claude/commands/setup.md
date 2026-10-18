@@ -272,7 +272,7 @@ Ask about:
 - Full name
 - Location (city, country)
 - Phone, email, LinkedIn, GitHub
-- What languages they work in professionally, and roughly what level in each (native, fluent, conversational, a CEFR letter like B2 - whatever's natural for them to describe, doesn't need to be precise). Worth explaining why: a posting requiring a language they don't list at all gets auto-excluded later by the Language Gate, while one asking for a higher level in a language they do list gets flagged for their own judgment instead of silently passed or rejected - so it's worth being honest here rather than optimistic.
+- What languages they work in professionally, and roughly what level in each (native, fluent, conversational, a CEFR letter like B2 - whatever's natural for them to describe, doesn't need to be precise). The current candidate rule is binary: unspecified language and English pass; an explicitly required non-English language fails, so record the profile honestly for transparency even though level comparison does not create a separate flag.
 - Current employment status
 - Family/commute constraints (if any)
 

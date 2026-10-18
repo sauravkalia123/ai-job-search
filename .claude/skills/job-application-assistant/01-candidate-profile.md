@@ -29,12 +29,12 @@ framework_version: 1.1.1
 ### Languages
 <!-- Every language you can work in professionally, with your honest level. Used by the
 Language Gate in 04-job-evaluation.md and by job-scraper/search-queries.md's query-language
-generation. Omit any language you don't actually work in - an undeclared language is treated as
-a hard no, not a gap to smooth over. -->
+generation. The current candidate rule is binary: unspecified language and English pass; an
+explicitly required non-English language fails. -->
 
 | Language | Level | Notes |
 |----------|-------|-------|
-| English | Professional working proficiency | Primary working language, 19+ years. Per candidate instruction (2026-10-13): any English requirement (incl. "fluent") = PASS; unspecified language = assume English. Only non-English requirements trigger the Language Gate. |
+| English | Professional working proficiency | Primary working language, 19+ years. Any English requirement (including "fluent") = PASS; unspecified language = assume English. An explicit requirement for any other language = FAIL under the candidate's binary Language Gate rule. |
 | Hindi | Native | |
 | German | A1 (beginner) | Actively learning; not yet a working language |
 
@@ -42,6 +42,14 @@ a hard no, not a gap to smooth over. -->
 
 ### Keyword Policy (solution/keyword catalog; tiers updated 2026-10-13)
 The candidate profile carries an optional "Product & Solution Domains" and "Streaming Protocols & Formats" keyword bank. It is a tailoring lookup source, **not default CV content**. Tailoring may use individual terms where the posting names them, **within the tier split below** (which now mirrors the candidate's own Strong/Moderate/Weak tier list in `04-job-evaluation.md`):
+
+**Important separation:** the 48 Strong-tier search entries and the solution-name search phrases in
+`.claude/skills/job-scraper/search-queries.md` are primarily **search-discovery inputs**. They are
+not the candidate's CV skill list and must not be pasted into a CV as an inventory. For CV
+tailoring, start from the evidence-backed Technical Skills and Professional Experience sections
+below plus `cv/master_cv.html` / `cv/master_cv.md`; select only the technologies and domains that
+are both relevant to the posting and honestly supported by that evidence. A search hit is not
+proof of expertise.
 
 - **Strong tier (= fully claimable, already in the CV bank):** C/C++ concurrency, GStreamer, WebRTC, RTSP, HLS, MPEG-DASH, MP4, H.264/H.265, DRM (Widevine/PlayReady), embedded Linux/ARM **in user-space/media-platform contexts**, video walls, digital signage, OTT, IPTV, STB, smart TV, Tizen, dashcam/video telematics, live view/recording, multicast, transcoding, A/V sync, media server, multi-stream decode.
 - **Adjacent/moderate tier (partial credit only; never a strong-fit signal by itself):** SIP/VoIP, PipeWire/JACK/ALSA, MPEG-TS, SRT, RIST, NDI, CMAF, LL-HLS, VP8/VP9/AV1, AAC/Opus, ABR/CDN/packager, VMS/NVR/IP cameras, video analytics/edge AI, V4L2, Yocto/BitBake, BSP/platform integration, VPU, Android TV, RDK, ExoPlayer/Shaka, Wayland/Weston, QNX, AGL, AAOS, AEC, OTA/secure boot/A-B partitions, PTP/gPTP, multi-camera capture, echo cancellation, firmware/bootloader and limited device/board interaction.

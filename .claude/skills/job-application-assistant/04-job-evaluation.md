@@ -40,25 +40,46 @@ A role that fails this gate is not scored and not drafted. Everything below appl
 
 ## Language Gate — run before scoring
 
-This gate checks a posting's language requirements against what the candidate actually speaks. It is not one of the five Scoring Dimensions below - it runs before them, structured the same way as the Eligibility Gate above: read the posting, classify against profile data, and treat a hard mismatch as FAIL before scoring. Its verdict is tracked downstream: `/rank` records the result as `language_gate` (PASS/FAIL/FLAG) with a supporting `language_note`, persists both into `seen_jobs.json`, and treats a FAIL as a shortlist veto; `/scrape` surfaces the flag in its results table and carries a language-override rule for postings whose ad language differs from the role's working language. `/apply`'s language detection (Step 1, which extracts a posting's required language generically) feeds this same check.
+This gate checks a posting's language requirements against what the candidate actually speaks. It is not one of the five Scoring Dimensions below - it runs before them, structured the same way as the Eligibility Gate above: read the posting, classify against profile data, and treat a hard mismatch as FAIL before scoring. Its verdict is tracked downstream: `/rank` records the result as `language_gate` (fresh evaluations use PASS/FAIL; FLAG is retained only for legacy stored entries) with a supporting `language_note`, persists both into `seen_jobs.json`, and treats a FAIL as a shortlist veto; `/scrape` surfaces the result in its results table and carries a language-override rule for postings whose ad language differs from the role's working language. `/apply`'s language detection (Step 1, which extracts a posting's required language generically) feeds this same check.
 
-Read the posting's language requirements as stated for **the role itself** — not the language the ad happens to be written in. A posting written in a language you don't work in, for a role that only needs languages you do work in on the job, passes fine; only an explicit job-condition requirement ("fluent X required," "must communicate with the Y team in Z") triggers this check. For each language the posting requires as a job condition, compare it against your Languages table in CLAUDE.md / `01-candidate-profile.md`:
+Read the posting's language requirements as stated for **the role itself** — not the language the ad happens to be written in. A posting written in a language you don't work in, for a role that does not explicitly require that language, passes fine. An unspecified language requirement also passes: assume English. Only an explicit language requirement triggers this check:
 
 | Posting requirement vs. your Languages table | Verdict |
 |---|---|
-| Requires a language **not on your table at all** (e.g. "fluent Polish required," "must communicate with the Warsaw team in Russian," and you list no Polish/Russian row) | **FAIL — hard stop.** Do not score, do not draft. Quote the exact requirement line. |
-| Requires a language you **do** list, but the posting's stated bar (as written — "fluent," "native," "C1+," "business-level") reads as plausibly **higher** than your declared level | **FLAG, then proceed.** Not a fail. Score and draft normally, but surface the gap explicitly in your report to the user (quote both the posting's requirement and your declared level) so they can judge it themselves — bars like "fluent" vary a lot by company and geography, and a recruiter may be flexible. Never silently drop the posting and never silently treat it as a clean pass. |
-| Requires a language you list, at or below your declared level (or the posting doesn't specify a level at all — just names the language) | **PASS.** No note needed. |
+| Posting does not explicitly require a language, or explicitly requires English at any level | **PASS.** Assume English when the posting is silent. No language penalty or flag. |
+| Posting explicitly requires **any language other than English** (including German, Dutch, Danish, French, Polish, etc.), whether or not it appears in the candidate's Languages table | **FAIL — hard stop.** Do not score, do not draft. Quote the exact requirement line. |
 
-Judge the level comparison the same way you judge everything else in this framework: read both sides as written and reason about it, don't force either into a rigid scale — CEFR letters, LinkedIn-style buckets ("professional working proficiency"), and plain-English words ("conversational," "fluent," "native") all appear in the wild and don't map onto each other precisely. When genuinely unsure whether a stated bar exceeds the candidate's level, prefer FLAG over a silent PASS — the human is meant to be the tiebreaker, not the gate.
+Do not downgrade an otherwise eligible role because the posting is written in another language, and do not infer a language requirement from the ad language. The rule is deliberately binary for this candidate: no explicit non-English requirement is PASS; an explicit non-English requirement is FAIL.
 
-**English is always a PASS (candidate instruction, 2026-10-13):** English is the candidate's primary working language (19+ years across India, UAE, South Korea, Germany). Any posting requirement in English — including "fluent English", "business-level English", "English/Full professional" — passes the gate unconditionally. If a posting specifies no language at all, assume English: PASS, no flag. Only non-English requirements trigger the table above.
+**English is always a PASS (candidate instruction, 2026-10-13):** English is the candidate's primary working language (19+ years across India, UAE, South Korea, Germany). Any posting requirement in English — including "fluent English", "business-level English", "English/Full professional" — passes the gate unconditionally. If a posting specifies no language at all, assume English: PASS, no flag. Any explicit non-English requirement is FAIL, even if the candidate has listed that language at a beginner level.
 
-**Worked example:** a candidate whose Languages table lists Spanish (Native) and English (B1/B2). A posting requiring "fluent Russian" → **FAIL**, Russian isn't declared at all. A posting requiring "fluent English" → **FLAG**, English is declared but "fluent" plausibly exceeds B1/B2 — score and draft the application, but tell the candidate this posting's bar may be a stretch and let them decide. A posting requiring "conversational English" or unspecified English → **PASS**, B1/B2 clears a "conversational" bar cleanly.
+**Worked example:** a posting requiring "fluent Russian" → **FAIL**, regardless of whether Russian is listed. A posting requiring "fluent German" → **FAIL**, even though German appears in the profile at A1. A posting requiring "fluent English", "conversational English", or no language at all → **PASS**.
 
 ## Scoring Dimensions
 
 Evaluate each job posting against these five dimensions:
+
+### Scoring boundary: never count keywords as points
+
+The **48 Strong search keywords and 29 solution-name search phrases are discovery inputs,
+not a scoring formula**. A keyword hit helps identify which part of the posting to inspect, but
+it does not add points by itself and a long keyword list does not prove fit. Score the posting's
+actual responsibilities and required depth against the candidate's evidence-backed profile.
+In particular, a posting dominated by Linux kernel work, deep BSP/Yocto ownership, primary
+device-driver development, or other explicitly not-strong areas must not become a Strong Fit merely
+because it contains many search terms.
+
+Apply the gates separately:
+
+- **Eligibility / sponsorship:** a stated no-sponsorship, citizen/PR-only, or existing-work-rights
+  requirement is a hard FAIL for an abroad role. Silence on sponsorship is **unverified**, not
+  automatic points or an automatic fail. Sponsorship is not a weighted score component.
+- **Language:** PASS, FLAG, or FAIL according to the Language Gate. A language FAIL vetoes the
+  shortlist; a FLAG is reported to the user. Do not convert language into arbitrary points.
+- **Location/logistics:** PASS/FAIL with sponsorship and relocation notes; it is not weighted.
+
+Only the weighted fit dimensions below produce the numeric overall score: Technical Skills (30%),
+Experience (25%), Behavioral/Culture (15%), and Career Alignment (30%).
 
 ### 1. Technical Skills Match (0-100)
 How well do the required/preferred skills align with the candidate's capabilities?
@@ -107,7 +128,7 @@ Does the role and company culture match the behavioral profile?
 
 The candidate is open to relocation **worldwide**. Location willingness never fails a role on its own; the binding constraints are the Eligibility Gate (sponsorship) and, in Germany, the Language Gate. Score this dimension as:
 
-- Germany: PASS (Opportunity Card holder, already in Munich). Flag postings requiring fluent German for daily work (language is A1 today).
+- Germany: PASS (Opportunity Card holder, already in Munich). An explicit German requirement is a Language Gate FAIL under the candidate's binary language rule.
 - India: PASS (citizen).
 - Europe (EU/EEA/UK), Canada, Australia, New Zealand, UAE, Singapore, South Korea, Malaysia: PASS with "Sponsorship required" — employer must be willing to sponsor (verify on silent postings).
 - Rest of world: PASS with "Sponsorship required" — same sponsorship caveat.

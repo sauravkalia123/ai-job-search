@@ -405,7 +405,7 @@ class RankCommandSpec(unittest.TestCase):
             "the scoring agents reported",
         )
 
-    def test_step5_documents_language_flag_marker(self):
+    def test_step5_documents_language_veto(self):
         # Note: _sections() splits on every "\n## " line, including the "## Job
         # Ranking - YYYY-MM-DD" line inside Step 5's own fenced example template -
         # so the presentation rules that follow that example live under that key,
@@ -416,10 +416,14 @@ class RankCommandSpec(unittest.TestCase):
         sections = _sections(COMMAND.read_text(encoding="utf-8"))
         step5_rules = sections.get("Job Ranking - YYYY-MM-DD", "")
         self.assertIn(
-            "language_gate: FLAG",
+            "language_gate: FAIL",
             step5_rules,
-            "Step 5's presentation rules must document the ⚠ marker + language_note callout "
-            "for a shortlisted FLAG job, mirroring the existing location FLAG treatment",
+            "Step 5's presentation rules must document exclusion for an explicit non-English requirement",
+        )
+        self.assertIn(
+            "explicit non-English",
+            step5_rules,
+            "Step 5 must explain the candidate's binary language rule",
         )
 
     @unittest.skipUnless(

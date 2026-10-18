@@ -47,7 +47,7 @@ When a job posting mentions these keywords, it's a **strong behavioral fit**:
 When a job posting mentions these, flag as **potential friction** (not deal-breaker):
 - "purely people management" (no hands-on coding expected)
 - "process-heavy", "document-driven" cultures over build-and-debug cultures
-- Roles requiring fluent German for daily collaboration (language is A1 today)
+- Roles explicitly requiring German for daily collaboration (the binary Language Gate marks any explicit non-English requirement as FAIL)
 
 ## Management Style Preferences
 - *(not yet stated by the user)* - Leads by example: reviews code directly, sets architecture, then delegates. *[Inferred from "Best Code Reviewer" + managed 30 engineers across architecture/quality]*

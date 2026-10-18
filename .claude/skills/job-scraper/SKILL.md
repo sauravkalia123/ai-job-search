@@ -138,8 +138,8 @@ If two or more results in this run's pool (from the same company, or sharing the
 ### Step 3: Inline Ranking (title gate → JD → full-framework score)
 
 **The title gate.** From search metadata alone, hard-drop only clear non-fits: wrong
-domain (sales, web-only frontend, admin), roles requiring an entirely-undeclared
-language, clearly below-level (junior/graduate). Everything else passes — **vague
+domain (sales, web-only frontend, admin), roles with a clearly explicit non-English language
+requirement, clearly below-level (junior/graduate). Everything else passes — **vague
 titles at relevant companies are default-pull, not drop**: "Software Engineer" at a
 relevant employer or an unknown-stack listing is exactly where a strong match hides.
 The 7-day window bounds volume; the gate bounds JD fetches — never an arbitrary cap.
@@ -156,11 +156,9 @@ per gated-in posting.
 gated-in postings as `status: "new"`, and report them in Step 5 as "unscored — run
 /rank later". Never guess a score for a JD that wasn't read.
 
-**Language Gate:** a required language entirely undeclared in your CLAUDE.md Languages
-table overrides skill fit (FAIL — apply the framework's override rule). A declared
-language above your level (e.g. German at A1) is FLAG — score normally and carry the
-quoted requirement in `language_note` so the gap is visible without being
-auto-downgraded.
+**Language Gate:** an explicit non-English language requirement overrides skill fit and is
+FAIL under the candidate's binary rule. An unspecified language, or an English requirement,
+is PASS. Do not infer a requirement from the language in which the advertisement is written.
 
 ### Step 3.5: Auto-draft Tailored CVs (rank_score > 55)
 
@@ -222,7 +220,7 @@ The `portal` field records which CLI skill produced the job (results are already
 
 The `source` field records which mechanism produced the entry: `cli` for Step 1b portal-CLI output, `websearch` for the Step 1c fallback. This is what keeps a ghost-job report diagnosable after the run's summary is gone: a stored entry whose URL later resolves to nothing (or to a different job) reads very differently depending on whether it came from live CLI output or from a search index that can be weeks stale - and a presented job with no entry here at all points at fabrication, which Rule 1 forbids. Entries written before this field existed lack it; never backfill it - the mechanism was not recorded.
 
-`/rank` extends this schema additively — and under the inline-ranking pipeline (Step 3) `/scrape` itself writes the same fields at first store for every gated-in posting (`status: "ranked"`; `"new"` now means only unscored leftovers from a rate-limit partial). Ranked entries also carry `rank_score` (0–100 overall score), `rank_verdict` (fit band, e.g. "strong fit"), `rank_date` (ISO date of ranking), the veto fields `location_verdict` and `language_gate` (both PASS/FAIL/FLAG) with `language_note` (the quoted requirement explaining a non-PASS), and `strengths`/`gaps` (1-3 verbatim bullets each, copied from the scoring agent's findings). The `status` field is set to `"ranked"`. Do not drop any of these fields when re-writing entries. Entries ranked before `strengths`/`gaps` existed simply lack them; readers tolerate their absence and never backfill by guessing. Entries ranked before the verdict rename may carry a legacy PASS/FAIL/FLAG string in `location` - read that as the verdict when `location_verdict` is absent; in fresh entries `location` is always a place, never a verdict.
+`/rank` extends this schema additively — and under the inline-ranking pipeline (Step 3) `/scrape` itself writes the same fields at first store for every gated-in posting (`status: "ranked"`; `"new"` now means only unscored leftovers from a rate-limit partial). Ranked entries also carry `rank_score` (0–100 overall score), `rank_verdict` (fit band, e.g. "strong fit"), `rank_date` (ISO date of ranking), the veto fields `location_verdict` and `language_gate` (location uses PASS/FAIL/FLAG; fresh language evaluations use PASS/FAIL, with FLAG retained only for legacy entries) with `language_note` (the quoted requirement explaining a non-PASS), and `strengths`/`gaps` (1-3 verbatim bullets each, copied from the scoring agent's findings). The `status` field is set to `"ranked"`. Do not drop any of these fields when re-writing entries. Entries ranked before `strengths`/`gaps` existed simply lack them; readers tolerate their absence and never backfill by guessing. Entries ranked before the verdict rename may carry a legacy PASS/FAIL/FLAG string in `location` - read that as the verdict when `location_verdict` is absent; in fresh entries `location` is always a place, never a verdict.
 
 `deadline` is a base field rather than a `/rank` extension: Step 2's detail fetch already extracts the application deadline, so it is written when the job is first seen and refreshed by `/rank` Step 4 when a scoring agent returns a different value. `null` means the posting states no deadline; a missing key means the entry predates this field - **never infer a deadline** from either, and never backfill by guessing.
 
